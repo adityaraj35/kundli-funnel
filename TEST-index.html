@@ -1,0 +1,512 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Book Page Flip</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&family=Cinzel:wght@400;600;700&family=Fondamento:ital@0;1&family=Karma:wght@400;500;600;700&family=Lovers+Quarrel&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+
+    <div class="book">
+      <div id="pages" class="pages">
+
+        <!-- ══════════════════════════════════════════════════
+             PAGE 1 — Ganesh cover (odd → right side)
+        ══════════════════════════════════════════════════ -->
+        <div class="page">
+          <div class="ganesh-page">
+            <img class="ganesh-page__img" src="./img/ganesh-ji.png" alt="Ganesh Ji" />
+            <p class="ganesh-page__mantra">ॐ श्री गणेशाय नमः</p>
+          </div>
+        </div>
+
+        <!-- ══════════════════════════════════════════════════
+             PAGE 2 — Astro info (even → left after first flip)
+        ══════════════════════════════════════════════════ -->
+        <div class="page">
+          <img class="corner-art corner-art--top"    src="./svg/corder-art.svg" alt="" />
+          <img class="corner-art corner-art--bottom" src="./svg/corder-art.svg" alt="" />
+
+          <div class="page-inner">
+            <h2 class="info-page__title">Astro Arun Pandit</h2>
+
+            <img
+              class="info-page__separator"
+              src="https://d1wqi5f82xeqa6.cloudfront.net/cosmic-report/elements/star-grad-seperator.png"
+              alt=""
+            />
+
+            <div class="info-grid">
+              <div class="info-col">
+                <div class="info-item">
+                  <span class="info-item__label">Sex</span>
+                  <span class="info-item__value">Male</span>
+                </div>
+                <div class="info-item">
+                  <span class="info-item__label">Date of Birth</span>
+                  <span class="info-item__value">16/08/1990</span>
+                </div>
+                <div class="info-item">
+                  <span class="info-item__label">Day</span>
+                  <span class="info-item__value">Friday</span>
+                </div>
+                <div class="info-item">
+                  <span class="info-item__label">Time of Birth</span>
+                  <span class="info-item__value">19:13:00 Hour</span>
+                </div>
+              </div>
+
+              <div class="info-col info-col--right">
+                <div class="info-item">
+                  <span class="info-item__label">Age</span>
+                  <span class="info-item__value">30 Years</span>
+                </div>
+                <div class="info-item">
+                  <span class="info-item__label">City</span>
+                  <span class="info-item__value">Kanpur</span>
+                </div>
+                <div class="info-item">
+                  <span class="info-item__label">State</span>
+                  <span class="info-item__value">Uttar Pradesh</span>
+                </div>
+                <div class="info-item">
+                  <span class="info-item__label">Country</span>
+                  <span class="info-item__value">India</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="signs-row">
+              <div class="sign-card">
+                <div class="sign-card__visual">
+                  <img class="sign-card__frame" src="./svg/sun-sign.svg"  alt="" />
+                  <img class="sign-card__icon"  src="./img/aries.png"     alt="Aries" />
+                </div>
+                <span class="sign-card__name">ARIES</span>
+              </div>
+              <div class="sign-card">
+                <div class="sign-card__visual">
+                  <img class="sign-card__frame" src="./svg/moon-sign.svg" alt="" />
+                  <img class="sign-card__icon"  src="./img/aries.png"     alt="Aries" />
+                </div>
+                <span class="sign-card__name">ARIES</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ══════════════════════════════════════════════════
+             PAGE 3 — Kundli scroll
+        ══════════════════════════════════════════════════ -->
+        <!-- <div class="page">
+          <div class="page-inner">
+            <h2 class="info-page__title">Kundli</h2>
+            <img
+              class="info-page__separator"
+              src="https://d1wqi5f82xeqa6.cloudfront.net/cosmic-report/elements/star-grad-seperator.png"
+              alt=""
+            />
+
+            <div class="scroll-page">
+              <div>
+                <img style="width: 100%;" src="./img/scroll-page.png" alt="" />
+              </div>
+            </div>
+
+            <div class="toc-footer">
+              <img class="page-footer__img" src="./svg/om-footer.svg" alt="ॐ" />
+            </div>
+          </div>
+        </div> -->
+
+        <!-- ══════════════════════════════════════════════════
+             PAGE 4 — Table of Contents
+        ══════════════════════════════════════════════════ -->
+        <div class="page">
+          <img class="corner-art corner-art--top"    src="./svg/corder-art.svg" alt="" />
+          <img class="corner-art corner-art--bottom" src="./svg/corder-art.svg" alt="" />
+
+          <div class="toc-page">
+            <div class="toc-header">
+              <img class="toc-title-img" src="./svg/TOC-title.svg" alt="Table of Content" />
+            </div>
+
+            <ul class="toc-list" role="list">
+              <li class="toc-row">
+                <span class="toc-badge">01</span>
+                <span class="toc-name">Basic Details</span>
+                <span class="toc-pagenum">01 &rarr;</span>
+              </li>
+              <li class="toc-row">
+                <span class="toc-badge">02</span>
+                <span class="toc-name">Panchang Details</span>
+                <span class="toc-pagenum">02 &rarr;</span>
+              </li>
+              <li class="toc-row">
+                <span class="toc-badge">03</span>
+                <span class="toc-name">Lagna Chart, Moon Chart</span>
+                <span class="toc-pagenum">03 &rarr;</span>
+              </li>
+              <li class="toc-row">
+                <span class="toc-badge">04</span>
+                <span class="toc-name">Shodashvarga Details</span>
+                <span class="toc-pagenum">04 &rarr;</span>
+              </li>
+              <li class="toc-row">
+                <span class="toc-badge">05</span>
+                <span class="toc-name">Dasha Chart</span>
+                <span class="toc-pagenum">05&ndash;09 &rarr;</span>
+              </li>
+              <li class="toc-row">
+                <span class="toc-badge">06</span>
+                <span class="toc-name">Shodashvarga Details</span>
+                <span class="toc-pagenum">10 &rarr;</span>
+              </li>
+            </ul>
+
+            <div class="toc-footer">
+              <img class="page-footer__img" src="./svg/om-footer.svg" alt="ॐ" />
+            </div>
+          </div>
+        </div>
+
+        <!-- ══════════════════════════════════════════════════
+             PAGE 5 — Kundli Summary
+        ══════════════════════════════════════════════════ -->
+        <div class="page">
+          <div class="summary-page">
+            <h2 class="summary-page__title">
+              Astro Arun Pandit, Your Janam Kundli Summary
+            </h2>
+
+            <div class="summary-grid">
+
+              <div class="sum-card">
+                <div class="sum-card__top">
+                  <img class="sum-card__icon" src="./svg/doshas.png" alt="Yogas" />
+                  <div class="sum-card__name-wrap">
+                    <span class="sum-card__cat">YOGAS</span>
+                  </div>
+                  <span class="sum-card__count">17</span>
+                </div>
+                <span class="sum-card__sub">17 Powerful Yogas Identified</span>
+                <p class="sum-card__body">Your birth chart reveals multiple powerful planetary combinations that enhance prosperity, wisdom, and spiritual growth throughout your life journey.</p>
+                <a class="sum-card__link" href="#">Explore yoga benefits &rarr;</a>
+              </div>
+
+              <div class="sum-card">
+                <div class="sum-card__top">
+                  <img class="sum-card__icon" src="./svg/doshas.png" alt="Doshas" />
+                  <div class="sum-card__name-wrap">
+                    <span class="sum-card__cat">DOSHAS</span>
+                  </div>
+                  <span class="sum-card__count">02</span>
+                </div>
+                <span class="sum-card__sub">2 Karmic Imbalances</span>
+                <p class="sum-card__body">Planetary afflictions detected in your horoscope require specific remedies to harmonize cosmic energies and remove obstacles from your path.</p>
+                <a class="sum-card__link" href="#">Explore dosha remedies &rarr;</a>
+              </div>
+
+              <div class="sum-card">
+                <div class="sum-card__top">
+                  <img class="sum-card__icon" src="./svg/doshas.png" alt="Career" />
+                  <div class="sum-card__name-wrap">
+                    <span class="sum-card__cat">CAREER</span>
+                  </div>
+                  <span class="sum-card__count">01</span>
+                </div>
+                <span class="sum-card__sub">01 Professional Insight</span>
+                <p class="sum-card__body">Astrological analysis of your 10th house and career significators reveals optimal timing and directions for professional advancement and success.</p>
+                <a class="sum-card__link" href="#">View career guidance &rarr;</a>
+              </div>
+
+              <div class="sum-card">
+                <div class="sum-card__top">
+                  <img class="sum-card__icon" src="./svg/doshas.png" alt="Marriage" />
+                  <div class="sum-card__name-wrap">
+                    <span class="sum-card__cat">MARRIAGE</span>
+                  </div>
+                  <span class="sum-card__count">04</span>
+                </div>
+                <span class="sum-card__sub">4 Relationship Insights</span>
+                <p class="sum-card__body">Venus and 7th house positions indicate key periods for partnership, compatibility factors, and recommendations for harmonious marital life.</p>
+                <a class="sum-card__link" href="#">Explore marriage insights &rarr;</a>
+              </div>
+
+              <div class="sum-card">
+                <div class="sum-card__top">
+                  <img class="sum-card__icon" src="./svg/doshas.png" alt="Business" />
+                  <div class="sum-card__name-wrap">
+                    <span class="sum-card__cat">BUSINESS</span>
+                  </div>
+                  <span class="sum-card__count">10</span>
+                </div>
+                <span class="sum-card__sub">10 Entrepreneurial Indicators</span>
+                <p class="sum-card__body">Strong combinations in your chart support business ventures, wealth creation, and strategic opportunities aligned with planetary periods.</p>
+                <a class="sum-card__link" href="#">View business analysis &rarr;</a>
+              </div>
+
+              <div class="sum-card">
+                <div class="sum-card__top">
+                  <img class="sum-card__icon" src="./svg/doshas.png" alt="House Building" />
+                  <div class="sum-card__name-wrap">
+                    <span class="sum-card__cat">HOUSE<br />BUILDING</span>
+                  </div>
+                  <span class="sum-card__count">03</span>
+                </div>
+                <span class="sum-card__sub">3 Property Recommendations</span>
+                <p class="sum-card__body">Auspicious timing for real estate investments and construction based on your 4th house strength and current planetary transits.</p>
+                <a class="sum-card__link" href="#">Explore property timing &rarr;</a>
+              </div>
+
+            </div><!-- /.summary-grid -->
+
+            <div class="toc-footer">
+              <img class="page-footer__img" src="./svg/om-footer.svg" alt="ॐ" />
+            </div>
+          </div>
+        </div>
+
+        <!-- ══════════════════════════════════════════════════
+             PAGE 6 — Chapter 1: Personal Birth Details
+        ══════════════════════════════════════════════════ -->
+        <div class="page">
+          <div class="chapter-page">
+            <div class="chapter-page__hero">
+              <img class="chapter-frame-img"  src="./svg/chapter-frame.svg"  alt="" />
+              <img class="chapter-banner-img" src="./img/chapter-banner.png" alt="" />
+            </div>
+
+            <div class="chapter-page__body">
+              <div class="chapter-heading">
+                <img class="chapter-title-img" src="./svg/chapter-1-title.svg" alt="Chapter 1" />
+              </div>
+
+              <div class="ch-grid">
+                <div class="ch-col">
+                  <div class="ch-item">
+                    <span class="ch-item__label">Name</span>
+                    <span class="ch-item__value">Astro Arun Pandit</span>
+                  </div>
+                  <div class="ch-item">
+                    <span class="ch-item__label">Date of Birth</span>
+                    <span class="ch-item__value">16/08/1990</span>
+                  </div>
+                  <div class="ch-item">
+                    <span class="ch-item__label">Day</span>
+                    <span class="ch-item__value">Friday</span>
+                  </div>
+                  <div class="ch-item">
+                    <span class="ch-item__label">Time of Birth</span>
+                    <span class="ch-item__value">19:13:00 Hour</span>
+                  </div>
+                  <div class="ch-item">
+                    <span class="ch-item__label">Ayanamsa</span>
+                    <span class="ch-item__value">Chitra Paksha</span>
+                  </div>
+                </div>
+
+                <div class="ch-col ch-col--right">
+                  <div class="ch-item">
+                    <span class="ch-item__label">Gender</span>
+                    <span class="ch-item__value">Male</span>
+                  </div>
+                  <div class="ch-item">
+                    <span class="ch-item__label">City</span>
+                    <span class="ch-item__value">Bulandshahr</span>
+                  </div>
+                  <div class="ch-item">
+                    <span class="ch-item__label">State</span>
+                    <span class="ch-item__value">Uttar Pradesh</span>
+                  </div>
+                  <div class="ch-item">
+                    <span class="ch-item__label">Country</span>
+                    <span class="ch-item__value">India</span>
+                  </div>
+                  <div class="ch-item">
+                    <span class="ch-item__label">Birth Star</span>
+                    <span class="ch-item__value">Mrigasira - 1</span>
+                  </div>
+                </div>
+              </div><!-- /.ch-grid -->
+
+              <div class="toc-footer">
+                <img class="page-footer__img" src="./svg/om-footer.svg" alt="ॐ" />
+              </div>
+            </div><!-- /.chapter-page__body -->
+          </div>
+        </div>
+
+        <!-- ══════════════════════════════════════════════════
+             PAGE 7 — Chapter 2: Panchang Details
+        ══════════════════════════════════════════════════ -->
+        <div class="page">
+          <div class="chapter-page">
+            <div class="chapter-page__hero">
+              <img class="chapter-frame-img"  src="./svg/chapter-frame.svg"  alt="" />
+              <img class="chapter-banner-img" src="./img/chapter-banner.png" alt="" />
+            </div>
+
+            <div class="chapter-page__body">
+              <div class="chapter-heading">
+                <img class="chapter-title-img" src="./svg/chapter-2-title.svg" alt="Chapter 2" />
+              </div>
+
+              <div class="content-scroll">
+
+                <div class="content-block">
+                  <p class="content-block__text">
+                    Subham - Something about the Panchang formed at your birth
+                    stands out in an interesting way. When its deeper meaning is
+                    understood, it can explain certain patterns that keep
+                    appearing in your life.
+                  </p>
+                </div>
+
+                <div class="content-block content-block--locked">
+                  <p class="content-block__text content-block__text--blurred" aria-hidden="true">
+                    On 1994 February 20 Sunday at 17 Ghat (Dumba) 16 Vipak after
+                    sunrise in First Pada of Star Mrigasira, Shatabhisha, Dusami
+                    Thaki, Tantla Karana and Vaitasedha Nithya Yog with Moon in
+                    Vrishabha rasi and Surya Navamsa in Mithuna Lagna and Makha
+                    Shatbhisha. Day is born.
+                  </p>
+                  
+                  <div class="lock-popup" role="dialog" aria-label="Content locked">
+                    <div class="lock-resp">
+                      <div class="lock-popup__icon-wrap">
+                        <img class="lock-icon-img" src="./svg/lock-Icon.svg" alt="" />
+                      </div>
+                      <div class="lock-popup__text">
+                        <span class="lock-popup__heading">Some detailed predictions in this section are hidden.</span>
+                        <p class="lock-popup__body">Unlock your complete 300+ page horoscope including Dasha periods, remedies, and personalized astrological insights.</p>
+                      </div>
+                    </div>
+                    <a class="btn-gold lock-popup__btn" href="#">Unlock Full Kundli</a>
+                  </div>
+
+                </div>
+
+                <div class="content-block">
+                  <p class="content-block__text">
+                    Subham - Something about the Panchang formed at your birth
+                    stands out in an interesting way. When its deeper meaning is
+                    understood, it can explain certain patterns that keep
+                    appearing in your life.
+                  </p>
+                </div>
+
+                <div class="content-block content-block--locked content-block--blur-only">
+                  <p class="content-block__text content-block__text--blurred" aria-hidden="true">
+                    On 1994 February 20 Sunday at 17 Ghat (Dumba) 16 Vipak after
+                    sunrise in First Pada of Star Mrigasira, Shatabhisha, Dusami
+                    Thaki, Tantla Karana and Vaitasedha Nithya Yog with Moon in
+                    Vrishabha rasi and Surya Navamsa in Mithuna Lagna. Subham -
+                    Something about the Panchang formed at your birth stands out
+                    in an interesting way. When its deeper meaning is understood,
+                    it can explain certain patterns that keep appearing in your
+                    life. Keep appearing in your life away.
+                  </p>
+                </div>
+
+              </div><!-- /.content-scroll -->
+
+              <div class="toc-footer">
+                <img class="page-footer__img" src="./svg/om-footer.svg" alt="ॐ" />
+              </div>
+            </div><!-- /.chapter-page__body -->
+          </div>
+        </div>
+
+        <!-- ══════════════════════════════════════════════════
+             PAGE 8 — Chapter 3
+        ══════════════════════════════════════════════════ -->
+        <div class="page">
+          <div class="chapter-page">
+            <div class="chapter-page__hero">
+              <img class="chapter-frame-img"  src="./svg/chapter-frame.svg"  alt="" />
+              <img class="chapter-banner-img" src="./img/chapter-banner.png" alt="" />
+            </div>
+
+            <div class="chapter-page__body">
+              <div class="chapter-heading">
+                <img class="chapter-title-img" src="./svg/chapter-3-title.svg" alt="Chapter 3" />
+              </div>
+
+              <div class="content-scroll">
+
+                <div class="content-block">
+                  <p class="content-block__text">
+                    Subham - Something about the Panchang formed at your birth
+                    stands out in an interesting way. When its deeper meaning is
+                    understood, it can explain certain patterns that keep
+                    appearing in your life. During Uttarayana period; with Jupiter
+                    in Tula rasi and Saturn in Kumbha rasi; on 1994 February 20
+                    Sunday at 17 Ghati (Nazhika) 55 Vighati After sunrise; in
+                    First Pada of Star Mrigasira; Shuklapaksha Dasami Thidhi,
+                    Taitila Karana and Vishkamba Nithya Yog; with Moon in
+                    Vrishabha rasi and Simha Navamsa; in Mithuna Lagna and Middle
+                    Drekkana; Dev is born.
+                  </p>
+                </div>
+
+                <div class="content-block content-block--locked">
+                  <p class="content-block__text content-block__text--blurred" aria-hidden="true">
+                    Subham - Something about the Panchang formed at your birth
+                    stands out in an interesting way. When its deeper meaning is
+                    understood, it can explain certain patterns that keep
+                    appearing in your life. During Uttarayana period; with Jupiter
+                    in Tula rasi and Saturn in Kumbha rasi; on 1994 February 20
+                    Sunday at 17 Ghati. Subham - Something about the Panchang
+                    formed at your birth stands out in an interesting way. When
+                    its deeper meaning is understood, it can explain certain
+                    patterns that keep appearing in your life.
+                  </p>
+
+                  <div class="lock-popup" role="dialog" aria-label="Content locked">
+                    <div class="lock-resp">
+                      <div class="lock-popup__icon-wrap">
+                        <img class="lock-icon-img" src="./svg/lock-Icon.svg" alt="" />
+                      </div>
+                      <div class="lock-popup__text">
+                        <span class="lock-popup__heading">Some detailed predictions in this section are hidden.</span>
+                        <p class="lock-popup__body">Unlock your complete 300+ page horoscope including Dasha periods, remedies, and personalized astrological insights.</p>
+                      </div>
+                    </div>
+                    <a class="btn-gold lock-popup__btn" href="#">Unlock Full Kundli</a>
+                  </div>
+
+                </div>
+
+              </div><!-- /.content-scroll -->
+
+              <div class="toc-footer">
+                <img class="page-footer__img" src="./svg/om-footer.svg" alt="ॐ" />
+              </div>
+            </div><!-- /.chapter-page__body -->
+          </div>
+        </div>
+
+        <!-- PAGE 9 — blank back cover (keeps total even) -->
+        <div class="page"></div>
+
+      </div><!-- /.pages -->
+    </div><!-- /.book -->
+
+    <nav class="mobile-nav" id="mobileNav" aria-label="Book navigation">
+      <button class="mobile-nav__btn" id="mobilePrev" aria-label="Previous page" disabled>&#8592;</button>
+      <div class="mobile-nav__dots" id="mobileDots"></div>
+      <button class="mobile-nav__btn" id="mobileNext" aria-label="Next page">&#8594;</button>
+    </nav>
+
+    <script src="script.js"></script>
+  </body>
+</html>

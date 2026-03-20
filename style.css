@@ -1,0 +1,1558 @@
+/* ============================================================
+   FONT FACES
+   ============================================================ */
+@font-face { font-family:"FHTotalDisplay"; font-weight:normal; font-style:normal;   src:url("https://d1wqi5f82xeqa6.cloudfront.net/career-report/fonts/fh-total-display-test/FHTotalDisplay-Test-Black-BF6514dd5b2001e.otf") format("opentype"); }
+@font-face { font-family:"FHTotalDisplay"; font-weight:100;    font-style:italic;   src:url("https://d1wqi5f82xeqa6.cloudfront.net/career-report/fonts/fh-total-display-test/FHTotalDisplay-Test-BlackItalic-BF6514dd5b18743.otf") format("opentype"); }
+@font-face { font-family:"FHTotalDisplay"; font-weight:300;    font-style:italic;   src:url("https://d1wqi5f82xeqa6.cloudfront.net/career-report/fonts/fh-total-display-test/FHTotalDisplay-Test-BoldItalic-BF6514dd5b269d4.otf") format("opentype"); }
+@font-face { font-family:"FHTotalDisplay-light"; font-weight:300; font-style:normal; src:url("https://d1wqi5f82xeqa6.cloudfront.net/career-report/fonts/fh-total-display-test/FHTotalDisplay-Test-Light-BF6514dd5b2b64b.otf") format("opentype"); }
+@font-face { font-family:"FHTotalDisplay"; font-weight:400;    font-style:italic;   src:url("https://d1wqi5f82xeqa6.cloudfront.net/career-report/fonts/fh-total-display-test/FHTotalDisplay-Test-LightItalic-BF6514dd5b196e7.otf") format("opentype"); }
+@font-face { font-family:"FHTotalDisplay"; font-weight:400;    font-style:normal;   src:url("https://d1wqi5f82xeqa6.cloudfront.net/career-report/fonts/fh-total-display-test/FHTotalDisplay-Test-Medium-BF6514dd5ae34c2.otf") format("opentype"); }
+@font-face { font-family:"FHTotalDisplay"; font-weight:500;    font-style:italic;   src:url("https://d1wqi5f82xeqa6.cloudfront.net/career-report/fonts/fh-total-display-test/FHTotalDisplay-Test-MediumItalic-BF6514dd5b43127.otf") format("opentype"); }
+@font-face { font-family:"FHTotalDisplay"; font-weight:500;    font-style:normal;   src:url("https://d1wqi5f82xeqa6.cloudfront.net/career-report/fonts/fh-total-display-test/FHTotalDisplay-Test-Regular-BF6514dd5b34b98.otf") format("opentype"); }
+@font-face { font-family:"FHTotalDisplay"; font-weight:600;    font-style:italic;   src:url("https://d1wqi5f82xeqa6.cloudfront.net/career-report/fonts/fh-total-display-test/FHTotalDisplay-Test-RegularItalic-BF6514dd5b252ec.otf") format("opentype"); }
+@font-face { font-family:"FHTotalDisplay"; font-weight:600;    font-style:normal;   src:url("https://d1wqi5f82xeqa6.cloudfront.net/career-report/fonts/fh-total-display-test/FHTotalDisplay-Test-SemiBold-BF6514dd5b27c56.otf") format("opentype"); }
+@font-face { font-family:"FHTotalDisplay"; font-weight:700;    font-style:italic;   src:url("https://d1wqi5f82xeqa6.cloudfront.net/career-report/fonts/fh-total-display-test/FHTotalDisplay-Test-SemiBoldItalic-BF6514dd5ae1f5f.otf") format("opentype"); }
+@font-face { font-family:"FHTotalDisplay"; font-weight:700;    font-style:normal;   src:url("https://d1wqi5f82xeqa6.cloudfront.net/career-report/fonts/fh-total-display-test/FHTotalDisplay-Test-Thin-BF6514dd5b2d9d8.otf") format("opentype"); }
+@font-face { font-family:"FHTotalDisplay"; font-weight:900;    font-style:normal;   src:url("https://d1wqi5f82xeqa6.cloudfront.net/career-report/fonts/fh-total-fine-test/FHTotalFine-Test-Black-BF6514dd59bee93.otf") format("opentype"); }
+
+/* ============================================================
+   DESIGN TOKENS — desktop default
+   One single :root block. Breakpoints below only redefine values.
+   ============================================================ */
+:root {
+  /* ── Book layout ── */
+  --book-w:   60vw;
+  --book-h:   44vw;
+  --page-w:   30vw;
+  --page-h:   44vw;
+  --page-pad: 1.4vw 1.8vw;
+
+  /* ── Shared spacing ── */
+  --sp-xs: 0.35vw;
+  --sp-sm: 0.75vw;
+  --sp-md: 1.2vw;
+
+  /* ── Palette ── */
+  --clr-page-bg:     #f5ede0;
+  --clr-brown-dark:  #4e2f25;
+  --clr-brown-mid:   #7b4a1a;
+  --clr-brown-value: #a45f27;
+  --clr-gold:        #ae6426;
+  --clr-border:      #c09060;
+
+  /* ── Shared font stacks ── */
+  --font-body:    'Be Vietnam Pro', sans-serif;
+  --font-heading: 'Cinzel', serif;
+  --font-display: 'FHTotalDisplay', serif;
+  --font-script:  'Fondamento', cursive, serif;
+  --font-karma:   'Karma', serif;
+
+  /* ── Shared button style ── */
+  --btn-gradient: linear-gradient(135deg, #D27428 0%, #94511B 50%, #A45F27 100%);
+  --btn-shadow:   0 2.733px 8.2px 0 rgba(168,107,36,0.25),
+                  0 0.683px 0 0 rgba(255,255,255,0.20) inset;
+  --btn-radius:   15px;
+
+  /* ── Page 2: Astro info ── */
+  --fs-mantra:    2.6vw;
+  --fs-title:     1.9vw;
+  --fs-label:     0.75vw;
+  --fs-value:     0.95vw;
+  --fs-sign-tag:  0.6vw;
+  --fs-sign-name: 0.8vw;
+
+  /* ── TOC page ── */
+  --fs-toc-title:   2vw;
+  --fs-toc-sub:     0.65vw;
+  --fs-toc-badge:   0.85vw;
+  --fs-toc-name:    0.95vw;
+  --fs-toc-pagenum: 0.78vw;
+  --fs-toc-footer:  1.3vw;
+  --sp-toc-row:     0.55vw;
+  --toc-badge-size: 2.5vw;
+  --toc-row-pad:    0.45vw 0.8vw;
+  --toc-row-radius: 5vw;
+
+  /* ── Summary page ── */
+  --fs-sum-title:   1.1vw;
+  --fs-sum-cat:     0.95vw;
+  --fs-sum-count:   1.1vw;
+  --fs-sum-sub:     0.7vw;
+  --fs-sum-body:    0.6vw;
+  --fs-sum-link:    0.62vw;
+  --sum-icon-size:  2.4vw;
+  --sum-card-pad:   0.7vw 0.8vw 0.6vw;
+  --sum-card-gap:   0.5vw;
+  --sum-grid-gap:   0.55vw;
+
+  /* ── Chapter page ── */
+  --fs-ch-title:    1.9vw;
+  --fs-ch-sub:      0.65vw;
+  --fs-ch-label:    0.62vw;
+  --fs-ch-value:    0.9vw;
+  --fs-ch-lock-h:   0.72vw;
+  --fs-ch-lock-b:   0.6vw;
+  --fs-ch-btn:      0.62vw;
+  --ch-hero-h:      35%;
+  --ch-grid-gap:    0.55vw;
+  --ch-body-px:     2vw;
+  --ch-heading-mb:  0.8vw;
+  --ch-lock-pad:    0.65vw 0.8vw;
+  --ch-lock-radius: 12px;
+  --ch-lock-icon:   1.6vw;
+
+  /* ── Blurred content + lock popup ── */
+  --fs-content-body: 0.72vw;
+  --fs-lock-heading: 0.72vw;
+  --fs-lock-body:    0.6vw;
+  --fs-lock-btn:     0.62vw;
+  --lock-icon-size:  1.8vw;
+  --lock-popup-pad:  0.7vw 0.85vw;
+  --lock-popup-gap:  0.55vw;
+  --content-gap:     0.7vw;
+  --blur-amount:     4px;
+}
+
+/* ── Tablet (≤ 1024px) ──────────────────────────────────── */
+@media (max-width: 1024px) {
+  :root {
+    --book-w:   78vw;
+    --book-h:   57.2vw;
+    --page-w:   39vw;
+    --page-h:   57.2vw;
+    --page-pad: 2vw 2.2vw;
+    --sp-xs:    0.5vw;
+    --sp-sm:    1vw;
+    --sp-md:    1.6vw;
+
+    --fs-mantra:    3.2vw;
+    --fs-title:     2.5vw;
+    --fs-label:     1vw;
+    --fs-value:     1.25vw;
+    --fs-sign-tag:  0.8vw;
+    --fs-sign-name: 1.05vw;
+
+    --fs-toc-title:   2.5vw;
+    --fs-toc-sub:     0.85vw;
+    --fs-toc-badge:   1.1vw;
+    --fs-toc-name:    1.2vw;
+    --fs-toc-pagenum: 1vw;
+    --fs-toc-footer:  1.6vw;
+    --sp-toc-row:     0.7vw;
+    --toc-badge-size: 3.2vw;
+    --toc-row-pad:    0.6vw 1vw;
+
+    --fs-sum-title:   1.4vw;
+    --fs-sum-cat:     1.2vw;
+    --fs-sum-count:   1.35vw;
+    --fs-sum-sub:     0.9vw;
+    --fs-sum-body:    0.78vw;
+    --fs-sum-link:    0.8vw;
+    --sum-icon-size:  3vw;
+    --sum-card-pad:   1vw 1.1vw 0.8vw;
+    --sum-card-gap:   0.65vw;
+    --sum-grid-gap:   0.8vw;
+
+    --fs-ch-title:    2.4vw;
+    --fs-ch-sub:      0.85vw;
+    --fs-ch-label:    0.8vw;
+    --fs-ch-value:    1.1vw;
+    --fs-ch-lock-h:   0.9vw;
+    --fs-ch-lock-b:   0.75vw;
+    --fs-ch-btn:      0.8vw;
+    --ch-grid-gap:    0.75vw;
+    --ch-body-px:     2.5vw;
+    --ch-heading-mb:  1.2vw;
+    --ch-lock-pad:    0.85vw 1vw;
+    --ch-lock-icon:   2.2vw;
+
+    --fs-content-body: 0.95vw;
+    --fs-lock-heading: 0.92vw;
+    --fs-lock-body:    0.78vw;
+    --fs-lock-btn:     0.8vw;
+    --lock-icon-size:  2.4vw;
+    --lock-popup-pad:  0.9vw 1.1vw;
+    --lock-popup-gap:  0.75vw;
+    --content-gap:     0.9vw;
+  }
+}
+
+/* ── Mobile (≤ 768px) ───────────────────────────────────── */
+@media (max-width: 768px) {
+  :root {
+    --page-pad:     5vw 6vw;
+    --sp-xs:        1.5vw;
+    --sp-sm:        2.8vw;
+    --sp-md:        4.5vw;
+
+    --fs-mantra:    6vw;
+    --fs-title:     5.2vw;
+    --fs-label:     3vw;
+    --fs-value:     4vw;
+    --fs-sign-tag:  2.6vw;
+    --fs-sign-name: 3.4vw;
+
+    --fs-toc-title:   5.5vw;
+    --fs-toc-sub:     2.5vw;
+    --fs-toc-badge:   3.2vw;
+    --fs-toc-name:    3.8vw;
+    --fs-toc-pagenum: 3vw;
+    --fs-toc-footer:  4.5vw;
+    --sp-toc-row:     2.2vw;
+    --toc-badge-size: 9vw;
+    --toc-row-pad:    1.8vw 3vw;
+    --toc-row-radius: 10vw;
+
+    --fs-sum-title:   3.8vw;
+    --fs-sum-cat:     3.2vw;
+    --fs-sum-count:   3.8vw;
+    --fs-sum-sub:     2.4vw;
+    --fs-sum-body:    2.2vw;
+    --fs-sum-link:    2.4vw;
+    --sum-icon-size:  8.5vw;
+    --sum-card-pad:   2.5vw 3vw 2vw;
+    --sum-card-gap:   2vw;
+    --sum-grid-gap:   2vw;
+
+    --fs-ch-title:    5.5vw;
+    --fs-ch-sub:      2.5vw;
+    --fs-ch-label:    2.6vw;
+    --fs-ch-value:    3.8vw;
+    --fs-ch-lock-h:   3vw;
+    --fs-ch-lock-b:   2.5vw;
+    --fs-ch-btn:      2.6vw;
+    --ch-grid-gap:    2.5vw;
+    --ch-body-px:     6vw;
+    --ch-heading-mb:  3vw;
+    --ch-lock-pad:    2.5vw 3vw;
+    --ch-lock-icon:   7vw;
+
+    --fs-content-body: 2.8vw;
+    --fs-lock-heading: 2.8vw;
+    --fs-lock-body:    2.4vw;
+    --fs-lock-btn:     2.5vw;
+    --lock-icon-size:  7.5vw;
+    --lock-popup-pad:  2.5vw 3vw;
+    --lock-popup-gap:  2.2vw;
+    --content-gap:     2.5vw;
+    --blur-amount:     5px;
+  }
+}
+
+/* ── Small phones (≤ 480px) ────────────────────────────── */
+@media (max-width: 480px) {
+  :root {
+    --page-pad:     6vw 6.5vw;
+    --sp-xs:        1.8vw;
+    --sp-sm:        3.2vw;
+    --sp-md:        5vw;
+
+    --fs-mantra:    6.5vw;
+    --fs-title:     5.6vw;
+    --fs-label:     3.2vw;
+    --fs-value:     4.4vw;
+    --fs-sign-tag:  2.8vw;
+    --fs-sign-name: 3.6vw;
+
+    --fs-toc-title:   6vw;
+    --fs-toc-sub:     2.8vw;
+    --fs-toc-badge:   3.6vw;
+    --fs-toc-name:    4.2vw;
+    --fs-toc-pagenum: 3.3vw;
+    --fs-toc-footer:  5vw;
+    --sp-toc-row:     2.5vw;
+    --toc-badge-size: 10vw;
+    --toc-row-pad:    2vw 3.5vw;
+
+    --fs-sum-title:   4.2vw;
+    --fs-sum-cat:     3.6vw;
+    --fs-sum-count:   4.2vw;
+    --fs-sum-sub:     2.7vw;
+    --fs-sum-body:    2.5vw;
+    --fs-sum-link:    2.7vw;
+    --sum-icon-size:  9.5vw;
+    --sum-card-pad:   3vw 3.5vw 2.5vw;
+    --sum-card-gap:   2.5vw;
+    --sum-grid-gap:   2.2vw;
+
+    --fs-ch-title:    6vw;
+    --fs-ch-sub:      2.8vw;
+    --fs-ch-label:    2.9vw;
+    --fs-ch-value:    4.2vw;
+    --fs-ch-lock-h:   3.3vw;
+    --fs-ch-lock-b:   2.8vw;
+    --fs-ch-btn:      2.9vw;
+    --ch-grid-gap:    3vw;
+    --ch-body-px:     6.5vw;
+    --ch-heading-mb:  3.5vw;
+    --ch-lock-pad:    3vw 3.5vw;
+    --ch-lock-icon:   8vw;
+
+    --fs-content-body: 3.1vw;
+    --fs-lock-heading: 3.1vw;
+    --fs-lock-body:    2.6vw;
+    --fs-lock-btn:     2.7vw;
+    --lock-icon-size:  8.5vw;
+    --lock-popup-pad:  3vw 3.5vw;
+    --lock-popup-gap:  2.5vw;
+    --content-gap:     3vw;
+  }
+}
+
+/* ============================================================
+   RESET & BASE
+   ============================================================ */
+*,
+*::before,
+*::after { box-sizing: border-box; }
+
+html { height: 100%; }
+
+body {
+  min-height: 100%;
+  font-family: "Lovers Quarrel", cursive;
+  background: #2e2214;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2em 0;
+  line-height: 1.5;
+  gap: 2vw;
+}
+
+/* ============================================================
+   BOOK SHELL
+   ============================================================ */
+.book {
+  perspective: 250vw;
+  transition: opacity 0.4s 0.2s;
+}
+
+.book .pages {
+  width: var(--book-w);
+  height: var(--book-h);
+  position: relative;
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+  border-radius: 4px;
+  box-shadow:
+    inset -4px 0 12px rgba(0, 0, 0, 0.18),
+    inset  4px 0 12px rgba(0, 0, 0, 0.18);
+}
+
+/* ============================================================
+   PAGE BASE
+   ============================================================ */
+.book .page {
+  position: absolute;
+  top: 0;
+  margin: 0;
+  width: var(--page-w);
+  height: var(--page-h);
+  transform-origin: 0 0;
+  transition: transform 1.4s;
+  backface-visibility: hidden;
+  transform-style: preserve-3d;
+  cursor: pointer;
+  user-select: none;
+  overflow: hidden;
+  background-color: var(--clr-page-bg);
+}
+
+.book .page::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0);
+  transition: background 0.7s;
+  z-index: 4;
+  pointer-events: none;
+}
+
+/* ── ODD pages ───────────────────────────────────────────── */
+.book .page:nth-child(odd) {
+  right: 0;
+  border-radius: 0 4px 4px 0;
+  transform: rotateY(0deg);
+  pointer-events: all;
+  background-image: linear-gradient(to right, rgba(0,0,0,.12) 0%, rgba(0,0,0,0) 8%);
+}
+
+.book .page:nth-child(odd):not(:nth-child(1)) {
+  background-image:
+    linear-gradient(to right, rgba(0,0,0,.12) 0%, rgba(0,0,0,0) 8%),
+    url("./img/page-texture.webp");
+  background-size: cover;
+  background-position: right top;
+}
+
+.book .page:nth-child(odd):hover { transform: rotateY(-15deg); }
+.book .page:nth-child(odd):hover::before { background: rgba(0,0,0,0.04); }
+
+/* ── EVEN pages ──────────────────────────────────────────── */
+.book .page:nth-child(even) {
+  left: 0;
+  border-radius: 4px 0 0 4px;
+  transform: rotateY(180deg);
+  transform-origin: 100% 0;
+  pointer-events: none;
+  background-image:
+    linear-gradient(to left, rgba(0,0,0,.12) 0%, rgba(0,0,0,0) 8%),
+    url("./img/page-texture.webp");
+  background-size: cover;
+  background-position: left top;
+}
+
+.book .page:last-child {
+  background-image: none;
+  background-color: #e8ddd0;
+}
+
+/* ── FLIPPED states ─────────────────────────────────────── */
+.book .page.grabbing { transition: none; }
+
+.book .page.flipped:nth-child(odd) {
+  pointer-events: none;
+  transform: rotateY(-180deg);
+}
+.book .page.flipped:nth-child(odd)::before { background: rgba(0,0,0,0); }
+
+.book .page.flipped:nth-child(even) {
+  pointer-events: all;
+  transform: rotateY(0deg);
+}
+.book .page.flipped:nth-child(even):hover { transform: rotateY(15deg); }
+.book .page.flipped:nth-child(even):hover::before { background: rgba(0,0,0,0.04); }
+.book .page.flipped:nth-child(even)::before { background: rgba(0,0,0,0); }
+
+/* ============================================================
+   CORNER ART
+   ============================================================ */
+.corner-art {
+  position: absolute;
+  width: 100%;
+  padding: 10px;
+  pointer-events: none;
+  z-index: 1;
+  display: block;
+}
+.corner-art--top    { top: 0; left: 0; }
+.corner-art--bottom { bottom: 0; left: 0; transform: rotate(180deg); }
+
+/* ============================================================
+   PAGE INNER  (generic content wrapper)
+   ============================================================ */
+.page-inner {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+  padding: var(--page-pad);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden;
+}
+
+/* ============================================================
+   SHARED UTILITY COMPONENTS
+   ============================================================ */
+
+/* ── Page footer (Om image + flanking lines) ─────────────── */
+/* Used on every page type — one common class, no duplication  */
+.page-footer {
+  position: absolute;
+  bottom: 4px;
+  left: 0;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 var(--sp-md);
+  z-index: 3;
+  flex-shrink: 0;
+}
+
+.page-footer__img {
+  width: 30%;
+  max-width: 80px;
+  object-fit: contain;
+  opacity: 0.7;
+}
+
+/* ── Gradient-button (shared across lock banner & popup) ─── */
+.btn-gold {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5em 1.25em;
+  border-radius: var(--btn-radius);
+  background: var(--btn-gradient);
+  box-shadow: var(--btn-shadow);
+  color: #fff9f0;
+  font-family: var(--font-body);
+  font-weight: 600;
+  white-space: nowrap;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  line-height: 1.3;
+  transition: opacity 0.2s, transform 0.15s;
+  isolation: isolate;
+}
+.btn-gold:hover  { opacity: 0.88; }
+.btn-gold:active { transform: scale(0.97); }
+
+/* ── Inline SVG images with standard widths ──────────────── */
+/* Replace inline style="width: X%" in HTML with these classes */
+.img-w-50  { width: 50%;  display: block; }
+.img-w-73  { width: 73%;  display: block; }
+.img-w-80  { width: 80%;  display: block; margin-inline: auto; }
+.img-w-85  { width: 85%;  display: block; }
+.img-w-full { width: 100%; display: block; }
+
+/* Chapter hero images (frame + banner stacked) */
+.chapter-frame-img  { width: 85%; display: block; }
+.chapter-banner-img {
+  position: absolute;
+  top: 17%;
+  width: 73%;
+}
+.chapter-title-img  { width: 50%; display: block; margin-inline: auto; }
+.toc-title-img      { width: 80%; display: block; margin-inline: auto; }
+
+/* Lock icon inside popup circles */
+.lock-icon-img { width: 60%; }
+
+/* ============================================================
+   PAGE 1: GANESH COVER
+   ============================================================ */
+.ganesh-page {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: var(--page-pad);
+  background-color: #f8f5f2;
+}
+
+.ganesh-page__img {
+  width: 75%;
+  max-height: 70%;
+  object-fit: contain;
+  flex-shrink: 1;
+}
+
+.ganesh-page__mantra {
+  font-family: var(--font-karma);
+  font-weight: 600;
+  font-size: var(--fs-mantra);
+  color: var(--clr-gold);
+  margin: var(--sp-md) 0 0;
+  text-align: center;
+  line-height: 1.4;
+  white-space: nowrap;
+}
+
+/* ============================================================
+   PAGE 2: ASTRO INFO
+   ============================================================ */
+.info-page__title {
+  font-family: var(--font-heading);
+  font-size: var(--fs-title);
+  font-weight: 700;
+  color: var(--clr-brown-dark);
+  text-align: center;
+  margin: var(--sp-md) 0 var(--sp-xs);
+  letter-spacing: 0.4px;
+  line-height: 1.2;
+  width: 100%;
+}
+
+.info-page__separator {
+  width: 78%;
+  display: block;
+  margin: var(--sp-xs) auto var(--sp-sm);
+  flex-shrink: 0;
+}
+
+.info-grid {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex: 0 0 auto;
+  padding: 10px;
+}
+
+.info-col       { flex: 1; min-width: 0; }
+.info-col--right { text-align: right; }
+
+.info-item { margin-bottom: 15px; }
+
+.info-item__label {
+  display: block;
+  font-family: var(--font-body);
+  font-size: var(--fs-label);
+  font-weight: 400;
+  color: var(--clr-brown-dark);
+  line-height: 1.3;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.info-item__value {
+  display: block;
+  font-family: var(--font-body);
+  font-size: var(--fs-value);
+  font-weight: 600;
+  color: var(--clr-brown-value);
+  line-height: 1.3;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* ============================================================
+   SIGN CARDS (Sun / Moon)
+   ============================================================ */
+.signs-row {
+  display: flex;
+  width: 100%;
+  flex: 1;
+  min-height: 0;
+}
+
+.sign-card {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* justify-content: space-evenly; */
+  padding: var(--sp-xs);
+  overflow: hidden;
+}
+
+.sign-card:first-child { border-radius: 4px 0 0 4px; }
+.sign-card:last-child  { border-radius: 0 4px 4px 0; }
+
+.sign-card__header {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  gap: var(--sp-xs);
+  flex-shrink: 0;
+}
+
+.sign-card__line {
+  flex: 1;
+  height: 1px;
+  background: var(--clr-border);
+  opacity: 0.8;
+}
+
+.sign-card__label {
+  font-family: var(--font-heading);
+  font-size: var(--fs-sign-tag);
+  font-weight: 600;
+  color: var(--clr-brown-mid);
+  letter-spacing: 0.3px;
+  white-space: nowrap;
+}
+
+.sign-card__visual {
+  position: relative;
+  width: 90%;
+  aspect-ratio: 1 / 1;
+  flex-shrink: 1;
+  min-width: 0;
+}
+
+.sign-card__frame {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: contain;
+}
+
+.sign-card__icon {
+  position: absolute;
+  width: 50%;
+  height: 50%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -58%);
+  object-fit: contain;
+  border-radius: 50%;
+}
+
+.sign-card__name {
+  position: absolute;
+  bottom: 26.5%;
+  font-family: var(--font-heading);
+  font-size: var(--fs-sign-name);
+  font-weight: 700;
+  color: var(--clr-brown-mid);
+  letter-spacing: 1px;
+  text-align: center;
+  flex-shrink: 0;
+}
+
+/* ============================================================
+   TABLE OF CONTENTS PAGE
+   ============================================================ */
+
+.scroll-page {
+    height: 100%;
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* ============================================================
+   TABLE OF CONTENTS PAGE
+   ============================================================ */
+.toc-page {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: var(--page-pad);
+  overflow: hidden;
+}
+
+.toc-header {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-shrink: 0;
+  margin-top: var(--sp-toc-row);
+  margin-bottom: var(--sp-toc-row);
+}
+
+.toc-header__ornament-top {
+  font-size: var(--fs-toc-sub);
+  color: var(--clr-gold);
+  opacity: 0.7;
+  letter-spacing: 0.15em;
+  line-height: 1;
+  margin-bottom: 0.3em;
+}
+
+.toc-header__title {
+  font-family: var(--font-heading);
+  font-size: var(--fs-toc-title);
+  font-weight: 700;
+  color: var(--clr-brown-dark);
+  text-align: center;
+  letter-spacing: 0.08em;
+  line-height: 1.15;
+  margin: 0 0 0.3em;
+  text-transform: uppercase;
+}
+
+.toc-header__subtitle-row {
+  display: flex;
+  align-items: center;
+  width: 90%;
+  gap: 0.5em;
+}
+
+.toc-header__subtitle-line {
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(to var(--dir, right), transparent 0%, var(--clr-border) 100%);
+  opacity: 0.6;
+}
+.toc-header__subtitle-line:first-child { --dir: right; }
+.toc-header__subtitle-line:last-child  { --dir: left; }
+
+.toc-header__subtitle {
+  font-family: var(--font-body);
+  font-size: var(--fs-toc-sub);
+  font-style: italic;
+  font-weight: 400;
+  color: var(--clr-brown-mid);
+  white-space: nowrap;
+}
+
+.toc-header__ornament-bottom {
+  font-size: var(--fs-toc-sub);
+  color: var(--clr-gold);
+  opacity: 0.55;
+  margin-top: 0.4em;
+  letter-spacing: 0.2em;
+}
+
+.toc-list {
+  width: 85%;
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-toc-row);
+  padding: 0;
+  min-height: 0;
+  justify-content: center;
+}
+
+.toc-row {
+  display: flex;
+  align-items: center;
+  gap: 0.6em;
+  padding: var(--toc-row-pad);
+  border: 1px solid rgba(174,100,38,0.28);
+  border-radius: var(--toc-row-radius);
+  background: rgba(255,248,235,0.55);
+  flex-shrink: 0;
+  list-style: none;
+}
+
+.toc-badge {
+  width: var(--toc-badge-size);
+  height: var(--toc-badge-size);
+  /* min-width: var(--toc-badge-size); */
+  border-radius: 50%;
+  border: 1.5px solid var(--clr-gold);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-body);
+  font-size: var(--fs-toc-badge);
+  font-weight: 600;
+  color: var(--clr-gold);
+  background: rgba(174,100,38,0.06);
+  flex-shrink: 0;
+  letter-spacing: 0.02em;
+}
+
+.toc-name {
+  flex: 1;
+  min-width: 0;
+  font-family: var(--font-body);
+  font-size: var(--fs-toc-name);
+  font-weight: 700;
+  color: var(--clr-brown-dark);
+  line-height: 1.2;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.toc-name__chevron {
+  font-size: 0.9em;
+  font-weight: 400;
+  margin-left: 0.25em;
+  opacity: 0.7;
+}
+
+.toc-pagenum {
+  flex-shrink: 0;
+  font-family: var(--font-body);
+  font-size: var(--fs-toc-pagenum);
+  font-weight: 500;
+  color: var(--clr-brown-mid);
+  white-space: nowrap;
+}
+
+/* ── Legacy toc-footer (kept for pages still using it) ───── */
+/* Prefer .page-footer for new pages */
+.toc-footer {
+  position: absolute;
+  bottom: 4px;
+  left: 0;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+/* ============================================================
+   KUNDLI SUMMARY PAGE
+   ============================================================ */
+.summary-page {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: var(--page-pad);
+  overflow: hidden;
+}
+
+.summary-page__title {
+  font-family: var(--font-display);
+  font-size: var(--fs-sum-title);
+  font-weight: 600;
+  color: var(--clr-brown-mid);
+  text-align: center;
+  line-height: 1.35;
+  flex-shrink: 0;
+  margin-bottom: var(--sum-grid-gap);
+}
+
+.summary-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--sum-grid-gap);
+  width: 100%;
+  min-height: 0;
+}
+
+.sum-card {
+  display: flex;
+  flex-direction: column;
+  padding: var(--sum-card-pad);
+  border: 1px solid rgba(174,100,38,0.3);
+  border-radius: 12px;
+  background: linear-gradient(135deg,
+    rgba(248,233,216,0.10) 0%,
+    rgba(255,246,234,0.10) 50%,
+    rgba(241,227,215,0.10) 100%);
+  overflow: hidden;
+  min-height: 0;
+  gap: var(--sum-card-gap);
+}
+
+.sum-card__top {
+  display: flex;
+  align-items: center;
+  gap: 0.45em;
+  flex-shrink: 0;
+}
+
+.sum-card__icon {
+  width: var(--sum-icon-size);
+  height: var(--sum-icon-size);
+  min-width: var(--sum-icon-size);
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+.sum-card__name-wrap { flex: 1; min-width: 0; }
+
+.sum-card__cat {
+  font-family: var(--font-heading);
+  font-size: var(--fs-sum-cat);
+  font-weight: 600;
+  color: var(--clr-brown-dark);
+  line-height: 1.1;
+  display: block;
+  word-break: break-word;
+}
+
+.sum-card__count {
+  font-family: var(--font-heading);
+  font-size: var(--fs-sum-count);
+  font-weight: 700;
+  color: var(--clr-brown-mid);
+  opacity: 0.7;
+  flex-shrink: 0;
+  align-self: flex-start;
+  line-height: 1;
+}
+
+.sum-card__sub {
+  display: block;
+  font-family: var(--font-body);
+  font-size: var(--fs-sum-sub);
+  font-weight: 500;
+  color: #6F5B4A;
+  line-height: 1.3;
+  flex-shrink: 0;
+}
+
+.sum-card__body {
+  font-family: var(--font-body);
+  font-size: var(--fs-sum-body);   /* was hardcoded 6px — now uses token */
+  font-weight: 400;
+  color: #7A6A58;
+  line-height: 1.55;
+  flex: 1;
+  min-height: 0;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  margin: 0;
+}
+
+.sum-card__link {
+  display: block;
+  font-family: var(--font-body);
+  font-size: var(--fs-sum-link);
+  font-weight: 500;
+  color: var(--clr-brown-mid);
+  text-decoration: none;
+  flex-shrink: 0;
+  border-top: 1px solid rgba(174,100,38,0.18);
+  padding-top: 0.45em;
+  transition: color 0.2s;
+}
+.sum-card__link:hover { color: var(--clr-gold); }
+
+.summary-page__footer {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  width: 70%;
+  gap: 0.6em;
+  margin-top: var(--sum-grid-gap);
+}
+
+.summary-page__footer-line {
+  flex: 1;
+  height: 1px;
+  background: var(--clr-border);
+  opacity: 0.4;
+}
+
+.summary-page__footer-img {
+  width: 22%;
+  max-width: 56px;
+  object-fit: contain;
+  opacity: 0.65;
+}
+
+/* ============================================================
+   CHAPTER PAGE (Chapter 1, 2, 3 …)
+   ============================================================ */
+.chapter-page {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  position: relative;
+}
+
+.chapter-page__hero {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: var(--ch-hero-h);
+  flex-shrink: 0;
+  margin-top: var(--sp-sm);  /* was hardcoded 20px */
+  overflow: hidden;
+  position: relative;
+}
+
+.chapter-page__body {
+  flex: 1;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 var(--ch-body-px);  /* was hardcoded 35px */
+  overflow: hidden;
+}
+
+/* ── Chapter heading ─────────────────────────────────────── */
+.chapter-heading {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-shrink: 0;
+  margin-bottom: var(--ch-heading-mb);  /* was hardcoded 20px */
+}
+
+.chapter-heading__ornament {
+  font-size: var(--fs-ch-sub);
+  color: var(--clr-gold);
+  opacity: 0.65;
+  letter-spacing: 0.2em;
+  line-height: 1;
+  margin-bottom: 0.2em;
+}
+
+.chapter-heading__title {
+  font-family: var(--font-script);
+  font-size: var(--fs-ch-title);
+  font-weight: 400;
+  font-style: italic;
+  color: var(--clr-brown-dark);
+  text-align: center;
+  line-height: 1.1;
+  margin: 0 0 0.2em;
+}
+
+.chapter-heading__sub-row {
+  display: flex;
+  align-items: center;
+  width: 88%;
+  gap: 0.4em;
+}
+
+.chapter-heading__sub-line {
+  flex: 1;
+  height: 1px;
+  background: var(--clr-border);
+  opacity: 0.5;
+}
+
+.chapter-heading__sub {
+  font-family: var(--font-body);
+  font-size: var(--fs-ch-sub);
+  font-style: italic;
+  color: var(--clr-brown-mid);
+  white-space: nowrap;
+  opacity: 0.85;
+}
+
+.chapter-heading__ornament-bottom {
+  font-size: var(--fs-ch-sub);
+  color: var(--clr-gold);
+  opacity: 0.5;
+  margin-top: 0.25em;
+  letter-spacing: 0.25em;
+}
+
+/* ── Two-column data grid (Chapter 1 details) ────────────── */
+.ch-grid {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex: 1;
+  min-height: 0;
+  gap: var(--sp-sm);
+}
+
+.ch-col          { flex: 1; min-width: 0; }
+.ch-col--right   { text-align: right; }
+
+.ch-item { margin-bottom: var(--ch-grid-gap); }  /* was hardcoded 10px */
+
+.ch-item__label {
+  display: block;
+  font-family: var(--font-body);
+  font-size: var(--fs-ch-label);
+  font-weight: 400;
+  color: var(--clr-gold);
+  line-height: 2;
+}
+
+.ch-item__value {
+  display: block;
+  font-family: var(--font-body);
+  font-size: var(--fs-ch-value);
+  font-weight: 500;
+  color: var(--clr-brown-dark);
+  line-height: 1.25;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.ch-divider {
+  width: 100%;
+  height: 1px;
+  background: var(--clr-border);
+  opacity: 0.3;
+  flex-shrink: 0;
+  margin: var(--ch-grid-gap) 0;
+}
+
+/* ── Lock banner (Chapter 1 upsell) ─────────────────────── */
+.ch-lock-banner {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 0.7em;
+  padding: var(--ch-lock-pad);
+  border: 3px solid rgba(174,100,38,0.35);
+  border-radius: var(--ch-lock-radius);
+  background: radial-gradient(71.32% 261% at 30% 50%,
+    rgba(246,210,122,0.60) 0%,
+    rgba(0,0,0,0.00) 60%);
+  flex-shrink: 0;
+}
+
+/* Icon circle — reuses btn-gradient via variable */
+.lock-resp {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+.ch-lock-banner__icon-wrap,
+.lock-popup__icon-wrap {
+  border-radius: 50%;
+  background: var(--btn-gradient);
+  box-shadow: 0 2.733px 8.2px 0 rgba(200,145,45,0.30), 0 0.683px 1.367px 0 rgba(255,255,255,0.30) inset;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.ch-lock-banner__icon-wrap {
+  width: var(--ch-lock-icon);
+  height: var(--ch-lock-icon);
+  min-width: var(--ch-lock-icon);
+  font-size: calc(var(--ch-lock-icon) * 0.48);
+  color: #fff9f0;
+}
+
+.ch-lock-banner__text,
+.lock-popup__text { flex: 1; min-width: 0; }
+
+/* ── Shared heading/body inside both banners ─────────────── */
+.ch-lock-banner__heading,
+.lock-popup__heading {
+  display: block;
+  font-family: var(--font-body);
+  font-weight: 700;
+  color: var(--clr-brown-dark);
+  line-height: 1.3;
+  margin-bottom: 0.2em;
+}
+
+.ch-lock-banner__heading { font-size: var(--fs-ch-lock-h); }
+.lock-popup__heading     { font-size: var(--fs-lock-heading); }
+
+.ch-lock-banner__body,
+.lock-popup__body {
+  font-family: var(--font-body);
+  font-weight: 400;
+  color: var(--clr-brown-mid);
+  line-height: 1.45;
+  margin: 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.ch-lock-banner__body { font-size: var(--fs-ch-lock-b); }
+.lock-popup__body     { font-size: var(--fs-lock-body); }
+
+/* Buttons inherit .btn-gold but need size var per context */
+.ch-lock-banner__btn { font-size: var(--fs-ch-btn); }
+.lock-popup__btn     { font-size: var(--fs-lock-btn); }
+
+/* ── Chapter footer ──────────────────────────────────────── */
+.chapter-page__footer {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  width: 70%;
+  gap: 0.6em;
+  margin-top: var(--ch-grid-gap);
+  align-self: center;
+}
+
+.chapter-page__footer-line {
+  flex: 1;
+  height: 1px;
+  background: var(--clr-border);
+  opacity: 0.4;
+}
+
+.chapter-page__footer-img {
+  width: 22%;
+  max-width: 52px;
+  object-fit: contain;
+  opacity: 0.65;
+}
+
+/* ============================================================
+   BLURRED CONTENT + LOCK POPUP
+   ============================================================ */
+.content-scroll {
+  width: 100%;
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+  gap: var(--content-gap);
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.content-scroll::-webkit-scrollbar { display: none; }
+
+.content-block {
+  position: relative;
+  width: 100%;
+  flex-shrink: 0;
+}
+
+.content-block__text {
+  font-family: var(--font-body);
+  font-size: var(--fs-content-body);
+  font-weight: 400;
+  color: var(--clr-brown-dark);
+  line-height: 1.75;
+  text-align: justify;
+  margin: 0;
+  hyphens: auto;
+}
+
+.content-block__text--blurred {
+  filter: blur(var(--blur-amount));
+  user-select: none;
+  pointer-events: none;
+  opacity: 0.9;
+}
+
+.content-block--blur-only .content-block__text--blurred { opacity: 0.75; }
+
+/* ── Lock popup ──────────────────────────────────────────── */
+.lock-popup {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90%;
+  display: flex;
+  align-items: center;
+  gap: var(--lock-popup-gap);
+  padding: var(--lock-popup-pad);
+  border: 3px solid rgba(174,100,38,0.35);
+  border-radius: 12px;
+  background: rgba(248,242,230,0.96);
+  box-shadow: 0 2px 12px rgba(0,0,0,0.12);
+  z-index: 10;
+}
+
+.lock-popup__icon-wrap {
+  width: var(--lock-icon-size);
+  height: var(--lock-icon-size);
+  /* min-width: var(--lock-icon-size); */
+  font-size: calc(var(--lock-icon-size) * 0.46);
+  color: #fff9f0;
+}
+
+/* ============================================================
+   MOBILE NAV — hidden on desktop/tablet
+   ============================================================ */
+.mobile-nav { display: none; }
+
+/* ============================================================
+   MOBILE SINGLE-PAGE MODE  (≤ 768px)
+   ============================================================ */
+@media (max-width: 768px) {
+  body {
+    justify-content: flex-start;
+    padding: 5vw 0 10vw;
+    gap: 5vw;
+  }
+
+  .book { perspective: none; }
+
+  .book .pages {
+    width: 86vw;
+    height: min(122vw, 82vh);
+    transform-style: flat;
+    box-shadow:
+      8px 0 28px rgba(0,0,0,0.55),
+      -2px 0 6px rgba(0,0,0,0.18),
+      inset -4px 0 14px rgba(0,0,0,0.14);
+  }
+
+  /* Reset all page variants to hidden baseline */
+  .book .page,
+  .book .page:nth-child(odd),
+  .book .page:nth-child(even),
+  .book .page.flipped:nth-child(odd),
+  .book .page.flipped:nth-child(even) {
+    width:            100%    !important;
+    height:           100%    !important;
+    position:         absolute !important;
+    top:              0       !important;
+    left:             0       !important;
+    right:            auto    !important;
+    transform:        none    !important;
+    transform-origin: center  !important;
+    pointer-events:   none    !important;
+    opacity:          0       !important;
+    border-radius:    4px     !important;
+    background-image: url("./img/page-texture.webp") !important;
+    background-size:  cover   !important;
+    background-position: center !important;
+    transition:       opacity 0.45s ease !important;
+    z-index:          1       !important;
+  }
+
+  .book .page:nth-child(1) {
+    background-image: none !important;
+    background-color: #f8f5f2 !important;
+  }
+
+  .book .page:last-child {
+    background-image: none !important;
+    background-color: #e8ddd0 !important;
+  }
+
+  .book .page.mobile-active {
+    opacity:        1   !important;
+    pointer-events: all !important;
+    z-index:        5   !important;
+  }
+
+  .book .page:nth-child(odd):hover,
+  .book .page.flipped:nth-child(even):hover { transform: none !important; }
+
+  .book .page:nth-child(odd):hover::before,
+  .book .page.flipped:nth-child(even):hover::before { background: rgba(0,0,0,0) !important; }
+
+  /* Ganesh page */
+  .ganesh-page__img { width: 82%; max-height: 74%; }
+
+  /* Sign card */
+  .sign-card__visual { width: 90%; }
+
+  /* ── Navigation bar ──────────────────────────────────── */
+  .mobile-nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 86vw;
+    gap: 3vw;
+  }
+
+  .mobile-nav__btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width:  max(12vw, 44px);
+    height: max(12vw, 44px);
+    border-radius: 50%;
+    border: 1.5px solid rgba(245,237,224,0.3);
+    background: rgba(245,237,224,0.08);
+    color: #f5ede0;
+    font-size: max(5vw, 18px);
+    cursor: pointer;
+    flex-shrink: 0;
+    transition: background 0.2s, transform 0.15s;
+    -webkit-tap-highlight-color: transparent;
+  }
+  .mobile-nav__btn:active   { background: rgba(245,237,224,0.22); transform: scale(0.91); }
+  .mobile-nav__btn:disabled { opacity: 0.2; pointer-events: none; }
+
+  .mobile-nav__dots {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: max(2.5vw, 8px);
+    flex: 1;
+    flex-wrap: wrap;
+  }
+
+  .mobile-nav__dot {
+    width:  max(2vw, 7px);
+    height: max(2vw, 7px);
+    border-radius: 50%;
+    background: rgba(245,237,224,0.28);
+    transition: background 0.25s, transform 0.25s;
+    flex-shrink: 0;
+  }
+
+  .mobile-nav__dot.active { background: #f5ede0; transform: scale(1.5); }
+
+  .info-item__label {
+    font-size: 12px;
+    line-height: 1.7;
+  }
+
+  .toc-row .toc-badge {
+    font-size: 10px;
+    width: 25px;
+    height: 25px;
+  }
+  .toc-name, .toc-pagenum {
+    font-size: 12px;
+  }
+
+  /* Page 5 */
+
+  .summary-page__title {
+    font-size: 13px;
+    font-weight: 500;
+  }
+  .sum-card__icon {
+    width: 20px;
+    height: 20px;
+    min-width: auto;
+  }
+
+  .sum-card{
+    gap: 0.75vw;
+  }
+  .sum-card__name-wrap .sum-card__cat {
+    font-size: 10px;
+  }
+  .sum-card__count {
+    font-size: 10px;
+  }
+  .sum-card__sub {
+    font-size: 8px;
+  }
+  .sum-card__body {
+    font-size: 6px;
+    line-height: 1.3;
+    -webkit-line-clamp: 6;
+    -webkit-box-orient: none;
+  }
+  .sum-card__link {
+    font-size: 8px;
+  }
+
+  /* Page 6 */
+
+  .ch-item {
+    margin-bottom: 10px;
+  }
+  .ch-item .ch-item__label {
+    font-size: 9px;
+    line-height: 1.7;
+  }
+  .ch-item .ch-item__value {
+    font-size: 11px;
+    line-height: 1.2;
+  }
+
+  /* Page 7 */
+
+  .content-block__text {
+    font-size: 9px;
+    line-height: 1.2;
+  }
+  .lock-popup {
+    flex-direction: column;
+    /* top: 130%; */
+  }
+  .lock-resp {
+    flex-direction: column;
+  }
+  .lock-popup__text .lock-popup__heading {
+    font-size: 9px;
+  }
+  .lock-popup__text .lock-popup__body {
+    font-size: 8px;
+  }
+  .lock-popup__icon-wrap {
+    width: 25px;
+    height: 25px;
+  }
+  .lock-icon-img {
+    width: 45%;
+  }
+  .lock-popup__btn {
+    font-size: 10px;
+    font-weight: 200;
+  }
+
+  
+}
