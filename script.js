@@ -1,3 +1,194 @@
+async function getData() {
+  try {
+    const res = await fetch("https://reports.astroprenuers.com/cosmic_code/json/", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        name: "Aditya Raj Lodhi",
+        gender: "Male",
+        dob: "03/06/2003",
+        tob: "18:14",
+        city: "Bulandshahr",
+        state: "Uttar Pradesh",
+        country: "India",
+        pincode: "203001",
+        lang: "eng",
+        is_json_response: true
+      })
+    });
+
+    const data = await res.json();
+    console.log("data->", data);
+    
+    fillData(data);
+
+  } catch (err) {
+    console.error("API Error:", err);
+  }
+}
+
+function fillData(data) {
+  const capitalizeWords = (str = "") =>
+  str
+    .toLowerCase()
+    .split(" ")
+    .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+    .join(" ");
+    
+  document.querySelectorAll("#name").forEach(el => { el.textContent = capitalizeWords(data.NAME); });
+  document.querySelectorAll("#dob").forEach(el => { el.textContent = data.DOB; });
+  document.querySelectorAll("#tob").forEach(el => { el.textContent = data.TIME_OF_BIRTH + " Hour"; });
+  document.querySelectorAll("#city").forEach(el => { el.textContent = data.CITY; });
+  document.querySelectorAll("#state").forEach(el => { el.textContent = data.STATE; });
+  document.querySelectorAll("#country").forEach(el => { el.textContent = data.COUNTRY; });
+  document.querySelectorAll("#nakshatra").forEach(el => { el.textContent = data.NAKSHATRA_CHARAN; });
+  document.querySelectorAll("#ayanamsa").forEach(el => { el.textContent = data.TITHI_AT_SUNRISE; });
+  document.querySelectorAll("#gender").forEach(el => { el.textContent = data.GENDER; });
+  document.querySelectorAll("#day").forEach(el => { el.textContent = data.DAY; });
+  
+
+  // 🧠 Calculate age from DOB
+  const calculateAge = (dobStr) => {
+    if (!dobStr) return "-";
+
+    // convert DD/MM/YYYY → YYYY-MM-DD
+    const [day, month, year] = dobStr.split("/");
+    const dob = new Date(`${year}-${month}-${day}`);
+    const today = new Date();
+
+    let age = today.getFullYear() - dob.getFullYear();
+
+    const m = today.getMonth() - dob.getMonth();
+    if (m < 0 || (m === 0 && today.getDate() < dob.getDate())) {
+      age--;
+    }
+
+    return age;
+  };
+
+  const age = calculateAge(data.DOB);
+  document.querySelectorAll('#age').forEach(el => { el.textContent = age; });
+
+  // const { visible, masked } = maskAfterFullStops(data.VAAR_DESCRIPTION, 6);
+
+  // document.querySelector("#vaar-desc").innerHTML = `
+  //   ${visible}
+  //   <span class="blurred">${masked}</span>
+  // `;
+
+  const { visible: visible2, masked: masked2 } = maskAfterFullStops(data.TITHI_DESCRIPTION, 3);
+
+  document.querySelector("#tithi-desc").innerHTML = `
+    ${visible2}
+    <span class="blurred">${masked2}</span>
+  `;
+
+  const { visible: visible3, masked: masked3 } = maskAfterFullStops(data.PLANET_CONTENT.Sun.placement, 3);
+  document.querySelector("#planet-desc").innerHTML = `
+    ${visible3}
+    <span class="blurred">${masked3}</span>
+  `;
+
+  document.querySelector("#planet-aspect").innerHTML = data.PLANET_CONTENT.Sun.aspect.first;
+
+  // document.querySelector("#planet-aspect2").innerHTML = data.PLANET_CONTENT.Sun.aspect.rest;
+  
+  const { visible: visible4, masked: masked4 } = maskAfterFullStops(data.NAKSHATRA_PANCHANG_DESCRIPTION, 3);
+  document.querySelector("#nakshatra-desc").innerHTML = `
+    ${visible4}
+    <span class="blurred">${masked4}</span>
+  `;
+
+  const { visible: visible5, masked: masked5 } = maskAfterFullStops(data.YOGA_DESCRIPTION, 3);
+  document.querySelector("#yoga-desc").innerHTML = `
+    ${visible5}
+    <span class="blurred">${masked5}</span>
+  `;
+
+  const { visible: visible6, masked: masked6 } = maskAfterFullStops(data.MOON_SIGN_DESCRIPTION, 3);
+  const first_name = data.NAME.trim().split(" ")[0]
+  
+  document.querySelector("#rashi-desc").innerHTML = `
+    ${first_name}, ${visible6}
+    <span class="blurred">${masked6}</span>
+  `;
+  
+
+  
+  
+
+  renderChart(data);
+}
+
+function renderChart(data) {
+  const chart = data.SODASHVARGA?.[0]?.chart || [];
+
+  document.querySelectorAll(".house").forEach(houseEl => {
+    const index = houseEl.dataset.index;
+    const item = chart[index];
+
+    if (!item) return;
+
+    // inject planets (HTML safe)
+    const planetEl = houseEl.querySelector(".planet-in-chart");
+    if (planetEl) {
+      planetEl.innerHTML = item.planets || "";
+    }
+
+    // inject sign
+    const signEl = houseEl.querySelector(".numb");
+    if (signEl) {
+      signEl.textContent = item.sign ?? "-";
+    }
+  });
+}
+
+function stripHtml(html) {
+  return html.replace(/<[^>]*>/g, "");
+}
+
+function maskAfterFullStops(html, stopLimit = 3) {
+  if (!html) return { visible: "", masked: "" };
+
+  const text = stripHtml(html);
+  let count = 0;
+  let splitIndex = -1;
+
+  for (let i = 0; i < text.length; i++) {
+    if (/[.!?]/.test(text[i])) {
+      count++;
+      if (count === stopLimit) {
+        splitIndex = i + 1;
+        break;
+      }
+    }
+  }
+
+  if (splitIndex === -1) return { visible: text, masked: "" };
+
+  return {
+    visible: text.slice(0, splitIndex),
+    masked:  text.slice(splitIndex).replace(/[a-zA-Z]/g, "x"),
+  };
+}
+
+function maskContent(html, visibleChars = 100) {
+  if (!html) return { visible: "", masked: "" };
+
+  const text = stripHtml(html);
+  
+  return {
+    visible: text.slice(0, visibleChars),
+    masked:  text.slice(visibleChars).replace(/[a-zA-Z]/g, "x"),
+  };
+}
+
+getData();
+
+
+
 /* ============================================================
    Book Page Flip — script.js
    Two modes:
@@ -189,3 +380,27 @@ document.addEventListener('DOMContentLoaded', function () {
     initMobile();
   }
 });
+
+
+const scrollPage = document.querySelector(".scroll-page");
+
+const observer = new IntersectionObserver(
+  (entries, observer) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        scrollPage.classList.add("animate");
+
+        // run only once
+        observer.unobserve(entry.target);
+      }
+    });
+  },
+  {
+    threshold: 0.5 // trigger when 50% visible
+  }
+);
+
+observer.observe(scrollPage);
+
+
+

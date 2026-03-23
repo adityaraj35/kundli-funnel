@@ -1,19 +1,97 @@
 /* ============================================================
    FONT FACES
    ============================================================ */
-@font-face { font-family:"FHTotalDisplay"; font-weight:normal; font-style:normal;   src:url("https://d1wqi5f82xeqa6.cloudfront.net/career-report/fonts/fh-total-display-test/FHTotalDisplay-Test-Black-BF6514dd5b2001e.otf") format("opentype"); }
-@font-face { font-family:"FHTotalDisplay"; font-weight:100;    font-style:italic;   src:url("https://d1wqi5f82xeqa6.cloudfront.net/career-report/fonts/fh-total-display-test/FHTotalDisplay-Test-BlackItalic-BF6514dd5b18743.otf") format("opentype"); }
-@font-face { font-family:"FHTotalDisplay"; font-weight:300;    font-style:italic;   src:url("https://d1wqi5f82xeqa6.cloudfront.net/career-report/fonts/fh-total-display-test/FHTotalDisplay-Test-BoldItalic-BF6514dd5b269d4.otf") format("opentype"); }
-@font-face { font-family:"FHTotalDisplay-light"; font-weight:300; font-style:normal; src:url("https://d1wqi5f82xeqa6.cloudfront.net/career-report/fonts/fh-total-display-test/FHTotalDisplay-Test-Light-BF6514dd5b2b64b.otf") format("opentype"); }
-@font-face { font-family:"FHTotalDisplay"; font-weight:400;    font-style:italic;   src:url("https://d1wqi5f82xeqa6.cloudfront.net/career-report/fonts/fh-total-display-test/FHTotalDisplay-Test-LightItalic-BF6514dd5b196e7.otf") format("opentype"); }
-@font-face { font-family:"FHTotalDisplay"; font-weight:400;    font-style:normal;   src:url("https://d1wqi5f82xeqa6.cloudfront.net/career-report/fonts/fh-total-display-test/FHTotalDisplay-Test-Medium-BF6514dd5ae34c2.otf") format("opentype"); }
-@font-face { font-family:"FHTotalDisplay"; font-weight:500;    font-style:italic;   src:url("https://d1wqi5f82xeqa6.cloudfront.net/career-report/fonts/fh-total-display-test/FHTotalDisplay-Test-MediumItalic-BF6514dd5b43127.otf") format("opentype"); }
-@font-face { font-family:"FHTotalDisplay"; font-weight:500;    font-style:normal;   src:url("https://d1wqi5f82xeqa6.cloudfront.net/career-report/fonts/fh-total-display-test/FHTotalDisplay-Test-Regular-BF6514dd5b34b98.otf") format("opentype"); }
-@font-face { font-family:"FHTotalDisplay"; font-weight:600;    font-style:italic;   src:url("https://d1wqi5f82xeqa6.cloudfront.net/career-report/fonts/fh-total-display-test/FHTotalDisplay-Test-RegularItalic-BF6514dd5b252ec.otf") format("opentype"); }
-@font-face { font-family:"FHTotalDisplay"; font-weight:600;    font-style:normal;   src:url("https://d1wqi5f82xeqa6.cloudfront.net/career-report/fonts/fh-total-display-test/FHTotalDisplay-Test-SemiBold-BF6514dd5b27c56.otf") format("opentype"); }
-@font-face { font-family:"FHTotalDisplay"; font-weight:700;    font-style:italic;   src:url("https://d1wqi5f82xeqa6.cloudfront.net/career-report/fonts/fh-total-display-test/FHTotalDisplay-Test-SemiBoldItalic-BF6514dd5ae1f5f.otf") format("opentype"); }
-@font-face { font-family:"FHTotalDisplay"; font-weight:700;    font-style:normal;   src:url("https://d1wqi5f82xeqa6.cloudfront.net/career-report/fonts/fh-total-display-test/FHTotalDisplay-Test-Thin-BF6514dd5b2d9d8.otf") format("opentype"); }
-@font-face { font-family:"FHTotalDisplay"; font-weight:900;    font-style:normal;   src:url("https://d1wqi5f82xeqa6.cloudfront.net/career-report/fonts/fh-total-fine-test/FHTotalFine-Test-Black-BF6514dd59bee93.otf") format("opentype"); }
+@font-face {
+  font-family: "FHTotalDisplay";
+  font-weight: normal;
+  font-style: normal;
+  src: url("https://d1wqi5f82xeqa6.cloudfront.net/career-report/fonts/fh-total-display-test/FHTotalDisplay-Test-Black-BF6514dd5b2001e.otf")
+    format("opentype");
+}
+@font-face {
+  font-family: "FHTotalDisplay";
+  font-weight: 100;
+  font-style: italic;
+  src: url("https://d1wqi5f82xeqa6.cloudfront.net/career-report/fonts/fh-total-display-test/FHTotalDisplay-Test-BlackItalic-BF6514dd5b18743.otf")
+    format("opentype");
+}
+@font-face {
+  font-family: "FHTotalDisplay";
+  font-weight: 300;
+  font-style: italic;
+  src: url("https://d1wqi5f82xeqa6.cloudfront.net/career-report/fonts/fh-total-display-test/FHTotalDisplay-Test-BoldItalic-BF6514dd5b269d4.otf")
+    format("opentype");
+}
+@font-face {
+  font-family: "FHTotalDisplay-light";
+  font-weight: 300;
+  font-style: normal;
+  src: url("https://d1wqi5f82xeqa6.cloudfront.net/career-report/fonts/fh-total-display-test/FHTotalDisplay-Test-Light-BF6514dd5b2b64b.otf")
+    format("opentype");
+}
+@font-face {
+  font-family: "FHTotalDisplay";
+  font-weight: 400;
+  font-style: italic;
+  src: url("https://d1wqi5f82xeqa6.cloudfront.net/career-report/fonts/fh-total-display-test/FHTotalDisplay-Test-LightItalic-BF6514dd5b196e7.otf")
+    format("opentype");
+}
+@font-face {
+  font-family: "FHTotalDisplay";
+  font-weight: 400;
+  font-style: normal;
+  src: url("https://d1wqi5f82xeqa6.cloudfront.net/career-report/fonts/fh-total-display-test/FHTotalDisplay-Test-Medium-BF6514dd5ae34c2.otf")
+    format("opentype");
+}
+@font-face {
+  font-family: "FHTotalDisplay";
+  font-weight: 500;
+  font-style: italic;
+  src: url("https://d1wqi5f82xeqa6.cloudfront.net/career-report/fonts/fh-total-display-test/FHTotalDisplay-Test-MediumItalic-BF6514dd5b43127.otf")
+    format("opentype");
+}
+@font-face {
+  font-family: "FHTotalDisplay";
+  font-weight: 500;
+  font-style: normal;
+  src: url("https://d1wqi5f82xeqa6.cloudfront.net/career-report/fonts/fh-total-display-test/FHTotalDisplay-Test-Regular-BF6514dd5b34b98.otf")
+    format("opentype");
+}
+@font-face {
+  font-family: "FHTotalDisplay";
+  font-weight: 600;
+  font-style: italic;
+  src: url("https://d1wqi5f82xeqa6.cloudfront.net/career-report/fonts/fh-total-display-test/FHTotalDisplay-Test-RegularItalic-BF6514dd5b252ec.otf")
+    format("opentype");
+}
+@font-face {
+  font-family: "FHTotalDisplay";
+  font-weight: 600;
+  font-style: normal;
+  src: url("https://d1wqi5f82xeqa6.cloudfront.net/career-report/fonts/fh-total-display-test/FHTotalDisplay-Test-SemiBold-BF6514dd5b27c56.otf")
+    format("opentype");
+}
+@font-face {
+  font-family: "FHTotalDisplay";
+  font-weight: 700;
+  font-style: italic;
+  src: url("https://d1wqi5f82xeqa6.cloudfront.net/career-report/fonts/fh-total-display-test/FHTotalDisplay-Test-SemiBoldItalic-BF6514dd5ae1f5f.otf")
+    format("opentype");
+}
+@font-face {
+  font-family: "FHTotalDisplay";
+  font-weight: 700;
+  font-style: normal;
+  src: url("https://d1wqi5f82xeqa6.cloudfront.net/career-report/fonts/fh-total-display-test/FHTotalDisplay-Test-Thin-BF6514dd5b2d9d8.otf")
+    format("opentype");
+}
+@font-face {
+  font-family: "FHTotalDisplay";
+  font-weight: 900;
+  font-style: normal;
+  src: url("https://d1wqi5f82xeqa6.cloudfront.net/career-report/fonts/fh-total-fine-test/FHTotalFine-Test-Black-BF6514dd59bee93.otf")
+    format("opentype");
+}
 
 /* ============================================================
    DESIGN TOKENS — desktop default
@@ -21,10 +99,10 @@
    ============================================================ */
 :root {
   /* ── Book layout ── */
-  --book-w:   60vw;
-  --book-h:   44vw;
-  --page-w:   30vw;
-  --page-h:   44vw;
+  --book-w: 60vw;
+  --book-h: 44vw;
+  --page-w: 30vw;
+  --page-h: 44vw;
   --page-pad: 1.4vw 1.8vw;
 
   /* ── Shared spacing ── */
@@ -33,270 +111,117 @@
   --sp-md: 1.2vw;
 
   /* ── Palette ── */
-  --clr-page-bg:     #f5ede0;
-  --clr-brown-dark:  #4e2f25;
-  --clr-brown-mid:   #7b4a1a;
+  --clr-page-bg: #f5ede0;
+  --clr-brown-dark: #4e2f25;
+  --clr-brown-mid: #7b4a1a;
   --clr-brown-value: #a45f27;
-  --clr-gold:        #ae6426;
-  --clr-border:      #c09060;
+  --clr-gold: #ae6426;
+  --clr-border: #c09060;
 
   /* ── Shared font stacks ── */
-  --font-body:    'Be Vietnam Pro', sans-serif;
-  --font-heading: 'Cinzel', serif;
-  --font-display: 'FHTotalDisplay', serif;
-  --font-script:  'Fondamento', cursive, serif;
-  --font-karma:   'Karma', serif;
+  --font-body: "Be Vietnam Pro", sans-serif;
+  --font-heading: "Cinzel", serif;
+  --font-display: "FHTotalDisplay", serif;
+  --font-script: "Fondamento", cursive, serif;
+  --font-karma: "Karma", serif;
 
   /* ── Shared button style ── */
-  --btn-gradient: linear-gradient(135deg, #D27428 0%, #94511B 50%, #A45F27 100%);
-  --btn-shadow:   0 2.733px 8.2px 0 rgba(168,107,36,0.25),
-                  0 0.683px 0 0 rgba(255,255,255,0.20) inset;
-  --btn-radius:   15px;
+  --btn-gradient: linear-gradient(
+    135deg,
+    #d27428 0%,
+    #94511b 50%,
+    #a45f27 100%
+  );
+  --btn-shadow:
+    0 2.733px 8.2px 0 rgba(168, 107, 36, 0.25),
+    0 0.683px 0 0 rgba(255, 255, 255, 0.2) inset;
+  --btn-radius: 15px;
 
   /* ── Page 2: Astro info ── */
-  --fs-mantra:    2.6vw;
-  --fs-title:     1.9vw;
-  --fs-label:     0.75vw;
-  --fs-value:     0.95vw;
-  --fs-sign-tag:  0.6vw;
+  --fs-mantra: 2.6vw;
+  --fs-title: 1.9vw;
+  --fs-label: 0.75vw;
+  --fs-value: 0.95vw;
+  --fs-sign-tag: 0.6vw;
   --fs-sign-name: 0.8vw;
 
   /* ── TOC page ── */
-  --fs-toc-title:   2vw;
-  --fs-toc-sub:     0.65vw;
-  --fs-toc-badge:   0.85vw;
-  --fs-toc-name:    0.95vw;
+  --fs-toc-title: 2vw;
+  --fs-toc-sub: 0.65vw;
+  --fs-toc-badge: 0.85vw;
+  --fs-toc-name: 0.95vw;
   --fs-toc-pagenum: 0.78vw;
-  --fs-toc-footer:  1.3vw;
-  --sp-toc-row:     0.55vw;
+  --fs-toc-footer: 1.3vw;
+  --sp-toc-row: 0.55vw;
   --toc-badge-size: 2.5vw;
-  --toc-row-pad:    0.45vw 0.8vw;
+  --toc-row-pad: 0.45vw 0.8vw;
   --toc-row-radius: 5vw;
 
   /* ── Summary page ── */
-  --fs-sum-title:   1.1vw;
-  --fs-sum-cat:     0.95vw;
-  --fs-sum-count:   1.1vw;
-  --fs-sum-sub:     0.7vw;
-  --fs-sum-body:    0.6vw;
-  --fs-sum-link:    0.62vw;
-  --sum-icon-size:  2.4vw;
-  --sum-card-pad:   0.7vw 0.8vw 0.6vw;
-  --sum-card-gap:   0.5vw;
-  --sum-grid-gap:   0.55vw;
+  --fs-sum-title: 1.1vw;
+  --fs-sum-cat: 0.95vw;
+  --fs-sum-count: 1.1vw;
+  --fs-sum-sub: 0.7vw;
+  --fs-sum-body: 0.6vw;
+  --fs-sum-link: 0.62vw;
+  --sum-icon-size: 2.4vw;
+  --sum-card-pad: 0.7vw 0.8vw 0.6vw;
+  --sum-card-gap: 0.5vw;
+  --sum-grid-gap: 0.55vw;
 
   /* ── Chapter page ── */
-  --fs-ch-title:    1.9vw;
-  --fs-ch-sub:      0.65vw;
-  --fs-ch-label:    0.62vw;
-  --fs-ch-value:    0.9vw;
-  --fs-ch-lock-h:   0.72vw;
-  --fs-ch-lock-b:   0.6vw;
-  --fs-ch-btn:      0.62vw;
-  --ch-hero-h:      35%;
-  --ch-grid-gap:    0.55vw;
-  --ch-body-px:     2vw;
-  --ch-heading-mb:  0.8vw;
-  --ch-lock-pad:    0.65vw 0.8vw;
+  --fs-ch-title: 1.9vw;
+  --fs-ch-sub: 0.65vw;
+  --fs-ch-label: 0.62vw;
+  --fs-ch-value: 0.9vw;
+  --fs-ch-lock-h: 0.72vw;
+  --fs-ch-lock-b: 0.6vw;
+  --fs-ch-btn: 0.62vw;
+  --ch-hero-h: 35%;
+  --ch-grid-gap: 0.55vw;
+  --ch-body-px: 2vw;
+  --ch-heading-mb: 0.8vw;
+  --ch-lock-pad: 0.65vw 0.8vw;
   --ch-lock-radius: 12px;
-  --ch-lock-icon:   1.6vw;
+  --ch-lock-icon: 1.6vw;
 
   /* ── Blurred content + lock popup ── */
   --fs-content-body: 0.72vw;
   --fs-lock-heading: 0.72vw;
-  --fs-lock-body:    0.6vw;
-  --fs-lock-btn:     0.62vw;
-  --lock-icon-size:  1.8vw;
-  --lock-popup-pad:  0.7vw 0.85vw;
-  --lock-popup-gap:  0.55vw;
-  --content-gap:     0.7vw;
-  --blur-amount:     4px;
+  --fs-lock-body: 0.6vw;
+  --fs-lock-btn: 0.62vw;
+  --lock-icon-size: 1.8vw;
+  --lock-popup-pad: 0.7vw 0.85vw;
+  --lock-popup-gap: 0.55vw;
+  --content-gap: 0.7vw;
+  --blur-amount: 4px;
 }
 
-/* ── Tablet (≤ 1024px) ──────────────────────────────────── */
-@media (max-width: 1024px) {
-  :root {
-    --book-w:   78vw;
-    --book-h:   57.2vw;
-    --page-w:   39vw;
-    --page-h:   57.2vw;
-    --page-pad: 2vw 2.2vw;
-    --sp-xs:    0.5vw;
-    --sp-sm:    1vw;
-    --sp-md:    1.6vw;
-
-    --fs-mantra:    3.2vw;
-    --fs-title:     2.5vw;
-    --fs-label:     1vw;
-    --fs-value:     1.25vw;
-    --fs-sign-tag:  0.8vw;
-    --fs-sign-name: 1.05vw;
-
-    --fs-toc-title:   2.5vw;
-    --fs-toc-sub:     0.85vw;
-    --fs-toc-badge:   1.1vw;
-    --fs-toc-name:    1.2vw;
-    --fs-toc-pagenum: 1vw;
-    --fs-toc-footer:  1.6vw;
-    --sp-toc-row:     0.7vw;
-    --toc-badge-size: 3.2vw;
-    --toc-row-pad:    0.6vw 1vw;
-
-    --fs-sum-title:   1.4vw;
-    --fs-sum-cat:     1.2vw;
-    --fs-sum-count:   1.35vw;
-    --fs-sum-sub:     0.9vw;
-    --fs-sum-body:    0.78vw;
-    --fs-sum-link:    0.8vw;
-    --sum-icon-size:  3vw;
-    --sum-card-pad:   1vw 1.1vw 0.8vw;
-    --sum-card-gap:   0.65vw;
-    --sum-grid-gap:   0.8vw;
-
-    --fs-ch-title:    2.4vw;
-    --fs-ch-sub:      0.85vw;
-    --fs-ch-label:    0.8vw;
-    --fs-ch-value:    1.1vw;
-    --fs-ch-lock-h:   0.9vw;
-    --fs-ch-lock-b:   0.75vw;
-    --fs-ch-btn:      0.8vw;
-    --ch-grid-gap:    0.75vw;
-    --ch-body-px:     2.5vw;
-    --ch-heading-mb:  1.2vw;
-    --ch-lock-pad:    0.85vw 1vw;
-    --ch-lock-icon:   2.2vw;
-
-    --fs-content-body: 0.95vw;
-    --fs-lock-heading: 0.92vw;
-    --fs-lock-body:    0.78vw;
-    --fs-lock-btn:     0.8vw;
-    --lock-icon-size:  2.4vw;
-    --lock-popup-pad:  0.9vw 1.1vw;
-    --lock-popup-gap:  0.75vw;
-    --content-gap:     0.9vw;
-  }
+h2 {
+  text-align: center; 
+  color: #843E1E; 
+  font-family: 'FHTotalDisplay'; 
+  font-size: 24px; 
+  font-style: normal; 
+  font-weight: 600; 
+  line-height: normal; 
+  margin-bottom: 12px;
 }
 
-/* ── Mobile (≤ 768px) ───────────────────────────────────── */
-@media (max-width: 768px) {
-  :root {
-    --page-pad:     5vw 6vw;
-    --sp-xs:        1.5vw;
-    --sp-sm:        2.8vw;
-    --sp-md:        4.5vw;
-
-    --fs-mantra:    6vw;
-    --fs-title:     5.2vw;
-    --fs-label:     3vw;
-    --fs-value:     4vw;
-    --fs-sign-tag:  2.6vw;
-    --fs-sign-name: 3.4vw;
-
-    --fs-toc-title:   5.5vw;
-    --fs-toc-sub:     2.5vw;
-    --fs-toc-badge:   3.2vw;
-    --fs-toc-name:    3.8vw;
-    --fs-toc-pagenum: 3vw;
-    --fs-toc-footer:  4.5vw;
-    --sp-toc-row:     2.2vw;
-    --toc-badge-size: 9vw;
-    --toc-row-pad:    1.8vw 3vw;
-    --toc-row-radius: 10vw;
-
-    --fs-sum-title:   3.8vw;
-    --fs-sum-cat:     3.2vw;
-    --fs-sum-count:   3.8vw;
-    --fs-sum-sub:     2.4vw;
-    --fs-sum-body:    2.2vw;
-    --fs-sum-link:    2.4vw;
-    --sum-icon-size:  8.5vw;
-    --sum-card-pad:   2.5vw 3vw 2vw;
-    --sum-card-gap:   2vw;
-    --sum-grid-gap:   2vw;
-
-    --fs-ch-title:    5.5vw;
-    --fs-ch-sub:      2.5vw;
-    --fs-ch-label:    2.6vw;
-    --fs-ch-value:    3.8vw;
-    --fs-ch-lock-h:   3vw;
-    --fs-ch-lock-b:   2.5vw;
-    --fs-ch-btn:      2.6vw;
-    --ch-grid-gap:    2.5vw;
-    --ch-body-px:     6vw;
-    --ch-heading-mb:  3vw;
-    --ch-lock-pad:    2.5vw 3vw;
-    --ch-lock-icon:   7vw;
-
-    --fs-content-body: 2.8vw;
-    --fs-lock-heading: 2.8vw;
-    --fs-lock-body:    2.4vw;
-    --fs-lock-btn:     2.5vw;
-    --lock-icon-size:  7.5vw;
-    --lock-popup-pad:  2.5vw 3vw;
-    --lock-popup-gap:  2.2vw;
-    --content-gap:     2.5vw;
-    --blur-amount:     5px;
-  }
+h3 {
+  color: #843e1e;
+  font-family: "FHTotalDisplay";
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 15px;
 }
-
-/* ── Small phones (≤ 480px) ────────────────────────────── */
-@media (max-width: 480px) {
-  :root {
-    --page-pad:     6vw 6.5vw;
-    --sp-xs:        1.8vw;
-    --sp-sm:        3.2vw;
-    --sp-md:        5vw;
-
-    --fs-mantra:    6.5vw;
-    --fs-title:     5.6vw;
-    --fs-label:     3.2vw;
-    --fs-value:     4.4vw;
-    --fs-sign-tag:  2.8vw;
-    --fs-sign-name: 3.6vw;
-
-    --fs-toc-title:   6vw;
-    --fs-toc-sub:     2.8vw;
-    --fs-toc-badge:   3.6vw;
-    --fs-toc-name:    4.2vw;
-    --fs-toc-pagenum: 3.3vw;
-    --fs-toc-footer:  5vw;
-    --sp-toc-row:     2.5vw;
-    --toc-badge-size: 10vw;
-    --toc-row-pad:    2vw 3.5vw;
-
-    --fs-sum-title:   4.2vw;
-    --fs-sum-cat:     3.6vw;
-    --fs-sum-count:   4.2vw;
-    --fs-sum-sub:     2.7vw;
-    --fs-sum-body:    2.5vw;
-    --fs-sum-link:    2.7vw;
-    --sum-icon-size:  9.5vw;
-    --sum-card-pad:   3vw 3.5vw 2.5vw;
-    --sum-card-gap:   2.5vw;
-    --sum-grid-gap:   2.2vw;
-
-    --fs-ch-title:    6vw;
-    --fs-ch-sub:      2.8vw;
-    --fs-ch-label:    2.9vw;
-    --fs-ch-value:    4.2vw;
-    --fs-ch-lock-h:   3.3vw;
-    --fs-ch-lock-b:   2.8vw;
-    --fs-ch-btn:      2.9vw;
-    --ch-grid-gap:    3vw;
-    --ch-body-px:     6.5vw;
-    --ch-heading-mb:  3.5vw;
-    --ch-lock-pad:    3vw 3.5vw;
-    --ch-lock-icon:   8vw;
-
-    --fs-content-body: 3.1vw;
-    --fs-lock-heading: 3.1vw;
-    --fs-lock-body:    2.6vw;
-    --fs-lock-btn:     2.7vw;
-    --lock-icon-size:  8.5vw;
-    --lock-popup-pad:  3vw 3.5vw;
-    --lock-popup-gap:  2.5vw;
-    --content-gap:     3vw;
-  }
+.table-sub-heading {
+  color: #A45F27; 
+  font-family: 'Inter'; 
+  font-size: 9px; 
+  font-weight: 500; 
+  line-height: normal; 
+  padding: 0 7px;
 }
 
 /* ============================================================
@@ -304,13 +229,17 @@
    ============================================================ */
 *,
 *::before,
-*::after { box-sizing: border-box; }
+*::after {
+  box-sizing: border-box;
+}
 
-html { height: 100%; }
+html {
+  height: 100%;
+}
 
 body {
   min-height: 100%;
-  font-family: "Lovers Quarrel", cursive;
+  /* font-family: "Lovers Quarrel", cursive; */
   background: #2e2214;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   display: flex;
@@ -320,6 +249,13 @@ body {
   padding: 2em 0;
   line-height: 1.5;
   gap: 2vw;
+}
+
+p {
+  font-family: "Be Vietnam Pro";
+  font-size: 20px;
+  line-height: 1.75;
+  text-align: justify;
 }
 
 /* ============================================================
@@ -339,7 +275,7 @@ body {
   border-radius: 4px;
   box-shadow:
     inset -4px 0 12px rgba(0, 0, 0, 0.18),
-    inset  4px 0 12px rgba(0, 0, 0, 0.18);
+    inset 4px 0 12px rgba(0, 0, 0, 0.18);
 }
 
 /* ============================================================
@@ -377,19 +313,27 @@ body {
   border-radius: 0 4px 4px 0;
   transform: rotateY(0deg);
   pointer-events: all;
-  background-image: linear-gradient(to right, rgba(0,0,0,.12) 0%, rgba(0,0,0,0) 8%);
+  background-image: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0.12) 0%,
+    rgba(0, 0, 0, 0) 8%
+  );
 }
 
 .book .page:nth-child(odd):not(:nth-child(1)) {
   background-image:
-    linear-gradient(to right, rgba(0,0,0,.12) 0%, rgba(0,0,0,0) 8%),
+    linear-gradient(to right, rgba(0, 0, 0, 0.12) 0%, rgba(0, 0, 0, 0) 8%),
     url("./img/page-texture.webp");
   background-size: cover;
   background-position: right top;
 }
 
-.book .page:nth-child(odd):hover { transform: rotateY(-15deg); }
-.book .page:nth-child(odd):hover::before { background: rgba(0,0,0,0.04); }
+.book .page:nth-child(odd):hover {
+  transform: rotateY(-15deg);
+}
+.book .page:nth-child(odd):hover::before {
+  background: rgba(0, 0, 0, 0.04);
+}
 
 /* ── EVEN pages ──────────────────────────────────────────── */
 .book .page:nth-child(even) {
@@ -399,7 +343,7 @@ body {
   transform-origin: 100% 0;
   pointer-events: none;
   background-image:
-    linear-gradient(to left, rgba(0,0,0,.12) 0%, rgba(0,0,0,0) 8%),
+    linear-gradient(to left, rgba(0, 0, 0, 0.12) 0%, rgba(0, 0, 0, 0) 8%),
     url("./img/page-texture.webp");
   background-size: cover;
   background-position: left top;
@@ -411,21 +355,31 @@ body {
 }
 
 /* ── FLIPPED states ─────────────────────────────────────── */
-.book .page.grabbing { transition: none; }
+.book .page.grabbing {
+  transition: none;
+}
 
 .book .page.flipped:nth-child(odd) {
   pointer-events: none;
   transform: rotateY(-180deg);
 }
-.book .page.flipped:nth-child(odd)::before { background: rgba(0,0,0,0); }
+.book .page.flipped:nth-child(odd)::before {
+  background: rgba(0, 0, 0, 0);
+}
 
 .book .page.flipped:nth-child(even) {
   pointer-events: all;
   transform: rotateY(0deg);
 }
-.book .page.flipped:nth-child(even):hover { transform: rotateY(15deg); }
-.book .page.flipped:nth-child(even):hover::before { background: rgba(0,0,0,0.04); }
-.book .page.flipped:nth-child(even)::before { background: rgba(0,0,0,0); }
+.book .page.flipped:nth-child(even):hover {
+  transform: rotateY(15deg);
+}
+.book .page.flipped:nth-child(even):hover::before {
+  background: rgba(0, 0, 0, 0.04);
+}
+.book .page.flipped:nth-child(even)::before {
+  background: rgba(0, 0, 0, 0);
+}
 
 /* ============================================================
    CORNER ART
@@ -438,8 +392,15 @@ body {
   z-index: 1;
   display: block;
 }
-.corner-art--top    { top: 0; left: 0; }
-.corner-art--bottom { bottom: 0; left: 0; transform: rotate(180deg); }
+.corner-art--top {
+  top: 0;
+  left: 0;
+}
+.corner-art--bottom {
+  bottom: 0;
+  left: 0;
+  transform: rotate(180deg);
+}
 
 /* ============================================================
    PAGE INNER  (generic content wrapper)
@@ -499,32 +460,67 @@ body {
   border: none;
   cursor: pointer;
   line-height: 1.3;
-  transition: opacity 0.2s, transform 0.15s;
+  transition:
+    opacity 0.2s,
+    transform 0.15s;
   isolation: isolate;
 }
-.btn-gold:hover  { opacity: 0.88; }
-.btn-gold:active { transform: scale(0.97); }
+.btn-gold:hover {
+  opacity: 0.88;
+}
+.btn-gold:active {
+  transform: scale(0.97);
+}
 
 /* ── Inline SVG images with standard widths ──────────────── */
 /* Replace inline style="width: X%" in HTML with these classes */
-.img-w-50  { width: 50%;  display: block; }
-.img-w-73  { width: 73%;  display: block; }
-.img-w-80  { width: 80%;  display: block; margin-inline: auto; }
-.img-w-85  { width: 85%;  display: block; }
-.img-w-full { width: 100%; display: block; }
+.img-w-50 {
+  width: 50%;
+  display: block;
+}
+.img-w-73 {
+  width: 73%;
+  display: block;
+}
+.img-w-80 {
+  width: 80%;
+  display: block;
+  margin-inline: auto;
+}
+.img-w-85 {
+  width: 85%;
+  display: block;
+}
+.img-w-full {
+  width: 100%;
+  display: block;
+}
 
 /* Chapter hero images (frame + banner stacked) */
-.chapter-frame-img  { width: 85%; display: block; }
+.chapter-frame-img {
+  width: 85%;
+  display: block;
+}
 .chapter-banner-img {
   position: absolute;
   top: 17%;
   width: 73%;
 }
-.chapter-title-img  { width: 50%; display: block; margin-inline: auto; }
-.toc-title-img      { width: 80%; display: block; margin-inline: auto; }
+.chapter-title-img {
+  width: 50%;
+  display: block;
+  margin-inline: auto;
+}
+.toc-title-img {
+  width: 80%;
+  display: block;
+  margin-inline: auto;
+}
 
 /* Lock icon inside popup circles */
-.lock-icon-img { width: 60%; }
+.lock-icon-img {
+  width: 60%;
+}
 
 /* ============================================================
    PAGE 1: GANESH COVER
@@ -589,10 +585,17 @@ body {
   padding: 10px;
 }
 
-.info-col       { flex: 1; min-width: 0; }
-.info-col--right { text-align: right; }
+.info-col {
+  flex: 1;
+  min-width: 0;
+}
+.info-col--right {
+  text-align: right;
+}
 
-.info-item { margin-bottom: 15px; }
+.info-item {
+  margin-bottom: 15px;
+}
 
 .info-item__label {
   display: block;
@@ -639,8 +642,12 @@ body {
   overflow: hidden;
 }
 
-.sign-card:first-child { border-radius: 4px 0 0 4px; }
-.sign-card:last-child  { border-radius: 0 4px 4px 0; }
+.sign-card:first-child {
+  border-radius: 4px 0 0 4px;
+}
+.sign-card:last-child {
+  border-radius: 0 4px 4px 0;
+}
 
 .sign-card__header {
   display: flex;
@@ -709,13 +716,12 @@ body {
    ============================================================ */
 
 .scroll-page {
-    height: 100%;
-    width: 80%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  height: 100%;
+  width: 80%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-
 
 /* ============================================================
    TABLE OF CONTENTS PAGE
@@ -771,11 +777,19 @@ body {
 .toc-header__subtitle-line {
   flex: 1;
   height: 1px;
-  background: linear-gradient(to var(--dir, right), transparent 0%, var(--clr-border) 100%);
+  background: linear-gradient(
+    to var(--dir, right),
+    transparent 0%,
+    var(--clr-border) 100%
+  );
   opacity: 0.6;
 }
-.toc-header__subtitle-line:first-child { --dir: right; }
-.toc-header__subtitle-line:last-child  { --dir: left; }
+.toc-header__subtitle-line:first-child {
+  --dir: right;
+}
+.toc-header__subtitle-line:last-child {
+  --dir: left;
+}
 
 .toc-header__subtitle {
   font-family: var(--font-body);
@@ -809,9 +823,9 @@ body {
   align-items: center;
   gap: 0.6em;
   padding: var(--toc-row-pad);
-  border: 1px solid rgba(174,100,38,0.28);
+  border: 1px solid rgba(174, 100, 38, 0.28);
   border-radius: var(--toc-row-radius);
-  background: rgba(255,248,235,0.55);
+  background: rgba(255, 248, 235, 0.55);
   flex-shrink: 0;
   list-style: none;
 }
@@ -829,7 +843,7 @@ body {
   font-size: var(--fs-toc-badge);
   font-weight: 600;
   color: var(--clr-gold);
-  background: rgba(174,100,38,0.06);
+  background: rgba(174, 100, 38, 0.06);
   flex-shrink: 0;
   letter-spacing: 0.02em;
 }
@@ -912,12 +926,14 @@ body {
   display: flex;
   flex-direction: column;
   padding: var(--sum-card-pad);
-  border: 1px solid rgba(174,100,38,0.3);
+  border: 1px solid rgba(174, 100, 38, 0.3);
   border-radius: 12px;
-  background: linear-gradient(135deg,
-    rgba(248,233,216,0.10) 0%,
-    rgba(255,246,234,0.10) 50%,
-    rgba(241,227,215,0.10) 100%);
+  background: linear-gradient(
+    135deg,
+    rgba(248, 233, 216, 0.1) 0%,
+    rgba(255, 246, 234, 0.1) 50%,
+    rgba(241, 227, 215, 0.1) 100%
+  );
   overflow: hidden;
   min-height: 0;
   gap: var(--sum-card-gap);
@@ -938,7 +954,10 @@ body {
   flex-shrink: 0;
 }
 
-.sum-card__name-wrap { flex: 1; min-width: 0; }
+.sum-card__name-wrap {
+  flex: 1;
+  min-width: 0;
+}
 
 .sum-card__cat {
   font-family: var(--font-heading);
@@ -966,16 +985,16 @@ body {
   font-family: var(--font-body);
   font-size: var(--fs-sum-sub);
   font-weight: 500;
-  color: #6F5B4A;
+  color: #6f5b4a;
   line-height: 1.3;
   flex-shrink: 0;
 }
 
 .sum-card__body {
   font-family: var(--font-body);
-  font-size: var(--fs-sum-body);   /* was hardcoded 6px — now uses token */
+  font-size: var(--fs-sum-body); /* was hardcoded 6px — now uses token */
   font-weight: 400;
-  color: #7A6A58;
+  color: #7a6a58;
   line-height: 1.55;
   flex: 1;
   min-height: 0;
@@ -994,11 +1013,13 @@ body {
   color: var(--clr-brown-mid);
   text-decoration: none;
   flex-shrink: 0;
-  border-top: 1px solid rgba(174,100,38,0.18);
+  border-top: 1px solid rgba(174, 100, 38, 0.18);
   padding-top: 0.45em;
   transition: color 0.2s;
 }
-.sum-card__link:hover { color: var(--clr-gold); }
+.sum-card__link:hover {
+  color: var(--clr-gold);
+}
 
 .summary-page__footer {
   flex-shrink: 0;
@@ -1041,7 +1062,7 @@ body {
   width: 100%;
   height: var(--ch-hero-h);
   flex-shrink: 0;
-  margin-top: var(--sp-sm);  /* was hardcoded 20px */
+  margin-top: var(--sp-sm); /* was hardcoded 20px */
   overflow: hidden;
   position: relative;
 }
@@ -1052,7 +1073,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 0 var(--ch-body-px);  /* was hardcoded 35px */
+  padding: 0 var(--ch-body-px); /* was hardcoded 35px */
   overflow: hidden;
 }
 
@@ -1063,7 +1084,7 @@ body {
   flex-direction: column;
   align-items: center;
   flex-shrink: 0;
-  margin-bottom: var(--ch-heading-mb);  /* was hardcoded 20px */
+  margin-bottom: var(--ch-heading-mb); /* was hardcoded 20px */
 }
 
 .chapter-heading__ornament {
@@ -1128,10 +1149,17 @@ body {
   gap: var(--sp-sm);
 }
 
-.ch-col          { flex: 1; min-width: 0; }
-.ch-col--right   { text-align: right; }
+.ch-col {
+  flex: 1;
+  min-width: 0;
+}
+.ch-col--right {
+  text-align: right;
+}
 
-.ch-item { margin-bottom: var(--ch-grid-gap); }  /* was hardcoded 10px */
+.ch-item {
+  margin-bottom: var(--ch-grid-gap);
+} /* was hardcoded 10px */
 
 .ch-item__label {
   display: block;
@@ -1170,25 +1198,29 @@ body {
   align-items: center;
   gap: 0.7em;
   padding: var(--ch-lock-pad);
-  border: 3px solid rgba(174,100,38,0.35);
+  border: 3px solid rgba(174, 100, 38, 0.35);
   border-radius: var(--ch-lock-radius);
-  background: radial-gradient(71.32% 261% at 30% 50%,
-    rgba(246,210,122,0.60) 0%,
-    rgba(0,0,0,0.00) 60%);
+  background: radial-gradient(
+    71.32% 261% at 30% 50%,
+    rgba(246, 210, 122, 0.6) 0%,
+    rgba(0, 0, 0, 0) 60%
+  );
   flex-shrink: 0;
 }
 
 /* Icon circle — reuses btn-gradient via variable */
 .lock-resp {
-    display: flex;
-    gap: 10px;
-    align-items: center;
+  display: flex;
+  gap: 10px;
+  align-items: center;
 }
 .ch-lock-banner__icon-wrap,
 .lock-popup__icon-wrap {
   border-radius: 50%;
   background: var(--btn-gradient);
-  box-shadow: 0 2.733px 8.2px 0 rgba(200,145,45,0.30), 0 0.683px 1.367px 0 rgba(255,255,255,0.30) inset;
+  box-shadow:
+    0 2.733px 8.2px 0 rgba(200, 145, 45, 0.3),
+    0 0.683px 1.367px 0 rgba(255, 255, 255, 0.3) inset;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1204,7 +1236,10 @@ body {
 }
 
 .ch-lock-banner__text,
-.lock-popup__text { flex: 1; min-width: 0; }
+.lock-popup__text {
+  flex: 1;
+  min-width: 0;
+}
 
 /* ── Shared heading/body inside both banners ─────────────── */
 .ch-lock-banner__heading,
@@ -1217,8 +1252,12 @@ body {
   margin-bottom: 0.2em;
 }
 
-.ch-lock-banner__heading { font-size: var(--fs-ch-lock-h); }
-.lock-popup__heading     { font-size: var(--fs-lock-heading); }
+.ch-lock-banner__heading {
+  font-size: var(--fs-ch-lock-h);
+}
+.lock-popup__heading {
+  font-size: 9px;
+}
 
 .ch-lock-banner__body,
 .lock-popup__body {
@@ -1233,12 +1272,20 @@ body {
   overflow: hidden;
 }
 
-.ch-lock-banner__body { font-size: var(--fs-ch-lock-b); }
-.lock-popup__body     { font-size: var(--fs-lock-body); }
+.ch-lock-banner__body {
+  font-size: var(--fs-ch-lock-b);
+}
+.lock-popup__body {
+  font-size: 8px;
+}
 
 /* Buttons inherit .btn-gold but need size var per context */
-.ch-lock-banner__btn { font-size: var(--fs-ch-btn); }
-.lock-popup__btn     { font-size: var(--fs-lock-btn); }
+.ch-lock-banner__btn {
+  font-size: var(--fs-ch-btn);
+}
+.lock-popup__btn {
+  font-size: var(--fs-lock-btn);
+}
 
 /* ── Chapter footer ──────────────────────────────────────── */
 .chapter-page__footer {
@@ -1280,7 +1327,9 @@ body {
   scrollbar-width: none;
   -ms-overflow-style: none;
 }
-.content-scroll::-webkit-scrollbar { display: none; }
+.content-scroll::-webkit-scrollbar {
+  display: none;
+}
 
 .content-block {
   position: relative;
@@ -1290,10 +1339,10 @@ body {
 
 .content-block__text {
   font-family: var(--font-body);
-  font-size: var(--fs-content-body);
+  /* font-size: 9px; */
   font-weight: 400;
   color: var(--clr-brown-dark);
-  line-height: 1.75;
+  line-height: 1.5;
   text-align: justify;
   margin: 0;
   hyphens: auto;
@@ -1306,7 +1355,9 @@ body {
   opacity: 0.9;
 }
 
-.content-block--blur-only .content-block__text--blurred { opacity: 0.75; }
+.content-block--blur-only .content-block__text--blurred {
+  opacity: 0.75;
+}
 
 /* ── Lock popup ──────────────────────────────────────────── */
 .lock-popup {
@@ -1316,13 +1367,14 @@ body {
   transform: translate(-50%, -50%);
   width: 90%;
   display: flex;
-  align-items: center;
+  flex-direction: column;
+  /* align-items: center; */
   gap: var(--lock-popup-gap);
   padding: var(--lock-popup-pad);
-  border: 3px solid rgba(174,100,38,0.35);
+  border: 3px solid rgba(174, 100, 38, 0.35);
   border-radius: 12px;
-  background: rgba(248,242,230,0.96);
-  box-shadow: 0 2px 12px rgba(0,0,0,0.12);
+  background: rgba(248, 242, 230, 0.96);
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.12);
   z-index: 10;
 }
 
@@ -1334,31 +1386,460 @@ body {
   color: #fff9f0;
 }
 
+.scroll-container {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+/* Rolls */
+.scroll-roll {
+  position: absolute;
+  left: -8px;
+  width: 105%;
+  z-index: 2;
+  transform: translateY(0);
+}
+
+/* Initial position = CENTER */
+.scroll-roll.top {
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.scroll-roll.bottom {
+  top: 50%;
+  transform: translateY(-50%) scaleY(-1);
+}
+
+/* Paper */
+.scroll-paper {
+  width: 100%;
+
+  /* Hide top & bottom initially */
+  -webkit-mask-image: linear-gradient(
+    to top,
+    transparent 0%,
+    black 50%,
+    transparent 100%
+  );
+  mask-image: linear-gradient(
+    to bottom,
+    transparent 0%,
+    black 50%,
+    transparent 100%
+  );
+
+  -webkit-mask-size: 100% 0%;
+  mask-size: 100% 0%;
+
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+
+  transition: mask-size 1s ease;
+}
+
+/* 🎬 ACTIVE STATE (animation trigger) */
+.scroll-page.animate .scroll-roll.top {
+  animation: rollTop 1s ease forwards;
+}
+
+.scroll-page.animate .scroll-roll.bottom {
+  animation: rollBottom 1s ease forwards;
+}
+
+.scroll-page.animate .scroll-paper {
+  -webkit-mask-size: 100% 100%;
+  mask-size: 100% 100%;
+}
+
+/* Keyframes */
+@keyframes rollTop {
+  from {
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  to {
+    top: -5px;
+    transform: translateY(0);
+  }
+}
+
+@keyframes rollBottom {
+  from {
+    top: 50%;
+    transform: translateY(-50%) scaleY(-1);
+  }
+  to {
+    bottom: -5px;
+    top: auto;
+    transform: scaleY(-1);
+  }
+}
+
+/* CHART DESIGN */
+
+.chart-container {
+  /* position: relative; */
+  width: 20vw;
+  /* height: 20vw; */
+  background: transparent;
+}
+
+.house {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.chart-container .house {
+  position: absolute;
+  /* display: flex;
+        justify-content: center;
+        align-items: center; */
+  background-color: transparent;
+}
+
+.chart-container .diamond {
+  width: 80px;
+  height: 80px;
+  background: #d66c6c;
+  transform: rotate(45deg);
+}
+
+.chart-container .planet-in-chart p {
+  margin-top: 0;
+  margin-bottom: 0.2vw;
+}
+
+.chart-container .house span {
+  text-align: center;
+  font-weight: 600;
+  text-wrap: wrap;
+}
+
+.chart-container .triangle-horizontal-45 span {
+  font-weight: 400;
+  display: flex;
+}
+
+.chart-container .triangle {
+  border-left: 40px solid transparent;
+  border-right: 40px solid transparent;
+  border-bottom: 80px solid #fff;
+  /* border: 2px solid #333;  */
+  box-sizing: content-box;
+}
+
+.chart-container .triangle-45 {
+  width: 7.7vw;
+  height: 2.6vw;
+  clip-path: polygon(0 0, 100% 0, 50% 100%);
+  background-color: rgb(158, 77, 98, 0.5);
+}
+
+.chart-container .triangle-45 span {
+  line-height: 10px;
+}
+
+.chart-container .diamond-45 {
+  width: 8vw;
+  height: 6vw;
+  clip-path: polygon(50% 0, 100% 50%, 50% 100%, 0 50%);
+  background: rgb(240, 188, 197, 0.5);
+  /* opacity: 0.5; */
+  border: 2px solid #333;
+}
+
+.chart-container .diamond-45 span {
+  line-height: 0.6vw;
+  margin: 0;
+  padding: 0;
+}
+
+.chart-container .diamond-45 #tenthHouse span {
+  display: flex;
+  flex-direction: row;
+}
+
+.chart-container .diamond-45 #fourthHouse span {
+  display: flex;
+  flex-direction: row;
+}
+
+.chart-container .triangle-horizontal-45 {
+  width: 3.7vw;
+  height: 6.1vw;
+  line-height: 1.65vw;
+  clip-path: polygon(0% 0%, 0% 100%, 100% 50%);
+  background: rgba(128, 128, 66, 0.5);
+  /* opacity: 0.5; */
+}
+
+.chart-container .triangle-horizontal-45 .planet-in-chart span {
+  display: flex;
+  flex-direction: column;
+  padding-left: 2px;
+}
+
+.chart-container .triangle-45 .planet-in-chart span {
+  display: flex;
+}
+
+.chart-container .numb {
+  color: #4e2f25;
+  font-size: 0.8vw;
+  padding-right: 1px;
+}
+
+.chart-container .planet-in-chart {
+  color: #4e2f25;
+  font-size: 1.45vw;
+}
+
+.chart-container .planet-in-chart p {
+  color: #4e2f25;
+  font-weight: 400;
+  /* background-color: green; */
+}
+
+.chart-container .planet-in-chart span p {
+  font-size: 0.8vw;
+}
+
+.chart-container .planet-in-chart span p sub {
+  padding-left: 0.2vw;
+  font-size: 0.4vw;
+}
+
+/* Table */
+
+.bhav_phal_table th {
+  color: #4e2f25;
+  font-family: "FHTotalDisplay";
+  font-size: 9px;
+  text-align: left;
+  font-weight: 600;
+  line-height: normal;
+}
+
+.bhav_phal_table td {
+  color: #a45f27;
+  font-family: "Be Vietnam Pro";
+  font-size: 8px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  /* max-width: 180px; */
+  /* text-align: justify; */
+}
+.bhav_phal_table td:last-child {
+  text-align: justify;
+}
+
+.gemstone-table {
+  text-align: center;
+  font-family: "Inter";
+  border: 1px solid #843e1e;
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  font: 14px;
+  color: #242424;
+}
+
+.gemstone-table thead th {
+  background: #a45f27;
+  font-family: "Be Vietnam Pro";
+  font-size: 8px;
+  color: #fff;
+  text-transform: uppercase;
+  font-weight: 400;
+  padding: 3px 8px;
+  text-align: left;
+  border-right: 1px solid #843e1e;
+}
+.gemstone-table thead th:last-child {
+  border-right: 0;
+}
+
+.gemstone-table tbody td {
+  font-family: "Inter";
+  font-size: 8px;
+  padding: 3px 4px;
+  /* background:#fff; */
+  border-top: 1px solid #843e1e;
+  border-right: 1px solid #843e1e;
+}
+.gemstone-table tbody tr td:last-child {
+  border-right: 0;
+}
+
+.gemstone-table tbody tr:last-child td {
+  border-bottom: 1px solid #843e1e;
+}
+
+.blurred {
+  filter: blur(2.5px);
+  user-select: none;
+  color: #555;
+}
+
 /* ============================================================
    MOBILE NAV — hidden on desktop/tablet
    ============================================================ */
-.mobile-nav { display: none; }
+.mobile-nav {
+  display: none;
+}
 
 /* ============================================================
    MOBILE SINGLE-PAGE MODE  (≤ 768px)
    ============================================================ */
+
+/* ── Tablet (≤ 1024px) ──────────────────────────────────── */
+@media (max-width: 1024px) {
+  :root {
+    --book-w: 78vw;
+    --book-h: 57.2vw;
+    --page-w: 39vw;
+    --page-h: 57.2vw;
+    --page-pad: 2vw 2.2vw;
+    --sp-xs: 0.5vw;
+    --sp-sm: 1vw;
+    --sp-md: 1.6vw;
+
+    --fs-mantra: 3.2vw;
+    --fs-title: 2.5vw;
+    --fs-label: 1vw;
+    --fs-value: 1.25vw;
+    --fs-sign-tag: 0.8vw;
+    --fs-sign-name: 1.05vw;
+
+    --fs-toc-title: 2.5vw;
+    --fs-toc-sub: 0.85vw;
+    --fs-toc-badge: 1.1vw;
+    --fs-toc-name: 1.2vw;
+    --fs-toc-pagenum: 1vw;
+    --fs-toc-footer: 1.6vw;
+    --sp-toc-row: 0.7vw;
+    --toc-badge-size: 3.2vw;
+    --toc-row-pad: 0.6vw 1vw;
+
+    --fs-sum-title: 1.4vw;
+    --fs-sum-cat: 1.2vw;
+    --fs-sum-count: 1.35vw;
+    --fs-sum-sub: 0.9vw;
+    --fs-sum-body: 0.78vw;
+    --fs-sum-link: 0.8vw;
+    --sum-icon-size: 3vw;
+    --sum-card-pad: 1vw 1.1vw 0.8vw;
+    --sum-card-gap: 0.65vw;
+    --sum-grid-gap: 0.8vw;
+
+    --fs-ch-title: 2.4vw;
+    --fs-ch-sub: 0.85vw;
+    --fs-ch-label: 0.8vw;
+    --fs-ch-value: 1.1vw;
+    --fs-ch-lock-h: 0.9vw;
+    --fs-ch-lock-b: 0.75vw;
+    --fs-ch-btn: 0.8vw;
+    --ch-grid-gap: 0.75vw;
+    --ch-body-px: 2.5vw;
+    --ch-heading-mb: 1.2vw;
+    --ch-lock-pad: 0.85vw 1vw;
+    --ch-lock-icon: 2.2vw;
+
+    --fs-content-body: 0.95vw;
+    --fs-lock-heading: 0.92vw;
+    --fs-lock-body: 0.78vw;
+    --fs-lock-btn: 0.8vw;
+    --lock-icon-size: 2.4vw;
+    --lock-popup-pad: 0.9vw 1.1vw;
+    --lock-popup-gap: 0.75vw;
+    --content-gap: 0.9vw;
+  }
+}
+
+/* ── Mobile (≤ 768px) ───────────────────────────────────── */
 @media (max-width: 768px) {
+  :root {
+    --page-pad: 5vw 6vw;
+    --sp-xs: 1.5vw;
+    --sp-sm: 2.8vw;
+    --sp-md: 4.5vw;
+
+    --fs-mantra: 6vw;
+    --fs-title: 5.2vw;
+    --fs-label: 3vw;
+    --fs-value: 4vw;
+    --fs-sign-tag: 2.6vw;
+    --fs-sign-name: 3.4vw;
+
+    --fs-toc-title: 5.5vw;
+    --fs-toc-sub: 2.5vw;
+    --fs-toc-badge: 3.2vw;
+    --fs-toc-name: 3.8vw;
+    --fs-toc-pagenum: 3vw;
+    --fs-toc-footer: 4.5vw;
+    --sp-toc-row: 2.2vw;
+    --toc-badge-size: 9vw;
+    --toc-row-pad: 1.8vw 3vw;
+    --toc-row-radius: 10vw;
+
+    --fs-sum-title: 3.8vw;
+    --fs-sum-cat: 3.2vw;
+    --fs-sum-count: 3.8vw;
+    --fs-sum-sub: 2.4vw;
+    --fs-sum-body: 2.2vw;
+    --fs-sum-link: 2.4vw;
+    --sum-icon-size: 8.5vw;
+    --sum-card-pad: 2.5vw 3vw 2vw;
+    --sum-card-gap: 2vw;
+    --sum-grid-gap: 2vw;
+
+    --fs-ch-title: 5.5vw;
+    --fs-ch-sub: 2.5vw;
+    --fs-ch-label: 2.6vw;
+    --fs-ch-value: 3.8vw;
+    --fs-ch-lock-h: 3vw;
+    --fs-ch-lock-b: 2.5vw;
+    --fs-ch-btn: 2.6vw;
+    --ch-grid-gap: 2.5vw;
+    --ch-body-px: 6vw;
+    --ch-heading-mb: 3vw;
+    --ch-lock-pad: 2.5vw 3vw;
+    --ch-lock-icon: 7vw;
+
+    --fs-content-body: 2.8vw;
+    --fs-lock-heading: 2.8vw;
+    --fs-lock-body: 2.4vw;
+    --fs-lock-btn: 2.5vw;
+    --lock-icon-size: 7.5vw;
+    --lock-popup-pad: 2.5vw 3vw;
+    --lock-popup-gap: 2.2vw;
+    --content-gap: 2.5vw;
+    --blur-amount: 5px;
+  }
+
   body {
     justify-content: flex-start;
     padding: 5vw 0 10vw;
     gap: 5vw;
   }
 
-  .book { perspective: none; }
+  .book {
+    perspective: none;
+  }
 
   .book .pages {
     width: 86vw;
     height: min(122vw, 82vh);
     transform-style: flat;
     box-shadow:
-      8px 0 28px rgba(0,0,0,0.55),
-      -2px 0 6px rgba(0,0,0,0.18),
-      inset -4px 0 14px rgba(0,0,0,0.14);
+      8px 0 28px rgba(0, 0, 0, 0.55),
+      -2px 0 6px rgba(0, 0, 0, 0.18),
+      inset -4px 0 14px rgba(0, 0, 0, 0.14);
   }
 
   /* Reset all page variants to hidden baseline */
@@ -1367,22 +1848,22 @@ body {
   .book .page:nth-child(even),
   .book .page.flipped:nth-child(odd),
   .book .page.flipped:nth-child(even) {
-    width:            100%    !important;
-    height:           100%    !important;
-    position:         absolute !important;
-    top:              0       !important;
-    left:             0       !important;
-    right:            auto    !important;
-    transform:        none    !important;
-    transform-origin: center  !important;
-    pointer-events:   none    !important;
-    opacity:          0       !important;
-    border-radius:    4px     !important;
+    width: 100% !important;
+    height: 100% !important;
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: auto !important;
+    transform: none !important;
+    transform-origin: center !important;
+    pointer-events: none !important;
+    opacity: 0 !important;
+    border-radius: 4px !important;
     background-image: url("./img/page-texture.webp") !important;
-    background-size:  cover   !important;
+    background-size: cover !important;
     background-position: center !important;
-    transition:       opacity 0.45s ease !important;
-    z-index:          1       !important;
+    transition: opacity 0.45s ease !important;
+    z-index: 1 !important;
   }
 
   .book .page:nth-child(1) {
@@ -1396,22 +1877,31 @@ body {
   }
 
   .book .page.mobile-active {
-    opacity:        1   !important;
+    opacity: 1 !important;
     pointer-events: all !important;
-    z-index:        5   !important;
+    z-index: 5 !important;
   }
 
   .book .page:nth-child(odd):hover,
-  .book .page.flipped:nth-child(even):hover { transform: none !important; }
+  .book .page.flipped:nth-child(even):hover {
+    transform: none !important;
+  }
 
   .book .page:nth-child(odd):hover::before,
-  .book .page.flipped:nth-child(even):hover::before { background: rgba(0,0,0,0) !important; }
+  .book .page.flipped:nth-child(even):hover::before {
+    background: rgba(0, 0, 0, 0) !important;
+  }
 
   /* Ganesh page */
-  .ganesh-page__img { width: 82%; max-height: 74%; }
+  .ganesh-page__img {
+    width: 82%;
+    max-height: 74%;
+  }
 
   /* Sign card */
-  .sign-card__visual { width: 90%; }
+  .sign-card__visual {
+    width: 90%;
+  }
 
   /* ── Navigation bar ──────────────────────────────────── */
   .mobile-nav {
@@ -1426,20 +1916,28 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    width:  max(12vw, 44px);
+    width: max(12vw, 44px);
     height: max(12vw, 44px);
     border-radius: 50%;
-    border: 1.5px solid rgba(245,237,224,0.3);
-    background: rgba(245,237,224,0.08);
+    border: 1.5px solid rgba(245, 237, 224, 0.3);
+    background: rgba(245, 237, 224, 0.08);
     color: #f5ede0;
     font-size: max(5vw, 18px);
     cursor: pointer;
     flex-shrink: 0;
-    transition: background 0.2s, transform 0.15s;
+    transition:
+      background 0.2s,
+      transform 0.15s;
     -webkit-tap-highlight-color: transparent;
   }
-  .mobile-nav__btn:active   { background: rgba(245,237,224,0.22); transform: scale(0.91); }
-  .mobile-nav__btn:disabled { opacity: 0.2; pointer-events: none; }
+  .mobile-nav__btn:active {
+    background: rgba(245, 237, 224, 0.22);
+    transform: scale(0.91);
+  }
+  .mobile-nav__btn:disabled {
+    opacity: 0.2;
+    pointer-events: none;
+  }
 
   .mobile-nav__dots {
     display: flex;
@@ -1451,19 +1949,31 @@ body {
   }
 
   .mobile-nav__dot {
-    width:  max(2vw, 7px);
+    width: max(2vw, 7px);
     height: max(2vw, 7px);
     border-radius: 50%;
-    background: rgba(245,237,224,0.28);
-    transition: background 0.25s, transform 0.25s;
+    background: rgba(245, 237, 224, 0.28);
+    transition:
+      background 0.25s,
+      transform 0.25s;
     flex-shrink: 0;
   }
 
-  .mobile-nav__dot.active { background: #f5ede0; transform: scale(1.5); }
+  .mobile-nav__dot.active {
+    background: #f5ede0;
+    transform: scale(1.5);
+  }
 
   .info-item__label {
-    font-size: 12px;
-    line-height: 1.7;
+    font-size: 10px;
+    line-height: 1.5;
+  }
+  .info-item__value {
+    font-size: 13px;
+  }
+  .sign-card__name {
+    bottom: 15.5%;
+    font-size: 10px;
   }
 
   .toc-row .toc-badge {
@@ -1471,7 +1981,8 @@ body {
     width: 25px;
     height: 25px;
   }
-  .toc-name, .toc-pagenum {
+  .toc-name,
+  .toc-pagenum {
     font-size: 12px;
   }
 
@@ -1487,7 +1998,7 @@ body {
     min-width: auto;
   }
 
-  .sum-card{
+  .sum-card {
     gap: 0.75vw;
   }
   .sum-card__name-wrap .sum-card__cat {
@@ -1500,7 +2011,7 @@ body {
     font-size: 8px;
   }
   .sum-card__body {
-    font-size: 6px;
+    font-size: 7px;
     line-height: 1.3;
     -webkit-line-clamp: 6;
     -webkit-box-orient: none;
@@ -1526,12 +2037,12 @@ body {
   /* Page 7 */
 
   .content-block__text {
-    font-size: 9px;
-    line-height: 1.2;
+    font-size: 8px;
+    line-height: 1.4;
   }
   .lock-popup {
     flex-direction: column;
-    /* top: 130%; */
+    top: 80%;
   }
   .lock-resp {
     flex-direction: column;
@@ -1553,6 +2064,87 @@ body {
     font-size: 10px;
     font-weight: 200;
   }
+  p {
+    font-size: 8px;
+    line-height: 1.5;
+  }
+  h2 {
+    font-size: 14px;
+    margin-bottom: 10px;
+  }
+  .table-sub-heading {
+    font-size: 8px;
+  }
+  .bhav_phal_table th {
+    font-size: 8px;
+    font-weight: 500;
+  }
+  .bhav_phal_table td {
+    font-size: 7px;
+  }
+}
 
-  
+/* ── Small phones (≤ 480px) ────────────────────────────── */
+@media (max-width: 425px) {
+  :root {
+    --page-pad: 6vw 6.5vw;
+    --sp-xs: 1.8vw;
+    --sp-sm: 3.2vw;
+    --sp-md: 5vw;
+
+    --fs-mantra: 6.5vw;
+    --fs-title: 5.6vw;
+    --fs-label: 3.2vw;
+    --fs-value: 4.4vw;
+    --fs-sign-tag: 2.8vw;
+    --fs-sign-name: 3.6vw;
+
+    --fs-toc-title: 6vw;
+    --fs-toc-sub: 2.8vw;
+    --fs-toc-badge: 3.6vw;
+    --fs-toc-name: 4.2vw;
+    --fs-toc-pagenum: 3.3vw;
+    --fs-toc-footer: 5vw;
+    --sp-toc-row: 2.5vw;
+    --toc-badge-size: 10vw;
+    --toc-row-pad: 2vw 3.5vw;
+
+    --fs-sum-title: 4.2vw;
+    --fs-sum-cat: 3.6vw;
+    --fs-sum-count: 4.2vw;
+    --fs-sum-sub: 2.7vw;
+    --fs-sum-body: 2.5vw;
+    --fs-sum-link: 2.7vw;
+    --sum-icon-size: 9.5vw;
+    --sum-card-pad: 3vw 3.5vw 2.5vw;
+    --sum-card-gap: 2.5vw;
+    --sum-grid-gap: 2.2vw;
+
+    --fs-ch-title: 6vw;
+    --fs-ch-sub: 2.8vw;
+    --fs-ch-label: 2.9vw;
+    --fs-ch-value: 4.2vw;
+    --fs-ch-lock-h: 3.3vw;
+    --fs-ch-lock-b: 2.8vw;
+    --fs-ch-btn: 2.9vw;
+    --ch-grid-gap: 3vw;
+    --ch-body-px: 6.5vw;
+    --ch-heading-mb: 3.5vw;
+    --ch-lock-pad: 3vw 3.5vw;
+    --ch-lock-icon: 8vw;
+
+    --fs-content-body: 3.1vw;
+    --fs-lock-heading: 3.1vw;
+    --fs-lock-body: 2.6vw;
+    --fs-lock-btn: 2.7vw;
+    --lock-icon-size: 8.5vw;
+    --lock-popup-pad: 3vw 3.5vw;
+    --lock-popup-gap: 2.5vw;
+    --content-gap: 3vw;
+  }
+  h3 {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    font-size: 10px;
+  }
 }

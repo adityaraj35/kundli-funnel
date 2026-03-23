@@ -5,12 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Book Page Flip</title>
 
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&family=Cinzel:wght@400;600;700&family=Fondamento:ital@0;1&family=Karma:wght@400;500;600;700&family=Lovers+Quarrel&display=swap"
-      rel="stylesheet"
-    />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Cinzel:wght@400..900&family=Fondamento:ital@0;1&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Karma:wght@300;400;500;600;700&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
@@ -48,38 +45,38 @@
               <div class="info-col">
                 <div class="info-item">
                   <span class="info-item__label">Sex</span>
-                  <span class="info-item__value">Male</span>
+                  <span class="info-item__value" id="gender">Male</span>
                 </div>
                 <div class="info-item">
                   <span class="info-item__label">Date of Birth</span>
-                  <span class="info-item__value">16/08/1990</span>
+                  <span class="info-item__value" id="dob">16/08/1990</span>
                 </div>
                 <div class="info-item">
                   <span class="info-item__label">Day</span>
-                  <span class="info-item__value">Friday</span>
+                  <span class="info-item__value" id="day">Friday</span>
                 </div>
                 <div class="info-item">
                   <span class="info-item__label">Time of Birth</span>
-                  <span class="info-item__value">19:13:00 Hour</span>
+                  <span class="info-item__value" id="tob">19:13:00 Hour</span>
                 </div>
               </div>
 
               <div class="info-col info-col--right">
                 <div class="info-item">
                   <span class="info-item__label">Age</span>
-                  <span class="info-item__value">30 Years</span>
+                  <span class="info-item__value" id="age">30 Years</span>
                 </div>
                 <div class="info-item">
                   <span class="info-item__label">City</span>
-                  <span class="info-item__value">Kanpur</span>
+                  <span class="info-item__value" id="city">Kanpur</span>
                 </div>
                 <div class="info-item">
                   <span class="info-item__label">State</span>
-                  <span class="info-item__value">Uttar Pradesh</span>
+                  <span class="info-item__value" id="state">Uttar Pradesh</span>
                 </div>
                 <div class="info-item">
                   <span class="info-item__label">Country</span>
-                  <span class="info-item__value">India</span>
+                  <span class="info-item__value" id="country">India</span>
                 </div>
               </div>
             </div>
@@ -116,10 +113,118 @@
             />
 
             <div class="scroll-page">
-              <div>
-                <img style="width: 100%;" src="./img/scroll-page.png" alt="" />
+              <div class="scroll-container">
+                
+                <img class="scroll-roll top" src="./img/scroll-top.png" alt="">
+                <img class="scroll-paper" src="./img/scroll-page.png" alt="">
+                <img class="scroll-roll bottom" src="./img/scroll-top.png" alt="">
+
+                <div style="position: absolute; top: 20%;">
+                  <div class="chart-container">
+                      <div style="display: flex; flex-direction: column; align-items: center;">
+                          <img style="width: 80%;" src="./svg/kundli-art.svg" alt="">
+                          <img style="width: 80%;" src="./svg/kundli.svg" alt="">
+                          <img style="width: 80%; transform: rotate(180deg);" src="./svg/kundli-art.svg" alt="">
+                      </div>
+
+                      1st House
+                      <div class="house diamond-45" data-index="0" style="top: 2vw; right: 5.9vw; transform:rotate(180deg);">
+                          <span style="transform:rotate(180deg);">
+                              <span class="planet-in-chart">-</span>
+                              <span class="numb"></span>
+                          </span>
+                      </div>
+
+                      2nd House
+                      <div class="house triangle-45" data-index="1" style="top:2.4vh; left:2.5vh;">
+                          <span class="planet-in-chart"></span>
+                          <span class="numb"></span>
+                      </div>
+
+                      3rd House
+                      <div class="house triangle-horizontal-45" data-index="2" style="top:2.2vh; left:2.3vh;">
+                          <span>
+                              <span class="planet-in-chart"></span>
+                              <span class="numb"></span>
+                          </span>
+                      </div>
+
+                      4th House
+                      <div class="house diamond-45" data-index="3" style="top:5.2vw; left:2vw;">
+                          <span>
+                              <span class="planet-in-chart"></span>
+                              <span class="numb"></span>
+                          </span>
+                      </div>
+
+                      5th House
+                      <div class="house triangle-horizontal-45" data-index="4" style="bottom:2vh; left:2.4vh;">
+                          <span class="planet-in-chart"></span><br>
+                          <span class="numb"></span>
+                      </div>
+
+                      6th House
+                      <div class="house triangle-45" data-index="5" style="bottom:2.2vh; left:2.5vh; transform:rotate(180deg);">
+                          <span style="transform:rotate(180deg);">
+                              <span class="numb"></span>
+                              <span style="margin-top: 12px;" class="planet-in-chart"></span>
+                          </span>
+                      </div>
+
+                      7th House
+                      <div class="house diamond-45" data-index="6" style="bottom:2vw; right:5.9vw;">
+                          <span>
+                              <span class="numb"></span>
+
+                              <span  class="planet-in-chart"></span>
+                          </span>
+                      </div>
+
+                      8th House
+                      <div class="house triangle-45" data-index="7" style="bottom:2.3vh; right:2.4vh; transform:rotate(180deg);">
+                          <span style="transform:rotate(180deg);"> <span>
+                                  <span class="numb"></span>
+                                  <span style="margin-top: 2px;" class="planet-in-chart"></span>
+                              </span>
+                      </div>
+
+                      9th House
+                      <div class="house triangle-horizontal-45" data-index="8"
+                          style="bottom:2.1vh; right:2.3vh; transform:rotate(180deg);">
+                          <span style="transform:rotate(180deg);">
+                              <span class="numb"></span>
+                              <span class="planet-in-chart"></span>
+                          </span>
+                      </div>
+
+                      10th House
+                      <div class="house diamond-45" data-index="9" style="top:5.2vw; right:2vw;">
+                          <span>
+                              <span class="planet-in-chart"></span>
+                              <span class="numb"></span>
+                          </span>
+                      </div>
+
+                      11th House
+                      <div class="house triangle-horizontal-45" data-index="10" style="top:2.1vh; right:2.4vh; transform:rotate(180deg);">
+                          <span style="transform:rotate(180deg);">
+                              <span class="numb"></span><br>
+                              <span class="planet-in-chart"></span>
+                          </span>
+                      </div>
+
+                      12th House
+                      <div class="house triangle-45" data-index="11" style="top:2.4vh; right:2.3vh;">
+                          <span class="planet-in-chart"></span>
+                          <span class="numb"></span>
+                      </div>
+
+                    </div>
+                </div>
+              
               </div>
             </div>
+
 
             <div class="toc-footer">
               <img class="page-footer__img" src="./svg/om-footer.svg" alt="ॐ" />
@@ -294,46 +399,46 @@
                 <div class="ch-col">
                   <div class="ch-item">
                     <span class="ch-item__label">Name</span>
-                    <span class="ch-item__value">Astro Arun Pandit</span>
+                    <span class="ch-item__value" id="name">Astro Arun Pandit</span>
                   </div>
                   <div class="ch-item">
                     <span class="ch-item__label">Date of Birth</span>
-                    <span class="ch-item__value">16/08/1990</span>
+                    <span class="ch-item__value" id="dob">16/08/1990</span>
                   </div>
                   <div class="ch-item">
                     <span class="ch-item__label">Day</span>
-                    <span class="ch-item__value">Friday</span>
+                    <span class="ch-item__value" id="day">Friday</span>
                   </div>
                   <div class="ch-item">
                     <span class="ch-item__label">Time of Birth</span>
-                    <span class="ch-item__value">19:13:00 Hour</span>
+                    <span class="ch-item__value" id="tob">19:13:00 Hour</span>
                   </div>
                   <div class="ch-item">
                     <span class="ch-item__label">Ayanamsa</span>
-                    <span class="ch-item__value">Chitra Paksha</span>
+                    <span class="ch-item__value" id="ayanamsa">Chitra Paksha</span>
                   </div>
                 </div>
 
                 <div class="ch-col ch-col--right">
                   <div class="ch-item">
                     <span class="ch-item__label">Gender</span>
-                    <span class="ch-item__value">Male</span>
+                    <span class="ch-item__value" id="gender">Male</span>
                   </div>
                   <div class="ch-item">
                     <span class="ch-item__label">City</span>
-                    <span class="ch-item__value">Bulandshahr</span>
+                    <span class="ch-item__value" id="city">Bulandshahr</span>
                   </div>
                   <div class="ch-item">
                     <span class="ch-item__label">State</span>
-                    <span class="ch-item__value">Uttar Pradesh</span>
+                    <span class="ch-item__value" id="state">Uttar Pradesh</span>
                   </div>
                   <div class="ch-item">
                     <span class="ch-item__label">Country</span>
-                    <span class="ch-item__value">India</span>
+                    <span class="ch-item__value" id="country">India</span>
                   </div>
                   <div class="ch-item">
                     <span class="ch-item__label">Birth Star</span>
-                    <span class="ch-item__value">Mrigasira - 1</span>
+                    <span class="ch-item__value" id="nakshatra">Mrigasira - 1</span>
                   </div>
                 </div>
               </div><!-- /.ch-grid -->
@@ -360,26 +465,12 @@
                 <img class="chapter-title-img" src="./svg/chapter-2-title.svg" alt="Chapter 2" />
               </div>
 
-              <div class="content-scroll">
-
                 <div class="content-block">
-                  <p class="content-block__text">
-                    Subham - Something about the Panchang formed at your birth
-                    stands out in an interesting way. When its deeper meaning is
-                    understood, it can explain certain patterns that keep
-                    appearing in your life.
-                  </p>
+                  <h3>Nakshatra</h3>
+                  <p class="content-block__text" id="nakshatra-desc"></p>
                 </div>
 
-                <div class="content-block content-block--locked">
-                  <p class="content-block__text content-block__text--blurred" aria-hidden="true">
-                    On 1994 February 20 Sunday at 17 Ghat (Dumba) 16 Vipak after
-                    sunrise in First Pada of Star Mrigasira, Shatabhisha, Dusami
-                    Thaki, Tantla Karana and Vaitasedha Nithya Yog with Moon in
-                    Vrishabha rasi and Surya Navamsa in Mithuna Lagna and Makha
-                    Shatbhisha. Day is born.
-                  </p>
-                  
+                <div class="">
                   <div class="lock-popup" role="dialog" aria-label="Content locked">
                     <div class="lock-resp">
                       <div class="lock-popup__icon-wrap">
@@ -392,32 +483,36 @@
                     </div>
                     <a class="btn-gold lock-popup__btn" href="#">Unlock Full Kundli</a>
                   </div>
-
                 </div>
 
-                <div class="content-block">
-                  <p class="content-block__text">
-                    Subham - Something about the Panchang formed at your birth
-                    stands out in an interesting way. When its deeper meaning is
-                    understood, it can explain certain patterns that keep
-                    appearing in your life.
-                  </p>
+              <div class="toc-footer">
+                <img class="page-footer__img" src="./svg/om-footer.svg" alt="ॐ" />
+              </div>
+            </div><!-- /.chapter-page__body -->
+          </div>
+        </div>
+
+        <div class="page">
+          <div class="chapter-page">
+            <div class="chapter-page__body">
+              <!-- <div class="content-scroll"> -->
+                <div style="padding-top: 30px;" class="content-block">
+                  <h3>Tithi</h3>
+                  <p class="content-block__text" id="tithi-desc"></p>
+                  <br>
+                  <!-- <h3>Day</h3>
+                  <p class="content-block__text" id="vaar-desc"></p>
+                  <br> -->
+
+                  <h3>Yog</h3>
+                  <p class="content-block__text" id="yoga-desc"></p>
                 </div>
 
-                <div class="content-block content-block--locked content-block--blur-only">
-                  <p class="content-block__text content-block__text--blurred" aria-hidden="true">
-                    On 1994 February 20 Sunday at 17 Ghat (Dumba) 16 Vipak after
-                    sunrise in First Pada of Star Mrigasira, Shatabhisha, Dusami
-                    Thaki, Tantla Karana and Vaitasedha Nithya Yog with Moon in
-                    Vrishabha rasi and Surya Navamsa in Mithuna Lagna. Subham -
-                    Something about the Panchang formed at your birth stands out
-                    in an interesting way. When its deeper meaning is understood,
-                    it can explain certain patterns that keep appearing in your
-                    life. Keep appearing in your life away.
-                  </p>
+                <div class="content-block content-block--locked">
+                  <p class="content-block__text" id="tithi-desc"></p>
                 </div>
 
-              </div><!-- /.content-scroll -->
+              <!-- </div> -->
 
               <div class="toc-footer">
                 <img class="page-footer__img" src="./svg/om-footer.svg" alt="ॐ" />
@@ -444,7 +539,8 @@
               <div class="content-scroll">
 
                 <div class="content-block">
-                  <p class="content-block__text">
+                  <h3>Moon Sign</h3>
+                  <p class="content-block__text" id="rashi-desc">
                     Subham - Something about the Panchang formed at your birth
                     stands out in an interesting way. When its deeper meaning is
                     understood, it can explain certain patterns that keep
@@ -458,34 +554,6 @@
                   </p>
                 </div>
 
-                <div class="content-block content-block--locked">
-                  <p class="content-block__text content-block__text--blurred" aria-hidden="true">
-                    Subham - Something about the Panchang formed at your birth
-                    stands out in an interesting way. When its deeper meaning is
-                    understood, it can explain certain patterns that keep
-                    appearing in your life. During Uttarayana period; with Jupiter
-                    in Tula rasi and Saturn in Kumbha rasi; on 1994 February 20
-                    Sunday at 17 Ghati. Subham - Something about the Panchang
-                    formed at your birth stands out in an interesting way. When
-                    its deeper meaning is understood, it can explain certain
-                    patterns that keep appearing in your life.
-                  </p>
-
-                  <div class="lock-popup" role="dialog" aria-label="Content locked">
-                    <div class="lock-resp">
-                      <div class="lock-popup__icon-wrap">
-                        <img class="lock-icon-img" src="./svg/lock-Icon.svg" alt="" />
-                      </div>
-                      <div class="lock-popup__text">
-                        <span class="lock-popup__heading">Some detailed predictions in this section are hidden.</span>
-                        <p class="lock-popup__body">Unlock your complete 300+ page horoscope including Dasha periods, remedies, and personalized astrological insights.</p>
-                      </div>
-                    </div>
-                    <a class="btn-gold lock-popup__btn" href="#">Unlock Full Kundli</a>
-                  </div>
-
-                </div>
-
               </div><!-- /.content-scroll -->
 
               <div class="toc-footer">
@@ -496,7 +564,196 @@
         </div>
 
         <!-- PAGE 9 — blank back cover (keeps total even) -->
-        <div class="page"></div>
+        <div class="page">
+          <img style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 90%;" src="./svg/border-design.svg" alt="">
+          <div style="display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 65px 30px 0;">
+            <div>
+              <img src="./img/sun.png" alt="">
+            </div>
+            <div style="font-size: 9px;">
+              <p id="planet-desc">-</p>
+              <p id="planet-aspect"></p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Page 10 -->
+        <div class="page">
+
+          <div style="padding: 10px 30px;">
+            
+            <h2>
+              Bhav Phal
+            </h2>                    
+                  <div style="display: flex; justify-content: center; text-align: center;">
+                      <img style="width: 30%;" src="./svg/grad-line.svg" alt="">
+                      <h3 class="table-sub-heading">
+                        Significators of each Bhav
+                      </h3>
+                      <img style="width: 30%; transform: rotate(180deg);" src="./svg/grad-line.svg" alt="">
+                  </div>
+
+            <table class="bhav_phal_table">
+                <thead>
+                    <tr>
+                        <th>House</th>
+                        <th>Traditional Meaning</th>
+                        <th>Learn it with Ease</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><u>1st House</u><br>(Lagna/Ascendant)</td>
+                        <td>Self, Personality, Appearance</td>
+                        <td><u>"The Selfie House"</u> – Your cosmic profile picture. It decides how you show up in the
+                            world!
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><u>2nd House</u><br>(Dhana Bhav)</td>
+                        <td>Wealth, Speech, Family</td>
+                        <td><u>"The Piggy Bank House"</u> – Governs your money, speech, and how much you love food!</td>
+                    </tr>
+                    <tr>
+                        <td><u>3rd House</u><br>(Sahaj/ Bhaatru Bhav)</td>
+                        <td>Communication, Siblings, Short Travel</td>
+                        <td><u>"The Social Media House"</u> – Rules your talking skills, Insta stories, and sibling
+                            drama!</td>
+                    </tr>
+                    <tr>
+                        <td><u>4th House</u><br>(Sukha Bhav)</td>
+                        <td>Home, Mother, Comforts</td>
+                        <td><u>"The Cozy Blanket House"</u> – Your home, mom's love, and the emotional security you
+                            crave!</td>
+                    </tr>
+                    <tr>
+                        <td><u>5th House</u><br>(Putra Bhav)</td>
+                        <td>Creativity, Romance, Children</td>
+                        <td><u>"The Rockstar House"</u> – Love affairs, fun, kids, and the creative genius in you!</td>
+                    </tr>
+                    <tr class="blurred">
+                        <td><u>6th House</u><br>(Ripu/ Kasht Bhav)</td>
+                        <td>Work, Enemies, Health</td>
+                        <td><u>"The Workaholic House"</u> – Your daily grind, gym life, and how you handle enemies (or
+                            annoying
+                            coworkers)!</td>
+                    </tr>
+                    <tr class="blurred">
+                        <td><u>7th House</u><br>(Yuvati / Jaya Bhav)</td>
+                        <td>Marriage, Partnerships, Public Life</td>
+                        <td><u>"The Love & Business House"</u> – Marriages, business deals, and frenemies – basically,
+                            who you
+                            stuck with!</td>
+                    </tr>
+                    <tr class="blurred">
+                        <td><u>8th House</u><br>(Randhra/ Ayu Bhav)</td>
+                        <td>Mysticism, Sudden Events, Inheritance</td>
+                        <td><u>"The Mystery House"</u> – Secrets, scandals, inheritance, and deep transformation (hello,
+                            midlife crisis)!</td>
+                    </tr>
+                    <tr class="blurred">
+                        <td><u>9th House</u><br>(Dharma Bhav)</td>
+                        <td>Wisdom, Luck, Higher Learning</td>
+                        <td><u>"The Guru House of Travel"</u> – Travel, spirituality, gurus, and all those deep,
+                            philosophical
+                            debates!</td>
+                    </tr>
+                    <tr class="blurred">
+                        <td><u>10th House</u><br>(Karma Bhav)</td>
+                        <td>Career, Fame, Status</td>
+                        <td><u>"The CEO House"</u> – Your career, public image, and how famous (or infamous) you'll be!
+                        </td>
+                    </tr>
+                    <tr class="blurred">
+                        <td><u>11th House</u><br>(Labha Bhav)</td>
+                        <td>Gains, Friends, Social Circles</td>
+                        <td><u>"The Party House"</u> – Networking, social media clout, and where your wishes come true!
+                        </td>
+                    </tr>
+                    <tr class="blurred">
+                        <td><u>12th House</u><br>(Vyaya Bhav)</td>
+                        <td>Loss, Spirituality, Isolation</td>
+                        <td><u>"The Escape Room House"</u> – Secrets, dreams, past lives, and where you vanish when life
+                            gets
+                            too much!</td>
+                    </tr>
+                </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- Page 11 -->
+        <div class="page">
+          <div style="padding: 10px 30px;">
+            <table class="gemstone-table">
+                <thead>
+                    <tr>
+                        <th>Sr. no.</th>
+                        <th>Planetary Lord</th>
+                        <th>Metals</th>
+                        <th>Gemstone</th>
+                    </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>Sun</td>
+                    <td>Gold Sometimes Copper</td>
+                    <td>Real Pearl</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Moon</td>
+                    <td>Silver</td>
+                    <td>Real Pearl</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>Mars</td>
+                    <td>Ruby</td>
+                    <td>Red Coral</td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>Mercury</td>
+                    <td><span class="blurred">xxxx</span></td>
+                    <td><span class="blurred">xxxxxxx</span></td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td>Jupiter</td>
+                    <td><span class="blurred">xxxx</td></span>
+                    <td><span class="blurred">xxxxx xxxxxxx</td></span>
+                </tr>
+                <tr>
+                    <td>6</td>
+                    <td>Venus</td>
+                    <td><span class="blurred">xxxx xxxxxx xxxxx</span></td>
+                    <td><span class="blurred">xxxx/xxxxx xxxxxxx</span></td>
+                </tr>
+                <tr>
+                    <td>7</td>
+                    <td>Saturn</td>
+                    <td><span class="blurred">xxxxxx, xxxx xxxxxxxxx</span></td>
+                    <td><span class="blurred">xxxx xxxxxxx</span></td>
+                </tr>
+                <tr>
+                    <td>8</td>
+                    <td>Rahu</td>
+                    <td><span class="blurred">xxxxxx, xxxx xxxxxxxxx</span></td>
+                    <td><span class="blurred">xxxxxxxx/xxxxx</span></td>
+                </tr>
+                <tr>
+                    <td>9</td>
+                    <td>Ketu</td>
+                    <td><span class="blurred">xxxxxx xx xxxx</span></td>
+                    <td><span class="blurred">xxx'x xxx/xxxxxxxxx</span></td>
+                </tr>
+
+                </tbody>
+            </table>
+          </div>
+        </div>
 
       </div><!-- /.pages -->
     </div><!-- /.book -->
