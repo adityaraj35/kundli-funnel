@@ -48,6 +48,8 @@ function fillData(data) {
   document.querySelectorAll("#gender").forEach(el => { el.textContent = data.GENDER; });
   document.querySelectorAll("#day").forEach(el => { el.textContent = data.DAY; });
   
+  document.querySelector('#yog-count').innerHTML = data.YOG_COUNT;
+  document.querySelector('#dosh-count').innerHTML = data.DOSH_COUNT;
 
   // 🧠 Calculate age from DOB
   const calculateAge = (dobStr) => {
@@ -85,15 +87,42 @@ function fillData(data) {
     <span class="blurred">${masked2}</span>
   `;
 
-  const { visible: visible3, masked: masked3 } = maskAfterFullStops(data.PLANET_CONTENT.Sun.placement, 3);
-  document.querySelector("#planet-desc").innerHTML = `
-    ${visible3}
-    <span class="blurred">${masked3}</span>
+  // const { visible: visible3, masked: masked3 } = maskAfterFullStops(data.PLANET_CONTENT.Sun.placement, 3);
+  // document.querySelector("#sun-desc").innerHTML = `
+  //   ${visible3}
+  //   <span class="blurred">${masked3}</span>
+  // `;
+
+  const { visible: visible7, masked: masked7 } = maskAfterFullStops(data.PLANET_CONTENT.Moon.placement, 3);
+  document.querySelector("#moon-desc").innerHTML = `
+    ${visible7}
+    <span class="blurred">${masked7}</span>
   `;
 
-  document.querySelector("#planet-aspect").innerHTML = data.PLANET_CONTENT.Sun.aspect.first;
+  const { visible: visible8, masked: masked8 } = maskAfterFullStops(data.PLANET_CONTENT.Mercury.placement, 3);
+  document.querySelector("#mercury-desc").innerHTML = `
+    ${visible8}
+    <span class="blurred">${masked8}</span>
+  `;
 
-  // document.querySelector("#planet-aspect2").innerHTML = data.PLANET_CONTENT.Sun.aspect.rest;
+  // const { visible: visible9, masked: masked9 } = maskAfterFullStops(data.PLANET_CONTENT.Sun.aspect.first, 1);
+  // document.querySelector("#sun-aspect").innerHTML = `
+  //   ${visible9}
+  //   <span class="blurred">${masked9}</span>
+  // `;
+
+  const { visible: visible10, masked: masked10 } = maskAfterFullStops(data.PLANET_CONTENT.Moon.aspect.first, 1);
+  document.querySelector("#moon-aspect").innerHTML = `
+    ${visible10}
+    <span class="blurred">${masked10}</span>
+  `;
+
+  const { visible: visible11, masked: masked11 } = maskAfterFullStops(data.PLANET_CONTENT.Mercury.aspect.first, 1);
+  document.querySelector("#mercury-aspect").innerHTML = `
+    ${visible11}
+    <span class="blurred">${masked11}</span>
+  `;
+
   
   const { visible: visible4, masked: masked4 } = maskAfterFullStops(data.NAKSHATRA_PANCHANG_DESCRIPTION, 3);
   document.querySelector("#nakshatra-desc").innerHTML = `

@@ -211,9 +211,9 @@ h2 {
 h3 {
   color: #843e1e;
   font-family: "FHTotalDisplay";
-  font-size: 24px;
+  font-size: 1.5vw;
   font-weight: 600;
-  margin-bottom: 15px;
+  margin-bottom: 0.5vw;
 }
 .table-sub-heading {
   color: #A45F27; 
@@ -1339,7 +1339,7 @@ p {
 
 .content-block__text {
   font-family: var(--font-body);
-  /* font-size: 9px; */
+  font-size: 0.8vw;
   font-weight: 400;
   color: var(--clr-brown-dark);
   line-height: 1.5;
@@ -1482,6 +1482,9 @@ p {
 
 .chart-container {
   /* position: relative; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 20vw;
   /* height: 20vw; */
   background: transparent;
@@ -1550,6 +1553,10 @@ p {
   background: rgb(240, 188, 197, 0.5);
   /* opacity: 0.5; */
   border: 2px solid #333;
+}
+
+.chart-container .diamond-45 .planet-in-chart span {
+  display: flex;
 }
 
 .chart-container .diamond-45 span {
@@ -1637,6 +1644,13 @@ p {
 .bhav_phal_table td:last-child {
   text-align: justify;
 }
+.house-page {
+  padding: 3vw 4.5vw
+}
+
+.planet-content {
+    margin-top: 3vw;
+  }
 
 .gemstone-table {
   text-align: center;
@@ -1680,6 +1694,14 @@ p {
   border-bottom: 1px solid #843e1e;
 }
 
+.planet-wrap {
+  display: flex; 
+  flex-direction: column; 
+  align-items: center; 
+  justify-content: center; 
+  padding: 65px 30px 0;
+}
+
 .blurred {
   filter: blur(2.5px);
   user-select: none;
@@ -1696,6 +1718,61 @@ p {
 /* ============================================================
    MOBILE SINGLE-PAGE MODE  (≤ 768px)
    ============================================================ */
+
+@media (min-width: 1440px) {
+  .content-block__text {
+    font-size: 0.6vw;
+  }
+  p {
+    font-size: 0.6vw;
+    line-height: 1.5;
+  }
+  .planet-content {
+    margin-top: 1.5vw;
+  }
+  .house-page {
+    padding: 3vw 2vw
+  }
+  .planet-wrap {
+    padding: 5vw 1vw 0;
+  }
+  .bhav_phal_table th {
+    font-size: 0.65vw;
+  }
+  .bhav_phal_table td {
+    font-size: 0.57vw;
+  }
+}
+
+@media (max-width: 1440px) {
+  .content-block__text {
+    font-size: 0.6vw;
+    line-height: 1.5;
+  }
+  p {
+    font-size: 0.7vw;
+    line-height: 1vw;
+  }
+  h2 {
+    font-size: 1.5vw;
+    margin-bottom: 0.5vw;
+  }
+  .house-page {
+    padding: 3vw 2.5vw
+  }
+  .table-sub-heading {
+    font-size: 0.62vw;
+  }
+  .bhav_phal_table {
+    margin-top: 0.5vw;
+  }
+  .bhav_phal_table th {
+    font-size: 0.65vw;
+  }
+  .bhav_phal_table td {
+    font-size: 0.52vw;
+  }
+}
 
 /* ── Tablet (≤ 1024px) ──────────────────────────────────── */
 @media (max-width: 1024px) {
@@ -1758,6 +1835,29 @@ p {
     --lock-popup-pad: 0.9vw 1.1vw;
     --lock-popup-gap: 0.75vw;
     --content-gap: 0.9vw;
+  }
+  p {
+    font-size: 0.8vw;
+    line-height: 1.2vw;
+  }
+  h2 {
+    font-size: 2vw;
+    margin-bottom: 1vw;
+  }
+  .house-page {
+    padding: 3vw 2.5vw
+  }
+  .table-sub-heading {
+    font-size: 0.9vw;
+  }
+  .bhav_phal_table {
+    margin-top: 1vw;
+  }
+  .bhav_phal_table th {
+    font-size: 0.7vw;
+  }
+  .bhav_phal_table td {
+    font-size: 0.7vw;
   }
 }
 
@@ -2023,22 +2123,22 @@ p {
   /* Page 6 */
 
   .ch-item {
-    margin-bottom: 10px;
+    margin-bottom: 2vw;
   }
   .ch-item .ch-item__label {
-    font-size: 9px;
-    line-height: 1.7;
+    font-size: 2vw;
+    line-height: 3.5vw;
   }
   .ch-item .ch-item__value {
-    font-size: 11px;
-    line-height: 1.2;
+    font-size: 2.6vw;
+    line-height: 3.5vw;
   }
 
   /* Page 7 */
 
   .content-block__text {
-    font-size: 8px;
-    line-height: 1.4;
+    font-size: 1.8vw;
+    line-height: 2.4vw;
   }
   .lock-popup {
     flex-direction: column;
@@ -2065,22 +2165,33 @@ p {
     font-weight: 200;
   }
   p {
-    font-size: 8px;
-    line-height: 1.5;
+    font-size: 1.8vw;
+    line-height: 2.4vw;
   }
   h2 {
     font-size: 14px;
     margin-bottom: 10px;
   }
+  h3 {
+    color: #843e1e;
+    font-family: "FHTotalDisplay";
+    font-weight: 600;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    font-size: 2.6vw;
+  }
   .table-sub-heading {
-    font-size: 8px;
+    font-size: 1.7vw;
   }
   .bhav_phal_table th {
-    font-size: 8px;
+    font-size: 1.8vw;
     font-weight: 500;
   }
   .bhav_phal_table td {
-    font-size: 7px;
+    font-size: 1.6vw;
+  }
+  .house-page {
+    padding: 3vw 4.5vw
   }
 }
 
