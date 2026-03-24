@@ -87,11 +87,11 @@ function fillData(data) {
     <span class="blurred">${masked2}</span>
   `;
 
-  // const { visible: visible3, masked: masked3 } = maskAfterFullStops(data.PLANET_CONTENT.Sun.placement, 3);
-  // document.querySelector("#sun-desc").innerHTML = `
-  //   ${visible3}
-  //   <span class="blurred">${masked3}</span>
-  // `;
+  const { visible: visible3, masked: masked3 } = maskAfterFullStops(data.PLANET_CONTENT.Sun.placement, 3);
+  document.querySelector("#sun-desc").innerHTML = `
+    ${visible3}
+    <span class="blurred">${masked3}</span>
+  `;
 
   const { visible: visible7, masked: masked7 } = maskAfterFullStops(data.PLANET_CONTENT.Moon.placement, 3);
   document.querySelector("#moon-desc").innerHTML = `
@@ -105,11 +105,11 @@ function fillData(data) {
     <span class="blurred">${masked8}</span>
   `;
 
-  // const { visible: visible9, masked: masked9 } = maskAfterFullStops(data.PLANET_CONTENT.Sun.aspect.first, 1);
-  // document.querySelector("#sun-aspect").innerHTML = `
-  //   ${visible9}
-  //   <span class="blurred">${masked9}</span>
-  // `;
+  const { visible: visible9, masked: masked9 } = maskAfterFullStops(data.PLANET_CONTENT.Sun.aspect.first, 1);
+  document.querySelector("#sun-aspect").innerHTML = `
+    ${visible9}
+    <span class="blurred">${masked9}</span>
+  `;
 
   const { visible: visible10, masked: masked10 } = maskAfterFullStops(data.PLANET_CONTENT.Moon.aspect.first, 1);
   document.querySelector("#moon-aspect").innerHTML = `
