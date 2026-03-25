@@ -73,12 +73,12 @@ function fillData(data) {
   const age = calculateAge(data.DOB);
   document.querySelectorAll('#age').forEach(el => { el.textContent = age; });
 
-  // const { visible, masked } = maskAfterFullStops(data.VAAR_DESCRIPTION, 6);
+  const { visible, masked } = maskAfterFullStops(data.VAAR_DESCRIPTION, 6);
 
-  // document.querySelector("#vaar-desc").innerHTML = `
-  //   ${visible}
-  //   <span class="blurred">${masked}</span>
-  // `;
+  document.querySelector("#vaar-desc").innerHTML = `
+    ${visible}
+    <span class="blurred">${masked}</span>
+  `;
 
   const { visible: visible2, masked: masked2 } = maskAfterFullStops(data.TITHI_DESCRIPTION, 3);
 
@@ -87,43 +87,34 @@ function fillData(data) {
     <span class="blurred">${masked2}</span>
   `;
 
+  const { visible: visible24, masked: masked24 } = maskAfterFullStops(data.KARANA_DESCRIPTION, 3);
+
+  document.querySelector("#karana-desc").innerHTML = `
+    ${visible24}
+    <span class="blurred">${masked24}</span>
+  `;
+
+  const { visible: visible25, masked: masked25 } = maskAfterFullStops(data.ASCENDENT_DESCRIPTION, 3);
+
+  document.querySelector("#lagna-desc").innerHTML = `
+    ${visible25}
+    <span class="blurred">${masked25}</span>
+  `;
+
+  const { visible: visible26, masked: masked26 } = maskAfterFullStops(data.NAKSHATRA_DESCRIPTION, 3);
+
+  document.querySelector("#pada-desc").innerHTML = `
+    ${visible26}
+    <span class="blurred">${masked26}</span>
+  `;
+  
+
   const { visible: visible3, masked: masked3 } = maskAfterFullStops(data.PLANET_CONTENT.Sun.placement, 3);
   document.querySelector("#sun-desc").innerHTML = `
     ${visible3}
     <span class="blurred">${masked3}</span>
   `;
 
-  const { visible: visible7, masked: masked7 } = maskAfterFullStops(data.PLANET_CONTENT.Moon.placement, 3);
-  document.querySelector("#moon-desc").innerHTML = `
-    ${visible7}
-    <span class="blurred">${masked7}</span>
-  `;
-
-  const { visible: visible8, masked: masked8 } = maskAfterFullStops(data.PLANET_CONTENT.Mercury.placement, 3);
-  document.querySelector("#mercury-desc").innerHTML = `
-    ${visible8}
-    <span class="blurred">${masked8}</span>
-  `;
-
-  const { visible: visible9, masked: masked9 } = maskAfterFullStops(data.PLANET_CONTENT.Sun.aspect.first, 1);
-  document.querySelector("#sun-aspect").innerHTML = `
-    ${visible9}
-    <span class="blurred">${masked9}</span>
-  `;
-
-  const { visible: visible10, masked: masked10 } = maskAfterFullStops(data.PLANET_CONTENT.Moon.aspect.first, 1);
-  document.querySelector("#moon-aspect").innerHTML = `
-    ${visible10}
-    <span class="blurred">${masked10}</span>
-  `;
-
-  const { visible: visible11, masked: masked11 } = maskAfterFullStops(data.PLANET_CONTENT.Mercury.aspect.first, 1);
-  document.querySelector("#mercury-aspect").innerHTML = `
-    ${visible11}
-    <span class="blurred">${masked11}</span>
-  `;
-
-  
   const { visible: visible4, masked: masked4 } = maskAfterFullStops(data.NAKSHATRA_PANCHANG_DESCRIPTION, 3);
   document.querySelector("#nakshatra-desc").innerHTML = `
     ${visible4}
@@ -143,6 +134,120 @@ function fillData(data) {
     ${first_name}, ${visible6}
     <span class="blurred">${masked6}</span>
   `;
+
+  const { visible: visible7, masked: masked7 } = maskAfterFullStops(data.PLANET_CONTENT.Moon.placement, 3);
+  document.querySelector("#moon-desc").innerHTML = `
+    ${visible7}
+    <span class="blurred">${masked7}</span>
+  `;
+
+  const { visible: visible8, masked: masked8 } = maskAfterFullStops(data.PLANET_CONTENT.Mercury.placement, 3);
+  document.querySelector("#mercury-desc").innerHTML = `
+    ${visible8}
+    <span class="blurred">${masked8}</span>
+  `;
+
+  const { visible: visible9, masked: masked9 } = maskAfterFullStops(data.PLANET_CONTENT.Saturn.placement, 1);
+  document.querySelector("#saturn-desc").innerHTML = `
+    ${visible9}
+    <span class="blurred">${masked9}</span>
+  `;
+
+  const { visible: visible10, masked: masked10 } = maskAfterFullStops(data.PLANET_CONTENT.Rahu.placement, 1);
+  document.querySelector("#rahu-desc").innerHTML = `
+    ${visible10}
+    <span class="blurred">${masked10}</span>
+  `;
+
+  const { visible: visible11, masked: masked11 } = maskAfterFullStops(data.PLANET_CONTENT.Ketu.placement, 1);
+  document.querySelector("#ketu-desc").innerHTML = `
+    ${visible11}
+    <span class="blurred">${masked11}</span>
+  `;
+
+  const { visible: visible12, masked: masked12 } = maskAfterFullStops(data.PLANET_CONTENT.Venus.placement, 3);
+  document.querySelector("#venus-desc").innerHTML = `
+    ${visible12}
+    <span class="blurred">${masked12}</span>
+  `;
+
+  const { visible: visible13, masked: masked13 } = maskAfterFullStops(data.PLANET_CONTENT.Jupiter.placement, 3);
+  document.querySelector("#jupiter-desc").innerHTML = `
+    ${visible13}
+    <span class="blurred">${masked13}</span>
+  `;
+
+  const { visible: visible14, masked: masked14 } = maskAfterFullStops(data.PLANET_CONTENT.Mars.placement, 3);
+  document.querySelector("#mars-desc").innerHTML = `
+    ${visible14}
+    <span class="blurred">${masked14}</span>
+  `;
+
+  const { visible: visible15, masked: masked15 } = maskAfterFullStops(data.PLANET_CONTENT.Sun.aspect.first, 1);
+  document.querySelector("#sun-aspect").innerHTML = `
+    ${visible15}
+    <span class="blurred">${masked15}</span>
+  `;
+
+  const { visible: visible16, masked: masked16 } = maskAfterFullStops(data.PLANET_CONTENT.Moon.aspect.first, 1);
+  document.querySelector("#moon-aspect").innerHTML = `
+    ${visible16}
+    <span class="blurred">${masked16}</span>
+  `;
+
+  const { visible: visible17, masked: masked17 } = maskAfterFullStops(data.PLANET_CONTENT.Mercury.aspect.first, 1);
+  document.querySelector("#mercury-aspect").innerHTML = `
+    ${visible17}
+    <span class="blurred">${masked17}</span>
+  `;
+
+  const { visible: visible18, masked: masked18 } = maskAfterFullStops(data.PLANET_CONTENT.Venus.aspect.first, 1);
+  document.querySelector("#venus-aspect").innerHTML = `
+    ${visible18}
+    <span class="blurred">${masked18}</span>
+  `;
+
+  const { visible: visible19, masked: masked19 } = maskAfterFullStops(data.PLANET_CONTENT.Jupiter.aspect.first, 1);
+  document.querySelector("#jupiter-aspect").innerHTML = `
+    ${visible19}
+    <span class="blurred">${masked19}</span>
+  `;
+
+  const { visible: visible20, masked: masked20 } = maskAfterFullStops(data.PLANET_CONTENT.Mars.aspect.first, 1);
+  document.querySelector("#mars-aspect").innerHTML = `
+    ${visible20}
+    <span class="blurred">${masked20}</span>
+  `;
+
+  const { visible: visible21, masked: masked21 } = maskAfterFullStops(data.PLANET_CONTENT.Saturn.aspect.first, 1);
+  document.querySelector("#saturn-aspect").innerHTML = `
+    ${visible21}
+    <span class="blurred">${masked21}</span>
+  `;
+
+  const { visible: visible22, masked: masked22 } = maskAfterFullStops(data.PLANET_CONTENT.Rahu.aspect.first, 1);
+  document.querySelector("#rahu-aspect").innerHTML = `
+    ${visible22}
+    <span class="blurred">${masked22}</span>
+  `;
+
+  const { visible: visible23, masked: masked23 } = maskAfterFullStops(data.PLANET_CONTENT.Ketu.aspect.first, 1);
+  document.querySelector("#ketu-aspect").innerHTML = `
+    ${visible23}
+    <span class="blurred">${masked23}</span>
+  `;
+
+  // const { visible: visible27, masked: masked27 } = maskAfterFullStops(data.MAHADASHA_CONTENT, 1);
+  // document.querySelector("#mahadasha-intro").innerHTML = `
+  //   ${visible27}
+  //   <span class="blurred">${masked27}</span>
+  // `;
+
+
+  
+
+  
+  
   
 
   

@@ -1507,7 +1507,7 @@ p {
 .chart-container .diamond {
   width: 80px;
   height: 80px;
-  /* background: #d66c6c; */
+  background: #d66c6c;
   transform: rotate(45deg);
 }
 
@@ -1539,7 +1539,7 @@ p {
   width: 7.7vw;
   height: 2.6vw;
   clip-path: polygon(0 0, 100% 0, 50% 100%);
-  /* background-color: rgb(158, 77, 98, 0.5); */
+  background-color: rgb(158, 77, 98, 0.5);
 }
 
 .chart-container .triangle-45 span {
@@ -1550,7 +1550,7 @@ p {
   width: 8vw;
   height: 6vw;
   clip-path: polygon(50% 0, 100% 50%, 50% 100%, 0 50%);
-  /* background: rgb(240, 188, 197, 0.5); */
+  background: rgb(240, 188, 197, 0.5);
   /* opacity: 0.5; */
   border: 2px solid #333;
 }
@@ -1580,7 +1580,7 @@ p {
   height: 6.1vw;
   line-height: 1.65vw;
   clip-path: polygon(0% 0%, 0% 100%, 100% 50%);
-  /* background: rgba(128, 128, 66, 0.5); */
+  background: rgba(128, 128, 66, 0.5);
   /* opacity: 0.5; */
 }
 
