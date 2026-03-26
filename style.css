@@ -699,6 +699,17 @@ p {
   border-radius: 50%;
 }
 
+.sign-title {
+  position: absolute;
+  color: var(--clr-brown-mid); 
+  font-weight: 700;
+  bottom: 10%; 
+  left: 50%; 
+  transform: translate(-50%, -50%); 
+  font-size: 1.2vw;
+  letter-spacing: 1px;
+}
+
 .sign-card__name {
   position: absolute;
   bottom: 26.5%;
@@ -1480,6 +1491,10 @@ p {
 
 /* CHART DESIGN */
 
+.chart-wrap {
+  position: absolute; 
+  top: 20%;
+}
 .chart-container {
   display: flex;
   justify-content: center;
@@ -1528,6 +1543,7 @@ p {
 }
 
 .chart-container .triangle-horizontal-45 span {
+  align-items: center;
   font-weight: 400;
   display: flex;
 }
@@ -1654,6 +1670,11 @@ p {
 
 @media (max-width: 768px) {
 
+  .sign-title {
+    bottom: 14%; 
+    transform: translate(-50%, -50%); 
+    font-size: 1.6vw;
+  }
   .chart-container {
     width: 40vw;
   }
@@ -1822,6 +1843,17 @@ p {
    ============================================================ */
 
 @media (min-width: 1440px) {
+
+  .sign-title {
+    font-size: 0.9vw;
+  }
+  .chart-wrap {
+    position: absolute; 
+    top: 10%;
+  }
+  .chart-container {
+    width: 19.5vw;
+  }
   .content-block__text {
     font-size: 0.6vw;
   }
@@ -2097,6 +2129,10 @@ p {
     background: rgba(0, 0, 0, 0) !important;
   }
 
+  .planet-wrap {
+    padding: 13vw 3.5vw 0;
+  }
+
   /* Ganesh page */
   .ganesh-page__img {
     width: 82%;
@@ -2301,7 +2337,7 @@ p {
 }
 
 /* ── Small phones (≤ 480px) ────────────────────────────── */
-@media (max-width: 425px) {
+@media (max-width: 426px) {
   :root {
     --page-pad: 6vw 6.5vw;
     --sp-xs: 1.8vw;
@@ -2362,5 +2398,8 @@ p {
     margin-top: 5px;
     margin-bottom: 5px;
     font-size: 10px;
+  }
+  .planet-wrap {
+    padding: 13vw 3.5vw 0;
   }
 }
