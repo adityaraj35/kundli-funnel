@@ -97,6 +97,7 @@
                 <span class="sign-card__name">ARIES</span>
               </div>
             </div>
+            
           </div>
         </div>
 
@@ -121,105 +122,112 @@
 
                 <div style="position: absolute; top: 20%;">
                   <div class="chart-container">
-                      <div style="display: flex; flex-direction: column; align-items: center; width: 100%;">
-                          <img style="width: 80%;" src="./svg/kundli-art.svg" alt="">
-                          <img style="width: 80%;" src="./svg/kundli.svg" alt="">
-                          <img style="width: 80%; transform: rotate(180deg);" src="./svg/kundli-art.svg" alt="">
-                      </div>
+                    <div class="chart-inner">
 
-                      <!-- 1st House -->
-                      <div class="house diamond-45" data-index="0" style="top: 2vw; right: 5.9vw; transform:rotate(180deg);">
+                      <img class="kundli-art" src="./svg/kundli-art.svg" alt="">
+
+                      <!-- kundli-board is the new single source of truth for house positioning -->
+                      <div class="kundli-board">
+                        <img src="./svg/kundli.svg" alt="">
+
+                        <!-- 1st House -->
+                        <div class="house diamond-45" data-index="0" style="top: 11.5%; right: 25%; transform:rotate(180deg);">
                           <span style="transform:rotate(180deg);">
-                              <span class="planet-in-chart">-</span>
-                              <span class="numb"></span>
+                            <span class="planet-in-chart">-</span>
+                            <span class="numb"></span>
                           </span>
-                      </div>
+                        </div>
 
-                      <!-- 2nd House -->
-                      <div class="house triangle-45" data-index="1" style="top:2.4vh; left:2.5vh;">
+                        <!-- 2nd House -->
+                        <div class="house triangle-45" data-index="1" style="top:11.5%; left: 0%;">
                           <span class="planet-in-chart"></span>
                           <span class="numb"></span>
-                      </div>
+                        </div>
 
-                      <!-- 3rd House -->
-                      <div class="house triangle-horizontal-45" data-index="2" style="top:2.2vh; left:2.3vh;">
+                        <!-- 3rd House -->
+                        <div class="house triangle-horizontal-45" data-index="2" style="top: 10.75%; left: 0%;">
                           <span>
-                              <span class="planet-in-chart"></span>
-                              <span class="numb"></span>
+                            <span class="planet-in-chart"></span>
+                            <span class="numb"></span>
                           </span>
-                      </div>
+                        </div>
 
-                      <!-- 4th House -->
-                      <div class="house diamond-45" data-index="3" style="top:5.2vw; left:2vw;">
+                        <!-- 4th House -->
+                        <div class="house diamond-45" data-index="3" style="top: 30.5%; left: 0%;">
                           <span>
-                              <span class="planet-in-chart"></span>
-                              <span class="numb"></span>
+                            <span class="planet-in-chart"></span>
+                            <span class="numb"></span>
                           </span>
-                      </div>
+                        </div>
 
-                      <!-- 5th House -->
-                      <div class="house triangle-horizontal-45" data-index="4" style="bottom:2vh; left:2.4vh;">
+                        <!-- 5th House -->
+                        <div class="house triangle-horizontal-45" data-index="4" style="bottom: 12%; left: 0.5%;">
                           <span class="planet-in-chart"></span><br>
                           <span class="numb"></span>
-                      </div>
+                        </div>
 
-                      <!-- 6th House -->
-                      <div class="house triangle-45" data-index="5" style="bottom:2.2vh; left:2.5vh; transform:rotate(180deg);">
+                        <!-- 6th House -->
+                        <div class="house triangle-45" data-index="5" style="bottom: 11.75%; left: 1.8%; transform:rotate(180deg);">
                           <span style="transform:rotate(180deg);">
-                              <span class="numb"></span>
-                              <span style="margin-top: 12px;" class="planet-in-chart"></span>
+                            <span class="numb"></span>
+                            <span style="margin-top: 12px;" class="planet-in-chart"></span>
                           </span>
-                      </div>
+                        </div>
 
-                      <!-- 7th House -->
-                      <div class="house diamond-45" data-index="6" style="bottom:2vw; right:5.9vw;">
+                        <!-- 7th House -->
+                        <div class="house diamond-45" data-index="6" style="bottom: 12.5%; right: 25%;">
                           <span>
-                              <span class="numb"></span>
-
-                              <span  class="planet-in-chart"></span>
+                            <span class="numb"></span>
+                            <span class="planet-in-chart"></span>
                           </span>
-                      </div>
+                        </div>
 
-                      <!-- 8th House -->
-                      <div class="house triangle-45" data-index="7" style="bottom:2.3vh; right:2.4vh; transform:rotate(180deg);">
-                          <span style="transform:rotate(180deg);"> <span>
-                                  <span class="numb"></span>
-                                  <span style="margin-top: 2px;" class="planet-in-chart"></span>
-                              </span>
-                      </div>
-
-                      <!-- 9th House -->
-                      <div class="house triangle-horizontal-45" data-index="8"
-                          style="bottom:2.1vh; right:2.3vh; transform:rotate(180deg);">
+                        <!-- 8th House -->
+                        <div class="house triangle-45" data-index="7" style="bottom: 12.1%; right: 0.6%; transform:rotate(180deg);">
                           <span style="transform:rotate(180deg);">
+                            <span>
                               <span class="numb"></span>
-                              <span class="planet-in-chart"></span>
+                              <span style="margin-top: 2px;" class="planet-in-chart"></span>
+                            </span>
                           </span>
-                      </div>
+                        </div>
 
-                      <!-- 10th House -->
-                      <div class="house diamond-45" data-index="9" style="top:5.2vw; right:2vw;">
+                        <!-- 9th House -->
+                        <div class="house triangle-horizontal-45" data-index="8" style="bottom: 11.5%; right: 0%; transform:rotate(180deg);">
+                          <span style="transform:rotate(180deg);">
+                            <span class="numb"></span>
+                            <span class="planet-in-chart"></span>
+                          </span>
+                        </div>
+
+                        <!-- 10th House -->
+                        <div class="house diamond-45" data-index="9" style="top: 31.5%; right: 0%;">
                           <span>
-                              <span class="planet-in-chart"></span>
-                              <span class="numb"></span>
+                            <span class="planet-in-chart"></span>
+                            <span class="numb"></span>
                           </span>
-                      </div>
+                        </div>
 
-                      <!-- 11th House -->
-                      <div class="house triangle-horizontal-45" data-index="10" style="top:2.1vh; right:2.4vh; transform:rotate(180deg);">
+                        <!-- 11th House -->
+                        <div class="house triangle-horizontal-45" data-index="10" style="top: 11.4%; right: 0.5%; transform:rotate(180deg);">
                           <span style="transform:rotate(180deg);">
-                              <span class="numb"></span><br>
-                              <span class="planet-in-chart"></span>
+                            <span class="numb"></span><br>
+                            <span class="planet-in-chart"></span>
                           </span>
-                      </div>
+                        </div>
 
-                      <!-- 12th House -->
-                      <div class="house triangle-45" data-index="11" style="top:2.4vh; right:2.3vh;">
+                        <!-- 12th House -->
+                        <div class="house triangle-45" data-index="11" style="top: 11.5%; right: 0%;">
                           <span class="planet-in-chart"></span>
                           <span class="numb"></span>
-                      </div>
+                        </div>
 
-                    </div>
+                      </div><!-- /kundli-board -->
+
+                      <img class="kundli-art" style="transform: rotate(180deg);" src="./svg/kundli-art.svg" alt="">
+
+                    </div><!-- /chart-inner -->
+                  </div><!-- /chart-container -->
                 </div>
               
               </div>
@@ -584,10 +592,20 @@
               </div>
 
               <!-- <div class="content-scroll"> -->
-
                 <div class="content-block">
-                  <h3>Vimshottari Dashas</h3>
-                  <p class="content-block__text" id="mahadasha-intro">-</p>
+                  <h3 style="text-align: center;">Vimshottari Dashas</h3>
+                  <table style="display: flex; flex-direction: column; align-items: center; justify-content: center;" class="mahadasha_table">
+                    <thead>
+                      <tr>
+                          <th>Mahadasha</th>
+                          <th>Start Date</th>
+                          <th>End Date</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                  </table>
+                  <!-- <p class="content-block__text" id="mahadasha-intro">-</p> -->
                 </div>
 
               <!-- </div> -->
@@ -596,6 +614,111 @@
                 <img class="page-footer__img" src="./svg/om-footer.svg" alt="ॐ" />
               </div>
             </div><!-- /.chapter-page__body -->
+          </div>
+        </div>
+
+        <div class="page">
+          <div class="chapter-page">
+            <div class="chapter-page__body">
+              
+              <!-- <div class="content-scroll"> -->
+                <div style="padding-top: 30px;" class="content-block">
+                  <h3 id="mahadasha-title1">- Mahadasha</h3>
+                  <p class="content-block__text" id="mahadasha-intro1">-</p>
+
+                  <h3 id="antardasha-title1">- Antardasha</h3>
+                  <p class="content-block__text" id="antardasha-intro1">-</p>
+                </div>
+              <!-- </div> -->
+
+              <div class="toc-footer">
+                <img class="page-footer__img" src="./svg/om-footer.svg" alt="ॐ" />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="page">
+          <div class="chapter-page">
+            <div class="chapter-page__body">
+            
+              <!-- <div class="content-scroll"> -->
+                <div style="padding-top: 30px;" class="content-block">
+                  <h3 id="antardasha-title2">- Antardasha</h3>
+                  <p class="content-block__text" id="antardasha-intro2">-</p>
+
+                  <h3 id="antardasha-title3">- Antardasha</h3>
+                  <p class="content-block__text" id="antardasha-intro3">-</p>
+                </div>
+              <!-- </div> -->
+
+              <div class="toc-footer">
+                <img class="page-footer__img" src="./svg/om-footer.svg" alt="ॐ" />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="page">
+          <div class="chapter-page">
+            <div class="chapter-page__body">
+              
+              <!-- <div class="content-scroll"> -->
+                <div style="padding-top: 30px;" class="content-block">
+                  <h3 id="antardasha-title4">- Antardasha</h3>
+                  <p class="content-block__text" id="antardasha-intro4">-</p>
+
+                  <h3 id="antardasha-title5">- Antardasha</h3>
+                  <p class="content-block__text" id="antardasha-intro5">-</p>
+                </div>
+              <!-- </div> -->
+
+              <div class="toc-footer">
+                <img class="page-footer__img" src="./svg/om-footer.svg" alt="ॐ" />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="page">
+          <div class="chapter-page">
+            <div class="chapter-page__body">
+              
+              <!-- <div class="content-scroll"> -->
+                <div style="padding-top: 30px;" class="content-block">
+                  <h3 id="antardasha-title6">- Antardasha</h3>
+                  <p class="content-block__text" id="antardasha-intro6">-</p>
+
+                  <h3 id="antardasha-title7">- Antardasha</h3>
+                  <p class="content-block__text" id="antardasha-intro7">-</p>
+                </div>
+              <!-- </div> -->
+
+              <div class="toc-footer">
+                <img class="page-footer__img" src="./svg/om-footer.svg" alt="ॐ" />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="page">
+          <div class="chapter-page">
+            <div class="chapter-page__body">
+              
+              <!-- <div class="content-scroll"> -->
+                <div style="padding-top: 30px;" class="content-block">
+                  <h3 id="antardasha-title8">- Antardasha</h3>
+                  <p class="content-block__text" id="antardasha-intro8">-</p>
+
+                  <h3 id="antardasha-title9">- Antardasha</h3>
+                  <p class="content-block__text" id="antardasha-intro9">-</p>
+                </div>
+              <!-- </div> -->
+
+              <div class="toc-footer">
+                <img class="page-footer__img" src="./svg/om-footer.svg" alt="ॐ" />
+              </div>
+            </div>
           </div>
         </div>
 
@@ -841,14 +964,18 @@
         </div>
 
         <!-- Page 11 -->
-
         <div class="page">
           <div class="chapter-page">
 
-            <div class="chapter-page__body">
+            <div class="house-page">
+              <img class="corner-art corner-art--top"    src="./svg/corder-art.svg" alt="" />
+              <img class="corner-art corner-art--bottom" src="./svg/corder-art.svg" alt="" />
               <div class="content-scroll">
                 <div class="content-block">
                   <div style="padding: 10px 30px;">
+                    <h2>Gemstone</h2> 
+                    <p id="gemstone-intro"></p>
+
                     <table class="gemstone-table">
                         <thead>
                             <tr>
@@ -916,6 +1043,7 @@
 
                         </tbody>
                     </table>
+                    
                   </div>
                 </div>
               </div>
@@ -927,78 +1055,24 @@
           </div>
         </div>
 
+        <div class="page">
+          <div class="chapter-page">
 
-        <!-- <div class="page">
-          <div style="padding: 10px 30px;">
-            <table class="gemstone-table">
-                <thead>
-                    <tr>
-                        <th>Sr. no.</th>
-                        <th>Planetary Lord</th>
-                        <th>Metals</th>
-                        <th>Gemstone</th>
-                    </tr>
-                </thead>
-                <tbody>
-                <tr>
-                    <td>1</td>
-                    <td>Sun</td>
-                    <td>Gold Sometimes Copper</td>
-                    <td>Real Pearl</td>
-                </tr>
-                <tr>
-                    <td>2</td>
-                    <td>Moon</td>
-                    <td>Silver</td>
-                    <td>Real Pearl</td>
-                </tr>
-                <tr>
-                    <td>3</td>
-                    <td>Mars</td>
-                    <td>Ruby</td>
-                    <td>Red Coral</td>
-                </tr>
-                <tr>
-                    <td>4</td>
-                    <td>Mercury</td>
-                    <td><span class="blurred">xxxx</span></td>
-                    <td><span class="blurred">xxxxxxx</span></td>
-                </tr>
-                <tr>
-                    <td>5</td>
-                    <td>Jupiter</td>
-                    <td><span class="blurred">xxxx</td></span>
-                    <td><span class="blurred">xxxxx xxxxxxx</td></span>
-                </tr>
-                <tr>
-                    <td>6</td>
-                    <td>Venus</td>
-                    <td><span class="blurred">xxxx xxxxxx xxxxx</span></td>
-                    <td><span class="blurred">xxxx/xxxxx xxxxxxx</span></td>
-                </tr>
-                <tr>
-                    <td>7</td>
-                    <td>Saturn</td>
-                    <td><span class="blurred">xxxxxx, xxxx xxxxxxxxx</span></td>
-                    <td><span class="blurred">xxxx xxxxxxx</span></td>
-                </tr>
-                <tr>
-                    <td>8</td>
-                    <td>Rahu</td>
-                    <td><span class="blurred">xxxxxx, xxxx xxxxxxxxx</span></td>
-                    <td><span class="blurred">xxxxxxxx/xxxxx</span></td>
-                </tr>
-                <tr>
-                    <td>9</td>
-                    <td>Ketu</td>
-                    <td><span class="blurred">xxxxxx xx xxxx</span></td>
-                    <td><span class="blurred">xxx'x xxx/xxxxxxxxx</span></td>
-                </tr>
+            <div class="chapter-page__body">
+              <div class="content-scroll">
+                <div class="content-block">
+                </div>
+              </div>
 
-                </tbody>
-            </table>
+              <div class="toc-footer">
+                <img class="page-footer__img" src="./svg/om-footer.svg" alt="ॐ" />
+              </div>
+            </div>
           </div>
-        </div> -->
+        </div>
+
+
+        
 
       </div><!-- /.pages -->
     </div><!-- /.book -->

@@ -211,7 +211,7 @@ h2 {
 h3 {
   color: #843e1e;
   font-family: "FHTotalDisplay";
-  font-size: 1.5vw;
+  font-size: 1.1vw;
   font-weight: 600;
   margin-bottom: 0.5vw;
 }
@@ -1481,14 +1481,19 @@ p {
 /* CHART DESIGN */
 
 .chart-container {
-  /* position: relative; */
   display: flex;
   justify-content: center;
   align-items: center;
   width: 20vw;
-  /* height: 20vw; */
+  /* width: clamp(240px, 20vw, 600px); /* min on mobile, 20vw on desktop, cap on 4K */
   background: transparent;
 }
+
+
+
+
+
+
 
 .house {
   display: flex;
@@ -1507,7 +1512,7 @@ p {
 .chart-container .diamond {
   width: 80px;
   height: 80px;
-  background: #d66c6c;
+  /* background: #d66c6c; */
   transform: rotate(45deg);
 }
 
@@ -1539,7 +1544,7 @@ p {
   width: 7.7vw;
   height: 2.6vw;
   clip-path: polygon(0 0, 100% 0, 50% 100%);
-  background-color: rgb(158, 77, 98, 0.5);
+  /* background-color: rgb(158, 77, 98, 0.5); */
 }
 
 .chart-container .triangle-45 span {
@@ -1550,7 +1555,7 @@ p {
   width: 8vw;
   height: 6vw;
   clip-path: polygon(50% 0, 100% 50%, 50% 100%, 0 50%);
-  background: rgb(240, 188, 197, 0.5);
+  /* background: rgb(240, 188, 197, 0.5); */
   /* opacity: 0.5; */
   border: 2px solid #333;
 }
@@ -1580,7 +1585,8 @@ p {
   height: 6.1vw;
   line-height: 1.65vw;
   clip-path: polygon(0% 0%, 0% 100%, 100% 50%);
-  background: rgba(128, 128, 66, 0.5);
+  /* background: rgba(128, 128, 66, 0.5); */
+  justify-content: left;
   /* opacity: 0.5; */
 }
 
@@ -1612,7 +1618,8 @@ p {
 }
 
 .chart-container .planet-in-chart span p {
-  font-size: 0.8vw;
+  font-size: 0.6vw;
+  padding: 0 1px;
 }
 
 .chart-container .planet-in-chart span p sub {
@@ -1620,9 +1627,75 @@ p {
   font-size: 0.4vw;
 }
 
+.chart-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 80%;            /* moved the 80% here so kundli-board inherits it cleanly */
+}
+
+.kundli-art {
+  width: 100%;
+  display: block;
+}
+
+/* ─── The one true reference container for all houses ─── */
+.kundli-board {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1 / 1;  /* assumes kundli.svg is square — adjust if yours isn't */
+}
+
+.kundli-board > img {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+@media (max-width: 768px) {
+
+  .chart-container {
+    width: 40vw;
+  }
+  .chart-container .house span {
+    font-weight: 600;
+  }
+  .chart-container .diamond-45 {
+    width: 16vw;
+    height: 12vw;
+  }
+  .chart-container .triangle-horizontal-45 {
+    width: 7vw;
+    height: 12vw;
+  }
+  .chart-container .triangle-45 {
+    width: 15vw;
+    height: 5.5vw;
+  }
+  .chart-container .numb {
+    font-size: 1.3vw;
+    align-items: center;
+  }
+  .chart-container .planet-in-chart {
+    font-size: 3.5vw;
+  }
+  .chart-container .planet-in-chart span p {
+    font-size: 1.1vw;
+    padding: 0 1.5px;
+  }
+  .chart-container .planet-in-chart span p sub {
+    font-size: 0.9vw;
+  }
+  /* .chart-container .diamond-45 span {
+    line-height: 1.5vw;
+    font-size: 1.5vw;
+  } */
+  
+}
+
 /* Table */
 
-.bhav_phal_table th {
+.bhav_phal_table th, .mahadasha_table th {
   color: #4e2f25;
   font-family: "FHTotalDisplay";
   font-size: 9px;
@@ -1630,8 +1703,17 @@ p {
   font-weight: 600;
   line-height: normal;
 }
+.mahadasha_table {
+  text-align: center;
+}
+.mahadasha_table th {
+  padding: 4px 8px;
+}
+.mahadasha_table td {
+  padding: 4px 8px;
+}
 
-.bhav_phal_table td {
+.bhav_phal_table td, .mahadasha_table td {
   color: #a45f27;
   font-family: "Be Vietnam Pro";
   font-size: 8px;
@@ -1671,8 +1753,9 @@ p {
   text-transform: uppercase;
   font-weight: 400;
   padding: 3px 8px;
-  text-align: left;
+  text-align: center;
   border-right: 1px solid #843e1e;
+
 }
 .gemstone-table thead th:last-child {
   border-right: 0;
@@ -1692,6 +1775,25 @@ p {
 
 .gemstone-table tbody tr:last-child td {
   border-bottom: 1px solid #843e1e;
+}
+
+@media(max-width: 768px){
+  .gemstone-table thead th {
+    font-size: 9px;
+  }
+  .gemstone-table tbody td {
+    font-size: 9px;
+  }
+}
+
+@media(max-width: 425px){
+  .gemstone-table thead th {
+    font-size: 6px;
+  }
+  .gemstone-table tbody td {
+    font-size: 6px;
+    padding: 2px 4px;
+  }
 }
 
 .planet-wrap {
@@ -1736,10 +1838,10 @@ p {
   .planet-wrap {
     padding: 5vw 1vw 0;
   }
-  .bhav_phal_table th {
+  .bhav_phal_table th, .mahadasha_table th {
     font-size: 0.65vw;
   }
-  .bhav_phal_table td {
+  .bhav_phal_table td, .mahadasha_table td {
     font-size: 0.57vw;
   }
   .sign-card__name {
@@ -1766,13 +1868,13 @@ p {
   .table-sub-heading {
     font-size: 0.62vw;
   }
-  .bhav_phal_table {
+  .bhav_phal_table, .mahadasha_table {
     margin-top: 0.5vw;
   }
-  .bhav_phal_table th {
+  .bhav_phal_table th, .mahadasha_table th {
     font-size: 0.65vw;
   }
-  .bhav_phal_table td {
+  .bhav_phal_table td, .mahadasha_table td {
     font-size: 0.52vw;
   }
 }
@@ -1853,13 +1955,13 @@ p {
   .table-sub-heading {
     font-size: 0.9vw;
   }
-  .bhav_phal_table {
+  .bhav_phal_table, .mahadasha_table {
     margin-top: 1vw;
   }
-  .bhav_phal_table th {
+  .bhav_phal_table th, .mahadasha_table th {
     font-size: 0.7vw;
   }
-  .bhav_phal_table td {
+  .bhav_phal_table td, .mahadasha_table td {
     font-size: 0.7vw;
   }
 }
@@ -2186,11 +2288,11 @@ p {
   .table-sub-heading {
     font-size: 1.7vw;
   }
-  .bhav_phal_table th {
+  .bhav_phal_table th, .mahadasha_table th {
     font-size: 1.8vw;
     font-weight: 500;
   }
-  .bhav_phal_table td {
+  .bhav_phal_table td, .mahadasha_table td {
     font-size: 1.6vw;
   }
   .house-page {

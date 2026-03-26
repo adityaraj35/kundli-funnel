@@ -237,14 +237,105 @@ function fillData(data) {
     <span class="blurred">${masked23}</span>
   `;
 
-  // const { visible: visible27, masked: masked27 } = maskAfterFullStops(data.MAHADASHA_CONTENT, 1);
-  // document.querySelector("#mahadasha-intro").innerHTML = `
-  //   ${visible27}
-  //   <span class="blurred">${masked27}</span>
-  // `;
+  const { visible: visible27, masked: masked27 } = maskAfterFullStops(data.FIRST_MAHADASHA_CONTENT, 3);
+  document.querySelector("#mahadasha-intro1").innerHTML = `
+    ${visible27}
+    <span class="blurred">${masked27}</span>
+  `;
 
+  document.querySelector("#mahadasha-title1").innerHTML = data.MAHADASHA_ANTARDASHA_DATA[0].planet_name + " Mahadasha";
+  document.querySelector("#antardasha-title1").innerHTML = data.MAHADASHA_ANTARDASHA_DATA[0].antardasha[0].planet_name + " Antardasha";
+  
+  const { visible: visible28, masked: masked28 } = maskAfterFullStops(data.MAHADASHA_ANTARDASHA_DATA[0].antardasha[0].content, 3);
+  document.querySelector("#antardasha-intro1").innerHTML = `
+    ${visible28}
+    <span class="blurred">${masked28}</span>
+  `;
+
+
+  document.querySelector("#antardasha-title2").innerHTML = data.MAHADASHA_ANTARDASHA_DATA[0].antardasha[1].planet_name + " Antardasha";
+  document.querySelector("#antardasha-title3").innerHTML = data.MAHADASHA_ANTARDASHA_DATA[0].antardasha[2].planet_name + " Antardasha";
+
+  const { visible: visible29, masked: masked29 } = maskAfterFullStops(data.MAHADASHA_ANTARDASHA_DATA[0].antardasha[1].content, 3);
+  document.querySelector("#antardasha-intro2").innerHTML = `
+    ${visible29}
+    <span class="blurred">${masked29}</span>
+  `;
+
+  const { visible: visible30, masked: masked30 } = maskAfterFullStops(data.MAHADASHA_ANTARDASHA_DATA[0].antardasha[2].content, 3);
+  document.querySelector("#antardasha-intro3").innerHTML = `
+    ${visible30}
+    <span class="blurred">${masked30}</span>
+  `;
+
+  document.querySelector("#antardasha-title4").innerHTML = data.MAHADASHA_ANTARDASHA_DATA[0].antardasha[3].planet_name + " Antardasha";
+  document.querySelector("#antardasha-title5").innerHTML = data.MAHADASHA_ANTARDASHA_DATA[0].antardasha[4].planet_name + " Antardasha";
+
+  const { visible: visible31, masked: masked31 } = maskAfterFullStops(data.MAHADASHA_ANTARDASHA_DATA[0].antardasha[3].content, 3);
+  document.querySelector("#antardasha-intro4").innerHTML = `
+    ${visible31}
+    <span class="blurred">${masked31}</span>
+  `;
+
+  const { visible: visible32, masked: masked32 } = maskAfterFullStops(data.MAHADASHA_ANTARDASHA_DATA[0].antardasha[4].content, 3);
+  document.querySelector("#antardasha-intro5").innerHTML = `
+    ${visible32}
+    <span class="blurred">${masked32}</span>
+  `;
+
+
+  document.querySelector("#antardasha-title6").innerHTML = data.MAHADASHA_ANTARDASHA_DATA[0].antardasha[5].planet_name + " Antardasha";
+  document.querySelector("#antardasha-title7").innerHTML = data.MAHADASHA_ANTARDASHA_DATA[0].antardasha[6].planet_name + " Antardasha";
+
+  const { visible: visible33, masked: masked33 } = maskAfterFullStops(data.MAHADASHA_ANTARDASHA_DATA[0].antardasha[5].content, 3);
+  document.querySelector("#antardasha-intro6").innerHTML = `
+    ${visible33}
+    <span class="blurred">${masked33}</span>
+  `;
+
+  const { visible: visible34, masked: masked34} = maskAfterFullStops(data.MAHADASHA_ANTARDASHA_DATA[0].antardasha[6].content, 3);
+  document.querySelector("#antardasha-intro7").innerHTML = `
+    ${visible34}
+    <span class="blurred">${masked34}</span>
+  `;
+
+
+  document.querySelector("#antardasha-title8").innerHTML = data.MAHADASHA_ANTARDASHA_DATA[0].antardasha[7].planet_name + " Antardasha";
+  document.querySelector("#antardasha-title9").innerHTML = data.MAHADASHA_ANTARDASHA_DATA[0].antardasha[8].planet_name + " Antardasha";
+
+  const { visible: visible35, masked: masked35 } = maskAfterFullStops(data.MAHADASHA_ANTARDASHA_DATA[0].antardasha[7].content, 3);
+  document.querySelector("#antardasha-intro8").innerHTML = `
+    ${visible35}
+    <span class="blurred">${masked35}</span>
+  `;
+
+  const { visible: visible36, masked: masked36} = maskAfterFullStops(data.MAHADASHA_ANTARDASHA_DATA[0].antardasha[8].content, 3);
+  document.querySelector("#antardasha-intro9").innerHTML = `
+    ${visible36}
+    <span class="blurred">${masked36}</span>
+  `;
+
+
+  const { visible: visible37, masked: masked37} = maskAfterFullStops(data.GEMS_INTRO, 3);
+  document.querySelector("#gemstone-intro").innerHTML = `
+    ${visible37}
+    <span class="blurred">${masked37}</span>
+  `;
 
   
+  const tbody = document.querySelector(".mahadasha_table tbody");
+  data.MAHADASHA_HEADER.forEach(item => {
+    const tr = document.createElement("tr");
+
+    tr.innerHTML = `
+      <td>${item.name}</td>
+      <td>${item.start}</td>
+      <td>${item.end}</td>
+    `;
+
+    tbody.appendChild(tr);
+  });
+
 
   
   
