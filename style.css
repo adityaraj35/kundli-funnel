@@ -1,5 +1,5 @@
 /* ============================================================
-   FONT FACES
+   1. FONT FACES
    ============================================================ */
 @font-face {
   font-family: "FHTotalDisplay";
@@ -94,8 +94,8 @@
 }
 
 /* ============================================================
-   DESIGN TOKENS — desktop default
-   One single :root block. Breakpoints below only redefine values.
+   2. DESIGN TOKENS — desktop default
+      One :root block; breakpoints below only redefine values.
    ============================================================ */
 :root {
   /* ── Book layout ── */
@@ -111,121 +111,89 @@
   --sp-md: 1.2vw;
 
   /* ── Palette ── */
-  --clr-page-bg: #f5ede0;
+  --clr-page-bg:    #f5ede0;
   --clr-brown-dark: #4e2f25;
-  --clr-brown-mid: #7b4a1a;
-  --clr-brown-value: #a45f27;
-  --clr-gold: #ae6426;
-  --clr-border: #c09060;
+  --clr-brown-mid:  #7b4a1a;
+  --clr-brown-value:#a45f27;
+  --clr-gold:       #ae6426;
+  --clr-border:     #c09060;
 
-  /* ── Shared font stacks ── */
-  --font-body: "Be Vietnam Pro", sans-serif;
+  /* ── Font stacks ── */
+  --font-body:    "Be Vietnam Pro", sans-serif;
   --font-heading: "Cinzel", serif;
   --font-display: "FHTotalDisplay", serif;
-  --font-script: "Fondamento", cursive, serif;
-  --font-karma: "Karma", serif;
+  --font-script:  "Fondamento", cursive, serif;
+  --font-karma:   "Karma", serif;
 
   /* ── Shared button style ── */
-  --btn-gradient: linear-gradient(
-    135deg,
-    #d27428 0%,
-    #94511b 50%,
-    #a45f27 100%
-  );
+  --btn-gradient: linear-gradient(135deg, #d27428 0%, #94511b 50%, #a45f27 100%);
   --btn-shadow:
     0 2.733px 8.2px 0 rgba(168, 107, 36, 0.25),
     0 0.683px 0 0 rgba(255, 255, 255, 0.2) inset;
   --btn-radius: 15px;
 
   /* ── Page 2: Astro info ── */
-  --fs-mantra: 2.6vw;
-  --fs-title: 1.9vw;
-  --fs-label: 0.75vw;
-  --fs-value: 0.95vw;
-  --fs-sign-tag: 0.6vw;
+  --fs-mantra:    2.6vw;
+  --fs-title:     1.9vw;
+  --fs-label:     0.75vw;
+  --fs-value:     0.95vw;
+  --fs-sign-tag:  0.6vw;
   --fs-sign-name: 0.8vw;
 
   /* ── TOC page ── */
-  --fs-toc-title: 2vw;
-  --fs-toc-sub: 0.65vw;
-  --fs-toc-badge: 0.85vw;
-  --fs-toc-name: 0.95vw;
+  --fs-toc-title:   2vw;
+  --fs-toc-sub:     0.65vw;
+  --fs-toc-badge:   0.85vw;
+  --fs-toc-name:    0.95vw;
   --fs-toc-pagenum: 0.78vw;
-  --fs-toc-footer: 1.3vw;
-  --sp-toc-row: 0.55vw;
+  --fs-toc-footer:  1.3vw;
+  --sp-toc-row:     0.55vw;
   --toc-badge-size: 2.5vw;
-  --toc-row-pad: 0.45vw 0.8vw;
+  --toc-row-pad:    0.45vw 0.8vw;
   --toc-row-radius: 5vw;
 
   /* ── Summary page ── */
   --fs-sum-title: 1.1vw;
-  --fs-sum-cat: 0.95vw;
+  --fs-sum-cat:   0.95vw;
   --fs-sum-count: 1.1vw;
-  --fs-sum-sub: 0.7vw;
-  --fs-sum-body: 0.6vw;
-  --fs-sum-link: 0.62vw;
-  --sum-icon-size: 2.4vw;
-  --sum-card-pad: 0.7vw 0.8vw 0.6vw;
-  --sum-card-gap: 0.5vw;
-  --sum-grid-gap: 0.55vw;
+  --fs-sum-sub:   0.7vw;
+  --fs-sum-body:  0.6vw;
+  --fs-sum-link:  0.62vw;
+  --sum-icon-size:  2.4vw;
+  --sum-card-pad:   0.7vw 0.8vw 0.6vw;
+  --sum-card-gap:   0.5vw;
+  --sum-grid-gap:   0.55vw;
 
   /* ── Chapter page ── */
-  --fs-ch-title: 1.9vw;
-  --fs-ch-sub: 0.65vw;
-  --fs-ch-label: 0.62vw;
-  --fs-ch-value: 0.9vw;
-  --fs-ch-lock-h: 0.72vw;
-  --fs-ch-lock-b: 0.6vw;
-  --fs-ch-btn: 0.62vw;
-  --ch-hero-h: 35%;
-  --ch-grid-gap: 0.55vw;
-  --ch-body-px: 2vw;
-  --ch-heading-mb: 0.8vw;
-  --ch-lock-pad: 0.65vw 0.8vw;
+  --fs-ch-title:    1.9vw;
+  --fs-ch-sub:      0.65vw;
+  --fs-ch-label:    0.62vw;
+  --fs-ch-value:    0.9vw;
+  --fs-ch-lock-h:   0.72vw;
+  --fs-ch-lock-b:   0.6vw;
+  --fs-ch-btn:      0.62vw;
+  --ch-hero-h:      35%;
+  --ch-grid-gap:    0.55vw;
+  --ch-body-px:     2vw;
+  --ch-heading-mb:  0.8vw;
+  --ch-lock-pad:    0.65vw 0.8vw;
   --ch-lock-radius: 12px;
-  --ch-lock-icon: 1.6vw;
+  --ch-lock-icon:   1.6vw;
 
   /* ── Blurred content + lock popup ── */
-  --fs-content-body: 0.72vw;
-  --fs-lock-heading: 0.72vw;
-  --fs-lock-body: 0.6vw;
-  --fs-lock-btn: 0.62vw;
-  --lock-icon-size: 1.8vw;
-  --lock-popup-pad: 0.7vw 0.85vw;
-  --lock-popup-gap: 0.55vw;
-  --content-gap: 0.7vw;
-  --blur-amount: 4px;
-}
-
-h2 {
-  text-align: center; 
-  color: #843E1E; 
-  font-family: 'FHTotalDisplay'; 
-  font-size: 24px; 
-  font-style: normal; 
-  font-weight: 600; 
-  line-height: normal; 
-  margin-bottom: 12px;
-}
-
-h3 {
-  color: #843e1e;
-  font-family: "FHTotalDisplay";
-  font-size: 1.1vw;
-  font-weight: 600;
-  margin-bottom: 0.5vw;
-}
-.table-sub-heading {
-  color: #A45F27; 
-  font-family: 'Inter'; 
-  font-size: 9px; 
-  font-weight: 500; 
-  line-height: normal; 
-  padding: 0 7px;
+  --fs-content-body:  0.72vw;
+  --fs-lock-heading:  0.72vw;
+  --fs-lock-body:     0.6vw;
+  --fs-lock-btn:      0.62vw;
+  --lock-icon-size:   1.8vw;
+  --lock-popup-pad:   0.7vw 0.85vw;
+  --lock-popup-gap:   0.55vw;
+  --content-gap:      0.7vw;
+  --blur-amount:      4px;
 }
 
 /* ============================================================
-   RESET & BASE
+   3. RESET & BASE
    ============================================================ */
 *,
 *::before,
@@ -239,7 +207,6 @@ html {
 
 body {
   min-height: 100%;
-  /* font-family: "Lovers Quarrel", cursive; */
   background: #2e2214;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   display: flex;
@@ -251,15 +218,43 @@ body {
   gap: 2vw;
 }
 
+h2 {
+  text-align: center;
+  color: #843e1e;
+  font-family: "FHTotalDisplay", serif;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  margin-bottom: 12px;
+}
+
+h3 {
+  color: #843e1e;
+  font-family: "FHTotalDisplay", serif;
+  font-size: 1.1vw;
+  font-weight: 600;
+  margin-bottom: 0.5vw;
+}
+
 p {
-  font-family: "Be Vietnam Pro";
+  font-family: "Be Vietnam Pro", sans-serif;
   font-size: 20px;
   line-height: 1.75;
   text-align: justify;
 }
 
+.table-sub-heading {
+  color: #a45f27;
+  font-family: "Inter", sans-serif;
+  font-size: 9px;
+  font-weight: 500;
+  line-height: normal;
+  padding: 0 7px;
+}
+
 /* ============================================================
-   BOOK SHELL
+   4. BOOK SHELL
    ============================================================ */
 .book {
   perspective: 250vw;
@@ -275,11 +270,11 @@ p {
   border-radius: 4px;
   box-shadow:
     inset -4px 0 12px rgba(0, 0, 0, 0.18),
-    inset 4px 0 12px rgba(0, 0, 0, 0.18);
+    inset  4px 0 12px rgba(0, 0, 0, 0.18);
 }
 
 /* ============================================================
-   PAGE BASE
+   5. PAGE BASE
    ============================================================ */
 .book .page {
   position: absolute;
@@ -307,17 +302,13 @@ p {
   pointer-events: none;
 }
 
-/* ── ODD pages ───────────────────────────────────────────── */
+/* ── ODD pages ── */
 .book .page:nth-child(odd) {
   right: 0;
   border-radius: 0 4px 4px 0;
   transform: rotateY(0deg);
   pointer-events: all;
-  background-image: linear-gradient(
-    to right,
-    rgba(0, 0, 0, 0.12) 0%,
-    rgba(0, 0, 0, 0) 8%
-  );
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0.12) 0%, rgba(0, 0, 0, 0) 8%);
 }
 
 .book .page:nth-child(odd):not(:nth-child(1)) {
@@ -331,11 +322,12 @@ p {
 .book .page:nth-child(odd):hover {
   transform: rotateY(-15deg);
 }
+
 .book .page:nth-child(odd):hover::before {
   background: rgba(0, 0, 0, 0.04);
 }
 
-/* ── EVEN pages ──────────────────────────────────────────── */
+/* ── EVEN pages ── */
 .book .page:nth-child(even) {
   left: 0;
   border-radius: 4px 0 0 4px;
@@ -354,7 +346,7 @@ p {
   background-color: #e8ddd0;
 }
 
-/* ── FLIPPED states ─────────────────────────────────────── */
+/* ── FLIPPED states ── */
 .book .page.grabbing {
   transition: none;
 }
@@ -363,6 +355,7 @@ p {
   pointer-events: none;
   transform: rotateY(-180deg);
 }
+
 .book .page.flipped:nth-child(odd)::before {
   background: rgba(0, 0, 0, 0);
 }
@@ -371,18 +364,21 @@ p {
   pointer-events: all;
   transform: rotateY(0deg);
 }
+
 .book .page.flipped:nth-child(even):hover {
   transform: rotateY(15deg);
 }
+
 .book .page.flipped:nth-child(even):hover::before {
   background: rgba(0, 0, 0, 0.04);
 }
+
 .book .page.flipped:nth-child(even)::before {
   background: rgba(0, 0, 0, 0);
 }
 
 /* ============================================================
-   CORNER ART
+   6. CORNER ART
    ============================================================ */
 .corner-art {
   position: absolute;
@@ -392,10 +388,12 @@ p {
   z-index: 1;
   display: block;
 }
+
 .corner-art--top {
   top: 0;
   left: 0;
 }
+
 .corner-art--bottom {
   bottom: 0;
   left: 0;
@@ -403,7 +401,7 @@ p {
 }
 
 /* ============================================================
-   PAGE INNER  (generic content wrapper)
+   7. PAGE INNER (generic content wrapper)
    ============================================================ */
 .page-inner {
   position: relative;
@@ -418,11 +416,10 @@ p {
 }
 
 /* ============================================================
-   SHARED UTILITY COMPONENTS
+   8. SHARED UTILITY COMPONENTS
    ============================================================ */
 
-/* ── Page footer (Om image + flanking lines) ─────────────── */
-/* Used on every page type — one common class, no duplication  */
+/* ── Page footer (Om image) ── */
 .page-footer {
   position: absolute;
   bottom: 4px;
@@ -443,7 +440,19 @@ p {
   opacity: 0.7;
 }
 
-/* ── Gradient-button (shared across lock banner & popup) ─── */
+/* Legacy alias — prefer .page-footer on new pages */
+.toc-footer {
+  position: absolute;
+  bottom: 4px;
+  left: 0;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+/* ── Gold gradient button ── */
 .btn-gold {
   display: inline-flex;
   align-items: center;
@@ -460,70 +469,36 @@ p {
   border: none;
   cursor: pointer;
   line-height: 1.3;
-  transition:
-    opacity 0.2s,
-    transform 0.15s;
+  transition: opacity 0.2s, transform 0.15s;
   isolation: isolate;
 }
-.btn-gold:hover {
-  opacity: 0.88;
-}
-.btn-gold:active {
-  transform: scale(0.97);
-}
 
-/* ── Inline SVG images with standard widths ──────────────── */
-/* Replace inline style="width: X%" in HTML with these classes */
-.img-w-50 {
-  width: 50%;
-  display: block;
-}
-.img-w-73 {
-  width: 73%;
-  display: block;
-}
-.img-w-80 {
-  width: 80%;
-  display: block;
-  margin-inline: auto;
-}
-.img-w-85 {
-  width: 85%;
-  display: block;
-}
-.img-w-full {
-  width: 100%;
-  display: block;
-}
+.btn-gold:hover  { opacity: 0.88; }
+.btn-gold:active { transform: scale(0.97); }
 
-/* Chapter hero images (frame + banner stacked) */
-.chapter-frame-img {
-  width: 85%;
-  display: block;
-}
-.chapter-banner-img {
-  position: absolute;
-  top: 17%;
-  width: 73%;
-}
-.chapter-title-img {
-  width: 50%;
-  display: block;
-  margin-inline: auto;
-}
-.toc-title-img {
-  width: 80%;
-  display: block;
-  margin-inline: auto;
-}
+/* ── Image width utility classes ── */
+.img-w-50   { width: 50%;  display: block; }
+.img-w-73   { width: 73%;  display: block; }
+.img-w-80   { width: 80%;  display: block; margin-inline: auto; }
+.img-w-85   { width: 85%;  display: block; }
+.img-w-full { width: 100%; display: block; }
 
-/* Lock icon inside popup circles */
-.lock-icon-img {
-  width: 60%;
+/* ── Chapter hero images ── */
+.chapter-frame-img  { width: 85%; display: block; }
+.chapter-banner-img { position: absolute; top: 17%; width: 73%; }
+.chapter-title-img  { width: 50%; display: block; margin-inline: auto; }
+.toc-title-img      { width: 80%; display: block; margin-inline: auto; }
+.lock-icon-img      { width: 60%; }
+
+/* ── Blurred / paywall text ── */
+.blurred {
+  filter: blur(0.25vw);
+  user-select: none;
+  color: #555;
 }
 
 /* ============================================================
-   PAGE 1: GANESH COVER
+   9. PAGE 1: GANESH COVER
    ============================================================ */
 .ganesh-page {
   width: 100%;
@@ -555,7 +530,7 @@ p {
 }
 
 /* ============================================================
-   PAGE 2: ASTRO INFO
+   10. PAGE 2: ASTRO INFO
    ============================================================ */
 .info-page__title {
   font-family: var(--font-heading);
@@ -585,17 +560,10 @@ p {
   padding: 10px;
 }
 
-.info-col {
-  flex: 1;
-  min-width: 0;
-}
-.info-col--right {
-  text-align: right;
-}
+.info-col { flex: 1; min-width: 0; }
+.info-col--right { text-align: right; }
 
-.info-item {
-  margin-bottom: 15px;
-}
+.info-item { margin-bottom: 15px; }
 
 .info-item__label {
   display: block;
@@ -621,9 +589,7 @@ p {
   text-overflow: ellipsis;
 }
 
-/* ============================================================
-   SIGN CARDS (Sun / Moon)
-   ============================================================ */
+/* ── Sign cards (Sun / Moon) ── */
 .signs-row {
   display: flex;
   width: 100%;
@@ -637,17 +603,12 @@ p {
   display: flex;
   flex-direction: column;
   align-items: center;
-  /* justify-content: space-evenly; */
   padding: var(--sp-xs);
   overflow: hidden;
 }
 
-.sign-card:first-child {
-  border-radius: 4px 0 0 4px;
-}
-.sign-card:last-child {
-  border-radius: 0 4px 4px 0;
-}
+.sign-card:first-child { border-radius: 4px 0 0 4px; }
+.sign-card:last-child  { border-radius: 0 4px 4px 0; }
 
 .sign-card__header {
   display: flex;
@@ -701,31 +662,34 @@ p {
 
 .sign-title {
   position: absolute;
-  color: var(--clr-brown-mid); 
-  font-weight: 700;
-  bottom: 10%; 
-  left: 50%; 
-  transform: translate(-50%, -50%); 
-  font-size: 1.2vw;
-  letter-spacing: 1px;
-}
-
-.sign-card__name {
-  position: absolute;
-  bottom: 26.5%;
-  font-family: var(--font-heading);
-  font-size: var(--fs-sign-name);
-  font-weight: 700;
   color: var(--clr-brown-mid);
+  font-weight: 700;
+  bottom: 10%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 1.2vw;
+  font-family: var(--font-heading);
   letter-spacing: 1px;
   text-align: center;
   flex-shrink: 0;
 }
 
-/* ============================================================
-   TABLE OF CONTENTS PAGE
-   ============================================================ */
+.sign-card__name {
+  position: absolute;
+  bottom: 20%;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: var(--font-heading);
+  font-size: var(--fs-sign-name);
+  color: var(--clr-brown-mid);
+  font-weight: 600;
+  white-space: nowrap;
+  text-align: center;
+}
 
+/* ============================================================
+   11. PAGE 3: KUNDLI SCROLL
+   ============================================================ */
 .scroll-page {
   height: 100%;
   width: 80%;
@@ -734,8 +698,218 @@ p {
   align-items: center;
 }
 
+.scroll-container {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+/* ── Scroll rolls ── */
+.scroll-roll {
+  position: absolute;
+  left: -8px;
+  width: 105%;
+  z-index: 2;
+}
+
+.scroll-roll.top {
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.scroll-roll.bottom {
+  top: 50%;
+  transform: translateY(-50%) scaleY(-1);
+}
+
+/* ── Scroll paper ── */
+.scroll-paper {
+  width: 100%;
+  -webkit-mask-image: linear-gradient(to top,   transparent 0%, black 50%, transparent 100%);
+  mask-image:         linear-gradient(to bottom, transparent 0%, black 50%, transparent 100%);
+  -webkit-mask-size: 100% 0%;
+  mask-size: 100% 0%;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  transition: mask-size 1s ease;
+}
+
+/* ── Animation trigger (added by JS on navigation) ── */
+.scroll-page.animate .scroll-roll.top {
+  animation: rollTop 1s ease forwards;
+}
+
+.scroll-page.animate .scroll-roll.bottom {
+  animation: rollBottom 1s ease forwards;
+}
+
+.scroll-page.animate .scroll-paper {
+  -webkit-mask-size: 100% 100%;
+  mask-size: 100% 100%;
+}
+
+@keyframes rollTop {
+  from { top: 50%;  transform: translateY(-50%); }
+  to   { top: -5px; transform: translateY(0); }
+}
+
+@keyframes rollBottom {
+  from { top: 50%;  transform: translateY(-50%) scaleY(-1); }
+  to   { bottom: -5px; top: auto; transform: scaleY(-1); }
+}
+
+/* ── Kundli chart ── */
+.chart-wrap {
+  position: absolute;
+  top: 20%;
+}
+
+.chart-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 20vw;
+  background: transparent;
+}
+
+.chart-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 80%;
+}
+
+.kundli-art {
+  width: 100%;
+  display: block;
+}
+
+.kundli-board {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+}
+
+.kundli-board > img {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+/* ── House cells ── */
+.house {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.chart-container .house {
+  position: absolute;
+  background-color: transparent;
+}
+
+.chart-container .diamond {
+  width: 80px;
+  height: 80px;
+  transform: rotate(45deg);
+}
+
+.chart-container .diamond-45 {
+  width: 8vw;
+  height: 6vw;
+  clip-path: polygon(50% 0, 100% 50%, 50% 100%, 0 50%);
+  border: 2px solid #333;
+}
+
+.chart-container .triangle-45 {
+  width: 7.7vw;
+  height: 2.6vw;
+  clip-path: polygon(0 0, 100% 0, 50% 100%);
+  display: flex;
+  flex-direction: column;
+}
+
+.chart-container .triangle-horizontal-45 {
+  width: 3.7vw;
+  height: 6.1vw;
+  line-height: 1.65vw;
+  clip-path: polygon(0% 0%, 0% 100%, 100% 50%);
+  justify-content: left;
+}
+
+.chart-container .house span {
+  text-align: center;
+  font-weight: 600;
+  text-wrap: wrap;
+}
+
+.chart-container .triangle-horizontal-45 span {
+  align-items: center;
+  font-weight: 400;
+  display: flex;
+}
+
+.chart-container .triangle-45 span {
+  line-height: 10px;
+}
+
+.chart-container .diamond-45 span {
+  line-height: 0.6vw;
+  margin: 0;
+  padding: 0;
+}
+
+.chart-container .diamond-45 #tenthHouse span,
+.chart-container .diamond-45 #fourthHouse span {
+  display: flex;
+  flex-direction: row;
+}
+
+.chart-container .triangle-horizontal-45 .planet-in-chart span {
+  display: flex;
+  flex-direction: column;
+  padding-left: 2px;
+}
+
+.chart-container .triangle-45 .planet-in-chart span {
+  display: flex;
+}
+
+.chart-container .diamond-45 .planet-in-chart span {
+  display: flex;
+}
+
+.chart-container .planet-in-chart {
+  color: #4e2f25;
+  font-size: 1.45vw;
+}
+
+.chart-container .planet-in-chart p {
+  margin-top: 0;
+  margin-bottom: 0.2vw;
+  color: #4e2f25;
+  font-weight: 400;
+}
+
+.chart-container .planet-in-chart span p {
+  font-size: 0.6vw;
+  padding: 0 1px;
+}
+
+.chart-container .planet-in-chart span p sub {
+  padding-left: 0.2vw;
+  font-size: 0.4vw;
+}
+
+.chart-container .numb {
+  color: #4e2f25;
+  font-size: 0.8vw;
+  padding-right: 1px;
+}
+
 /* ============================================================
-   TABLE OF CONTENTS PAGE
+   12. TABLE OF CONTENTS PAGE
    ============================================================ */
 .toc-page {
   width: 100%;
@@ -788,19 +962,12 @@ p {
 .toc-header__subtitle-line {
   flex: 1;
   height: 1px;
-  background: linear-gradient(
-    to var(--dir, right),
-    transparent 0%,
-    var(--clr-border) 100%
-  );
+  background: linear-gradient(to var(--dir, right), transparent 0%, var(--clr-border) 100%);
   opacity: 0.6;
 }
-.toc-header__subtitle-line:first-child {
-  --dir: right;
-}
-.toc-header__subtitle-line:last-child {
-  --dir: left;
-}
+
+.toc-header__subtitle-line:first-child { --dir: right; }
+.toc-header__subtitle-line:last-child  { --dir: left; }
 
 .toc-header__subtitle {
   font-family: var(--font-body);
@@ -840,11 +1007,14 @@ p {
   flex-shrink: 0;
   list-style: none;
 }
+.toc-row:hover {
+  background-color: #EFD8CA;
+  transition: background-color 0.2s;
+}
 
 .toc-badge {
   width: var(--toc-badge-size);
   height: var(--toc-badge-size);
-  /* min-width: var(--toc-badge-size); */
   border-radius: 50%;
   border: 1.5px solid var(--clr-gold);
   display: flex;
@@ -888,21 +1058,8 @@ p {
   white-space: nowrap;
 }
 
-/* ── Legacy toc-footer (kept for pages still using it) ───── */
-/* Prefer .page-footer for new pages */
-.toc-footer {
-  position: absolute;
-  bottom: 4px;
-  left: 0;
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-}
-
 /* ============================================================
-   KUNDLI SUMMARY PAGE
+   13. KUNDLI SUMMARY PAGE
    ============================================================ */
 .summary-page {
   width: 100%;
@@ -965,10 +1122,7 @@ p {
   flex-shrink: 0;
 }
 
-.sum-card__name-wrap {
-  flex: 1;
-  min-width: 0;
-}
+.sum-card__name-wrap { flex: 1; min-width: 0; }
 
 .sum-card__cat {
   font-family: var(--font-heading);
@@ -1003,7 +1157,7 @@ p {
 
 .sum-card__body {
   font-family: var(--font-body);
-  font-size: var(--fs-sum-body); /* was hardcoded 6px — now uses token */
+  font-size: var(--fs-sum-body);
   font-weight: 400;
   color: #7a6a58;
   line-height: 1.55;
@@ -1028,9 +1182,8 @@ p {
   padding-top: 0.45em;
   transition: color 0.2s;
 }
-.sum-card__link:hover {
-  color: var(--clr-gold);
-}
+
+.sum-card__link:hover { color: var(--clr-gold); }
 
 .summary-page__footer {
   flex-shrink: 0;
@@ -1056,7 +1209,7 @@ p {
 }
 
 /* ============================================================
-   CHAPTER PAGE (Chapter 1, 2, 3 …)
+   14. CHAPTER PAGE (Chapter 1, 2, 3 …)
    ============================================================ */
 .chapter-page {
   width: 100%;
@@ -1073,7 +1226,7 @@ p {
   width: 100%;
   height: var(--ch-hero-h);
   flex-shrink: 0;
-  margin-top: var(--sp-sm); /* was hardcoded 20px */
+  margin-top: var(--sp-sm);
   overflow: hidden;
   position: relative;
 }
@@ -1084,18 +1237,18 @@ p {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 0 var(--ch-body-px); /* was hardcoded 35px */
+  padding: 0 var(--ch-body-px);
   overflow: hidden;
 }
 
-/* ── Chapter heading ─────────────────────────────────────── */
+/* ── Chapter heading ── */
 .chapter-heading {
   width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   flex-shrink: 0;
-  margin-bottom: var(--ch-heading-mb); /* was hardcoded 20px */
+  margin-bottom: var(--ch-heading-mb);
 }
 
 .chapter-heading__ornament {
@@ -1149,7 +1302,7 @@ p {
   letter-spacing: 0.25em;
 }
 
-/* ── Two-column data grid (Chapter 1 details) ────────────── */
+/* ── Two-column data grid ── */
 .ch-grid {
   display: flex;
   width: 100%;
@@ -1160,17 +1313,10 @@ p {
   gap: var(--sp-sm);
 }
 
-.ch-col {
-  flex: 1;
-  min-width: 0;
-}
-.ch-col--right {
-  text-align: right;
-}
+.ch-col { flex: 1; min-width: 0; }
+.ch-col--right { text-align: right; }
 
-.ch-item {
-  margin-bottom: var(--ch-grid-gap);
-} /* was hardcoded 10px */
+.ch-item { margin-bottom: var(--ch-grid-gap); }
 
 .ch-item__label {
   display: block;
@@ -1202,7 +1348,7 @@ p {
   margin: var(--ch-grid-gap) 0;
 }
 
-/* ── Lock banner (Chapter 1 upsell) ─────────────────────── */
+/* ── Lock banner ── */
 .ch-lock-banner {
   width: 100%;
   display: flex;
@@ -1211,20 +1357,16 @@ p {
   padding: var(--ch-lock-pad);
   border: 3px solid rgba(174, 100, 38, 0.35);
   border-radius: var(--ch-lock-radius);
-  background: radial-gradient(
-    71.32% 261% at 30% 50%,
-    rgba(246, 210, 122, 0.6) 0%,
-    rgba(0, 0, 0, 0) 60%
-  );
+  background: radial-gradient(71.32% 261% at 30% 50%, rgba(246, 210, 122, 0.6) 0%, rgba(0, 0, 0, 0) 60%);
   flex-shrink: 0;
 }
 
-/* Icon circle — reuses btn-gradient via variable */
 .lock-resp {
   display: flex;
   gap: 10px;
   align-items: center;
 }
+
 .ch-lock-banner__icon-wrap,
 .lock-popup__icon-wrap {
   border-radius: 50%;
@@ -1252,7 +1394,6 @@ p {
   min-width: 0;
 }
 
-/* ── Shared heading/body inside both banners ─────────────── */
 .ch-lock-banner__heading,
 .lock-popup__heading {
   display: block;
@@ -1263,12 +1404,8 @@ p {
   margin-bottom: 0.2em;
 }
 
-.ch-lock-banner__heading {
-  font-size: var(--fs-ch-lock-h);
-}
-.lock-popup__heading {
-  font-size: 9px;
-}
+.ch-lock-banner__heading { font-size: var(--fs-ch-lock-h); }
+.lock-popup__heading     { font-size: 9px; }
 
 .ch-lock-banner__body,
 .lock-popup__body {
@@ -1283,22 +1420,13 @@ p {
   overflow: hidden;
 }
 
-.ch-lock-banner__body {
-  font-size: var(--fs-ch-lock-b);
-}
-.lock-popup__body {
-  font-size: 8px;
-}
+.ch-lock-banner__body { font-size: var(--fs-ch-lock-b); }
+.lock-popup__body     { font-size: 8px; }
 
-/* Buttons inherit .btn-gold but need size var per context */
-.ch-lock-banner__btn {
-  font-size: var(--fs-ch-btn);
-}
-.lock-popup__btn {
-  font-size: var(--fs-lock-btn);
-}
+.ch-lock-banner__btn { font-size: var(--fs-ch-btn); }
+.lock-popup__btn     { font-size: var(--fs-lock-btn); }
 
-/* ── Chapter footer ──────────────────────────────────────── */
+/* ── Chapter footer ── */
 .chapter-page__footer {
   flex-shrink: 0;
   display: flex;
@@ -1324,7 +1452,7 @@ p {
 }
 
 /* ============================================================
-   BLURRED CONTENT + LOCK POPUP
+   15. BLURRED CONTENT + LOCK POPUP
    ============================================================ */
 .content-scroll {
   width: 100%;
@@ -1338,9 +1466,8 @@ p {
   scrollbar-width: none;
   -ms-overflow-style: none;
 }
-.content-scroll::-webkit-scrollbar {
-  display: none;
-}
+
+.content-scroll::-webkit-scrollbar { display: none; }
 
 .content-block {
   position: relative;
@@ -1370,7 +1497,6 @@ p {
   opacity: 0.75;
 }
 
-/* ── Lock popup ──────────────────────────────────────────── */
 .lock-popup {
   position: absolute;
   top: 50%;
@@ -1379,7 +1505,6 @@ p {
   width: 90%;
   display: flex;
   flex-direction: column;
-  /* align-items: center; */
   gap: var(--lock-popup-gap);
   padding: var(--lock-popup-pad);
   border: 3px solid rgba(174, 100, 38, 0.35);
@@ -1392,383 +1517,75 @@ p {
 .lock-popup__icon-wrap {
   width: var(--lock-icon-size);
   height: var(--lock-icon-size);
-  /* min-width: var(--lock-icon-size); */
   font-size: calc(var(--lock-icon-size) * 0.46);
   color: #fff9f0;
 }
 
-.scroll-container {
-  position: relative;
-  width: 100%;
-  display: flex;
-  justify-content: center;
+/* ============================================================
+   16. HOUSE / PLANET PAGE LAYOUT
+   ============================================================ */
+.house-page {
+  padding: 3vw 4.5vw;
 }
 
-/* Rolls */
-.scroll-roll {
-  position: absolute;
-  left: -8px;
-  width: 105%;
-  z-index: 2;
-  transform: translateY(0);
-}
-
-/* Initial position = CENTER */
-.scroll-roll.top {
-  top: 50%;
-  transform: translateY(-50%);
-}
-
-.scroll-roll.bottom {
-  top: 50%;
-  transform: translateY(-50%) scaleY(-1);
-}
-
-/* Paper */
-.scroll-paper {
-  width: 100%;
-
-  /* Hide top & bottom initially */
-  -webkit-mask-image: linear-gradient(
-    to top,
-    transparent 0%,
-    black 50%,
-    transparent 100%
-  );
-  mask-image: linear-gradient(
-    to bottom,
-    transparent 0%,
-    black 50%,
-    transparent 100%
-  );
-
-  -webkit-mask-size: 100% 0%;
-  mask-size: 100% 0%;
-
-  -webkit-mask-repeat: no-repeat;
-  mask-repeat: no-repeat;
-
-  transition: mask-size 1s ease;
-}
-
-/* 🎬 ACTIVE STATE (animation trigger) */
-.scroll-page.animate .scroll-roll.top {
-  animation: rollTop 1s ease forwards;
-}
-
-.scroll-page.animate .scroll-roll.bottom {
-  animation: rollBottom 1s ease forwards;
-}
-
-.scroll-page.animate .scroll-paper {
-  -webkit-mask-size: 100% 100%;
-  mask-size: 100% 100%;
-}
-
-/* Keyframes */
-@keyframes rollTop {
-  from {
-    top: 50%;
-    transform: translateY(-50%);
-  }
-  to {
-    top: -5px;
-    transform: translateY(0);
-  }
-}
-
-@keyframes rollBottom {
-  from {
-    top: 50%;
-    transform: translateY(-50%) scaleY(-1);
-  }
-  to {
-    bottom: -5px;
-    top: auto;
-    transform: scaleY(-1);
-  }
-}
-
-/* CHART DESIGN */
-
-.chart-wrap {
-  position: absolute; 
-  top: 20%;
-}
-.chart-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 20vw;
-  /* width: clamp(240px, 20vw, 600px); /* min on mobile, 20vw on desktop, cap on 4K */
-  background: transparent;
-}
-
-
-
-
-
-
-
-.house {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.chart-container .house {
-  position: absolute;
-  /* display: flex;
-        justify-content: center;
-        align-items: center; */
-  background-color: transparent;
-}
-
-.chart-container .diamond {
-  width: 80px;
-  height: 80px;
-  /* background: #d66c6c; */
-  transform: rotate(45deg);
-}
-
-.chart-container .planet-in-chart p {
-  margin-top: 0;
-  margin-bottom: 0.2vw;
-}
-
-.chart-container .house span {
-  text-align: center;
-  font-weight: 600;
-  text-wrap: wrap;
-}
-
-.chart-container .triangle-horizontal-45 span {
-  align-items: center;
-  font-weight: 400;
-  display: flex;
-}
-
-.chart-container .triangle {
-  border-left: 40px solid transparent;
-  border-right: 40px solid transparent;
-  border-bottom: 80px solid #fff;
-  /* border: 2px solid #333;  */
-  box-sizing: content-box;
-}
-
-.chart-container .triangle-45 {
-  width: 7.7vw;
-  height: 2.6vw;
-  clip-path: polygon(0 0, 100% 0, 50% 100%);
-  /* background-color: rgb(158, 77, 98, 0.5); */
-}
-
-.chart-container .triangle-45 span {
-  line-height: 10px;
-}
-
-.chart-container .diamond-45 {
-  width: 8vw;
-  height: 6vw;
-  clip-path: polygon(50% 0, 100% 50%, 50% 100%, 0 50%);
-  /* background: rgb(240, 188, 197, 0.5); */
-  /* opacity: 0.5; */
-  border: 2px solid #333;
-}
-
-.chart-container .diamond-45 .planet-in-chart span {
-  display: flex;
-}
-
-.chart-container .diamond-45 span {
-  line-height: 0.6vw;
-  margin: 0;
-  padding: 0;
-}
-
-.chart-container .diamond-45 #tenthHouse span {
-  display: flex;
-  flex-direction: row;
-}
-
-.chart-container .diamond-45 #fourthHouse span {
-  display: flex;
-  flex-direction: row;
-}
-
-.chart-container .triangle-horizontal-45 {
-  width: 3.7vw;
-  height: 6.1vw;
-  line-height: 1.65vw;
-  clip-path: polygon(0% 0%, 0% 100%, 100% 50%);
-  /* background: rgba(128, 128, 66, 0.5); */
-  justify-content: left;
-  /* opacity: 0.5; */
-}
-
-.chart-container .triangle-horizontal-45 .planet-in-chart span {
-  display: flex;
-  flex-direction: column;
-  padding-left: 2px;
-}
-
-.chart-container .triangle-45 .planet-in-chart span {
-  display: flex;
-}
-
-.chart-container .numb {
-  color: #4e2f25;
-  font-size: 0.8vw;
-  padding-right: 1px;
-}
-
-.chart-container .planet-in-chart {
-  color: #4e2f25;
-  font-size: 1.45vw;
-}
-
-.chart-container .planet-in-chart p {
-  color: #4e2f25;
-  font-weight: 400;
-  /* background-color: green; */
-}
-
-.chart-container .planet-in-chart span p {
-  font-size: 0.6vw;
-  padding: 0 1px;
-}
-
-.chart-container .planet-in-chart span p sub {
-  padding-left: 0.2vw;
-  font-size: 0.4vw;
-}
-
-.chart-inner {
+.planet-wrap {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 80%;            /* moved the 80% here so kundli-board inherits it cleanly */
+  justify-content: center;
+  padding: 65px 30px 0;
 }
 
-.kundli-art {
-  width: 100%;
-  display: block;
+.planet-content {
+  margin-top: 3vw;
 }
 
-/* ─── The one true reference container for all houses ─── */
-.kundli-board {
-  position: relative;
-  width: 100%;
-  aspect-ratio: 1 / 1;  /* assumes kundli.svg is square — adjust if yours isn't */
-}
-
-.kundli-board > img {
-  width: 100%;
-  height: 100%;
-  display: block;
-}
-
-@media (max-width: 768px) {
-
-  .sign-title {
-    bottom: 14%; 
-    transform: translate(-50%, -50%); 
-    font-size: 1.6vw;
-  }
-  .chart-container {
-    width: 40vw;
-  }
-  .chart-container .house span {
-    font-weight: 600;
-  }
-  .chart-container .diamond-45 {
-    width: 16vw;
-    height: 12vw;
-  }
-  .chart-container .triangle-horizontal-45 {
-    width: 7vw;
-    height: 12vw;
-  }
-  .chart-container .triangle-45 {
-    width: 15vw;
-    height: 5.5vw;
-  }
-  .chart-container .numb {
-    font-size: 1.3vw;
-    align-items: center;
-  }
-  .chart-container .planet-in-chart {
-    font-size: 3.5vw;
-  }
-  .chart-container .planet-in-chart span p {
-    font-size: 1.1vw;
-    padding: 0 1.5px;
-  }
-  .chart-container .planet-in-chart span p sub {
-    font-size: 0.9vw;
-  }
-  /* .chart-container .diamond-45 span {
-    line-height: 1.5vw;
-    font-size: 1.5vw;
-  } */
-  
-}
-
-/* Table */
-
-.bhav_phal_table th, .mahadasha_table th {
+/* ============================================================
+   17. TABLE STYLES
+   ============================================================ */
+.bhav_phal_table th,
+.mahadasha_table th {
   color: #4e2f25;
-  font-family: "FHTotalDisplay";
+  font-family: "FHTotalDisplay", serif;
   font-size: 9px;
   text-align: left;
   font-weight: 600;
   line-height: normal;
 }
+
 .mahadasha_table {
   text-align: center;
 }
-.mahadasha_table th {
-  padding: 4px 8px;
-}
-.mahadasha_table td {
-  padding: 4px 8px;
-}
 
-.bhav_phal_table td, .mahadasha_table td {
+.mahadasha_table th { padding: 4px 8px; }
+.mahadasha_table td { padding: 4px 8px; }
+
+.bhav_phal_table td,
+.mahadasha_table td {
   color: #a45f27;
-  font-family: "Be Vietnam Pro";
+  font-family: "Be Vietnam Pro", sans-serif;
   font-size: 8px;
-  font-style: normal;
   font-weight: 400;
   line-height: normal;
-  /* max-width: 180px; */
-  /* text-align: justify; */
 }
+
 .bhav_phal_table td:last-child {
   text-align: justify;
 }
-.house-page {
-  padding: 3vw 4.5vw
-}
-
-.planet-content {
-    margin-top: 3vw;
-  }
 
 .gemstone-table {
   text-align: center;
-  font-family: "Inter";
+  font-family: "Inter", sans-serif;
   border: 1px solid #843e1e;
   width: 100%;
   border-collapse: separate;
   border-spacing: 0;
-  font: 14px;
   color: #242424;
 }
 
 .gemstone-table thead th {
   background: #a45f27;
-  font-family: "Be Vietnam Pro";
+  font-family: "Be Vietnam Pro", sans-serif;
   font-size: 8px;
   color: #fff;
   text-transform: uppercase;
@@ -1776,79 +1593,44 @@ p {
   padding: 3px 8px;
   text-align: center;
   border-right: 1px solid #843e1e;
-
 }
+
 .gemstone-table thead th:last-child {
   border-right: 0;
 }
 
 .gemstone-table tbody td {
-  font-family: "Inter";
+  font-family: "Inter", sans-serif;
   font-size: 8px;
   padding: 3px 4px;
-  /* background:#fff; */
   border-top: 1px solid #843e1e;
   border-right: 1px solid #843e1e;
 }
-.gemstone-table tbody tr td:last-child {
-  border-right: 0;
-}
 
-.gemstone-table tbody tr:last-child td {
-  border-bottom: 1px solid #843e1e;
-}
-
-@media(max-width: 768px){
-  .gemstone-table thead th {
-    font-size: 9px;
-  }
-  .gemstone-table tbody td {
-    font-size: 9px;
-  }
-}
-
-@media(max-width: 425px){
-  .gemstone-table thead th {
-    font-size: 6px;
-  }
-  .gemstone-table tbody td {
-    font-size: 6px;
-    padding: 2px 4px;
-  }
-}
-
-.planet-wrap {
-  display: flex; 
-  flex-direction: column; 
-  align-items: center; 
-  justify-content: center; 
-  padding: 65px 30px 0;
-}
-
-.blurred {
-  filter: blur(2.5px);
-  user-select: none;
-  color: #555;
-}
+.gemstone-table tbody tr td:last-child { border-right: 0; }
+.gemstone-table tbody tr:last-child td  { border-bottom: 1px solid #843e1e; }
 
 /* ============================================================
-   MOBILE NAV — hidden on desktop/tablet
+   18. MOBILE NAV — hidden on desktop/tablet
    ============================================================ */
 .mobile-nav {
   display: none;
 }
 
 /* ============================================================
-   MOBILE SINGLE-PAGE MODE  (≤ 768px)
+   19. RESPONSIVE MEDIA QUERIES
+       Order: largest → smallest breakpoint
    ============================================================ */
 
+/* ── Large screens (≥ 1440px) ── */
 @media (min-width: 1440px) {
-
   .sign-title {
     font-size: 0.9vw;
   }
+  .sign-card__name {
+    bottom: 30.5%;
+  }
   .chart-wrap {
-    position: absolute; 
     top: 10%;
   }
   .chart-container {
@@ -1861,26 +1643,20 @@ p {
     font-size: 0.6vw;
     line-height: 1.5;
   }
-  .planet-content {
-    margin-top: 1.5vw;
-  }
   .house-page {
-    padding: 3vw 2vw
+    padding: 3vw 2vw;
   }
   .planet-wrap {
     padding: 5vw 1vw 0;
   }
-  .bhav_phal_table th, .mahadasha_table th {
-    font-size: 0.65vw;
+  .planet-content {
+    margin-top: 1.5vw;
   }
-  .bhav_phal_table td, .mahadasha_table td {
-    font-size: 0.57vw;
-  }
-  .sign-card__name {
-    bottom: 30.5%;
-  }
+  .bhav_phal_table th, .mahadasha_table th { font-size: 0.65vw; }
+  .bhav_phal_table td, .mahadasha_table td { font-size: 0.57vw; }
 }
 
+/* ── Wide desktop (≤ 1440px) ── */
 @media (max-width: 1440px) {
   .content-block__text {
     font-size: 0.6vw;
@@ -1895,23 +1671,16 @@ p {
     margin-bottom: 0.5vw;
   }
   .house-page {
-    padding: 3vw 2.5vw
+    padding: 3vw 2.5vw;
   }
-  .table-sub-heading {
-    font-size: 0.62vw;
-  }
-  .bhav_phal_table, .mahadasha_table {
-    margin-top: 0.5vw;
-  }
-  .bhav_phal_table th, .mahadasha_table th {
-    font-size: 0.65vw;
-  }
-  .bhav_phal_table td, .mahadasha_table td {
-    font-size: 0.52vw;
-  }
+  .table-sub-heading { font-size: 0.62vw; }
+  .bhav_phal_table,
+  .mahadasha_table   { margin-top: 0.5vw; }
+  .bhav_phal_table th, .mahadasha_table th { font-size: 0.65vw; }
+  .bhav_phal_table td, .mahadasha_table td { font-size: 0.52vw; }
 }
 
-/* ── Tablet (≤ 1024px) ──────────────────────────────────── */
+/* ── Tablet (≤ 1024px) ── */
 @media (max-width: 1024px) {
   :root {
     --book-w: 78vw;
@@ -1923,82 +1692,69 @@ p {
     --sp-sm: 1vw;
     --sp-md: 1.6vw;
 
-    --fs-mantra: 3.2vw;
-    --fs-title: 2.5vw;
-    --fs-label: 1vw;
-    --fs-value: 1.25vw;
-    --fs-sign-tag: 0.8vw;
+    --fs-mantra:    3.2vw;
+    --fs-title:     2.5vw;
+    --fs-label:     1vw;
+    --fs-value:     1.25vw;
+    --fs-sign-tag:  0.8vw;
     --fs-sign-name: 1.05vw;
 
-    --fs-toc-title: 2.5vw;
-    --fs-toc-sub: 0.85vw;
-    --fs-toc-badge: 1.1vw;
-    --fs-toc-name: 1.2vw;
+    --fs-toc-title:   2.5vw;
+    --fs-toc-sub:     0.85vw;
+    --fs-toc-badge:   1.1vw;
+    --fs-toc-name:    1.2vw;
     --fs-toc-pagenum: 1vw;
-    --fs-toc-footer: 1.6vw;
-    --sp-toc-row: 0.7vw;
+    --fs-toc-footer:  1.6vw;
+    --sp-toc-row:     0.7vw;
     --toc-badge-size: 3.2vw;
-    --toc-row-pad: 0.6vw 1vw;
+    --toc-row-pad:    0.6vw 1vw;
 
     --fs-sum-title: 1.4vw;
-    --fs-sum-cat: 1.2vw;
+    --fs-sum-cat:   1.2vw;
     --fs-sum-count: 1.35vw;
-    --fs-sum-sub: 0.9vw;
-    --fs-sum-body: 0.78vw;
-    --fs-sum-link: 0.8vw;
-    --sum-icon-size: 3vw;
-    --sum-card-pad: 1vw 1.1vw 0.8vw;
-    --sum-card-gap: 0.65vw;
-    --sum-grid-gap: 0.8vw;
+    --fs-sum-sub:   0.9vw;
+    --fs-sum-body:  0.78vw;
+    --fs-sum-link:  0.8vw;
+    --sum-icon-size:  3vw;
+    --sum-card-pad:   1vw 1.1vw 0.8vw;
+    --sum-card-gap:   0.65vw;
+    --sum-grid-gap:   0.8vw;
 
-    --fs-ch-title: 2.4vw;
-    --fs-ch-sub: 0.85vw;
-    --fs-ch-label: 0.8vw;
-    --fs-ch-value: 1.1vw;
-    --fs-ch-lock-h: 0.9vw;
-    --fs-ch-lock-b: 0.75vw;
-    --fs-ch-btn: 0.8vw;
-    --ch-grid-gap: 0.75vw;
-    --ch-body-px: 2.5vw;
-    --ch-heading-mb: 1.2vw;
-    --ch-lock-pad: 0.85vw 1vw;
-    --ch-lock-icon: 2.2vw;
+    --fs-ch-title:    2.4vw;
+    --fs-ch-sub:      0.85vw;
+    --fs-ch-label:    0.8vw;
+    --fs-ch-value:    1.1vw;
+    --fs-ch-lock-h:   0.9vw;
+    --fs-ch-lock-b:   0.75vw;
+    --fs-ch-btn:      0.8vw;
+    --ch-grid-gap:    0.75vw;
+    --ch-body-px:     2.5vw;
+    --ch-heading-mb:  1.2vw;
+    --ch-lock-pad:    0.85vw 1vw;
+    --ch-lock-icon:   2.2vw;
 
     --fs-content-body: 0.95vw;
     --fs-lock-heading: 0.92vw;
-    --fs-lock-body: 0.78vw;
-    --fs-lock-btn: 0.8vw;
-    --lock-icon-size: 2.4vw;
-    --lock-popup-pad: 0.9vw 1.1vw;
-    --lock-popup-gap: 0.75vw;
-    --content-gap: 0.9vw;
+    --fs-lock-body:    0.78vw;
+    --fs-lock-btn:     0.8vw;
+    --lock-icon-size:  2.4vw;
+    --lock-popup-pad:  0.9vw 1.1vw;
+    --lock-popup-gap:  0.75vw;
+    --content-gap:     0.9vw;
   }
-  p {
-    font-size: 0.8vw;
-    line-height: 1.2vw;
-  }
-  h2 {
-    font-size: 2vw;
-    margin-bottom: 1vw;
-  }
-  .house-page {
-    padding: 3vw 2.5vw
-  }
-  .table-sub-heading {
-    font-size: 0.9vw;
-  }
-  .bhav_phal_table, .mahadasha_table {
-    margin-top: 1vw;
-  }
-  .bhav_phal_table th, .mahadasha_table th {
-    font-size: 0.7vw;
-  }
-  .bhav_phal_table td, .mahadasha_table td {
-    font-size: 0.7vw;
-  }
+
+  p  { font-size: 0.8vw; line-height: 1.2vw; }
+  h2 { font-size: 2vw;   margin-bottom: 1vw; }
+
+  .house-page      { padding: 3vw 2.5vw; }
+  .table-sub-heading { font-size: 0.9vw; }
+  .bhav_phal_table,
+  .mahadasha_table   { margin-top: 1vw; }
+  .bhav_phal_table th, .mahadasha_table th { font-size: 0.7vw; }
+  .bhav_phal_table td, .mahadasha_table td { font-size: 0.7vw; }
 }
 
-/* ── Mobile (≤ 768px) ───────────────────────────────────── */
+/* ── Mobile (≤ 768px) ── */
 @media (max-width: 768px) {
   :root {
     --page-pad: 5vw 6vw;
@@ -2006,68 +1762,67 @@ p {
     --sp-sm: 2.8vw;
     --sp-md: 4.5vw;
 
-    --fs-mantra: 6vw;
-    --fs-title: 5.2vw;
-    --fs-label: 3vw;
-    --fs-value: 4vw;
-    --fs-sign-tag: 2.6vw;
+    --fs-mantra:    6vw;
+    --fs-title:     5.2vw;
+    --fs-label:     3vw;
+    --fs-value:     4vw;
+    --fs-sign-tag:  2.6vw;
     --fs-sign-name: 3.4vw;
 
-    --fs-toc-title: 5.5vw;
-    --fs-toc-sub: 2.5vw;
-    --fs-toc-badge: 3.2vw;
-    --fs-toc-name: 3.8vw;
+    --fs-toc-title:   5.5vw;
+    --fs-toc-sub:     2.5vw;
+    --fs-toc-badge:   3.2vw;
+    --fs-toc-name:    3.8vw;
     --fs-toc-pagenum: 3vw;
-    --fs-toc-footer: 4.5vw;
-    --sp-toc-row: 2.2vw;
+    --fs-toc-footer:  4.5vw;
+    --sp-toc-row:     2.2vw;
     --toc-badge-size: 9vw;
-    --toc-row-pad: 1.8vw 3vw;
+    --toc-row-pad:    1.8vw 3vw;
     --toc-row-radius: 10vw;
 
     --fs-sum-title: 3.8vw;
-    --fs-sum-cat: 3.2vw;
+    --fs-sum-cat:   3.2vw;
     --fs-sum-count: 3.8vw;
-    --fs-sum-sub: 2.4vw;
-    --fs-sum-body: 2.2vw;
-    --fs-sum-link: 2.4vw;
-    --sum-icon-size: 8.5vw;
-    --sum-card-pad: 2.5vw 3vw 2vw;
-    --sum-card-gap: 2vw;
-    --sum-grid-gap: 2vw;
+    --fs-sum-sub:   2.4vw;
+    --fs-sum-body:  2.2vw;
+    --fs-sum-link:  2.4vw;
+    --sum-icon-size:  8.5vw;
+    --sum-card-pad:   2.5vw 3vw 2vw;
+    --sum-card-gap:   2vw;
+    --sum-grid-gap:   2vw;
 
-    --fs-ch-title: 5.5vw;
-    --fs-ch-sub: 2.5vw;
-    --fs-ch-label: 2.6vw;
-    --fs-ch-value: 3.8vw;
-    --fs-ch-lock-h: 3vw;
-    --fs-ch-lock-b: 2.5vw;
-    --fs-ch-btn: 2.6vw;
-    --ch-grid-gap: 2.5vw;
-    --ch-body-px: 6vw;
-    --ch-heading-mb: 3vw;
-    --ch-lock-pad: 2.5vw 3vw;
-    --ch-lock-icon: 7vw;
+    --fs-ch-title:    5.5vw;
+    --fs-ch-sub:      2.5vw;
+    --fs-ch-label:    2.6vw;
+    --fs-ch-value:    3.8vw;
+    --fs-ch-lock-h:   3vw;
+    --fs-ch-lock-b:   2.5vw;
+    --fs-ch-btn:      2.6vw;
+    --ch-grid-gap:    2.5vw;
+    --ch-body-px:     6vw;
+    --ch-heading-mb:  3vw;
+    --ch-lock-pad:    2.5vw 3vw;
+    --ch-lock-icon:   7vw;
 
     --fs-content-body: 2.8vw;
     --fs-lock-heading: 2.8vw;
-    --fs-lock-body: 2.4vw;
-    --fs-lock-btn: 2.5vw;
-    --lock-icon-size: 7.5vw;
-    --lock-popup-pad: 2.5vw 3vw;
-    --lock-popup-gap: 2.2vw;
-    --content-gap: 2.5vw;
-    --blur-amount: 5px;
+    --fs-lock-body:    2.4vw;
+    --fs-lock-btn:     2.5vw;
+    --lock-icon-size:  7.5vw;
+    --lock-popup-pad:  2.5vw 3vw;
+    --lock-popup-gap:  2.2vw;
+    --content-gap:     2.5vw;
+    --blur-amount:     5px;
   }
 
+  /* Layout */
   body {
     justify-content: flex-start;
     padding: 5vw 0 10vw;
     gap: 5vw;
   }
 
-  .book {
-    perspective: none;
-  }
+  .book { perspective: none; }
 
   .book .pages {
     width: 86vw;
@@ -2129,22 +1884,98 @@ p {
     background: rgba(0, 0, 0, 0) !important;
   }
 
-  .planet-wrap {
-    padding: 13vw 3.5vw 0;
+  .blurred {
+    filter: blur(0.7vw);
   }
+
+  /* Typography */
+  p  { font-size: 1.8vw; line-height: 2.4vw; }
+  h2 { font-size: 28px;  margin-bottom: 20px; }
+  h3 {
+    font-family: "FHTotalDisplay", serif;
+    font-weight: 600;
+    color: #843e1e;
+    font-size: 2.6vw;
+    margin-top: 5px;
+    margin-bottom: 5px;
+  }
+  .table-sub-heading { font-size: 1.7vw; }
+
+  /* Tables */
+  .bhav_phal_table th, .mahadasha_table th {
+    font-size: 1.8vw;
+    font-weight: 500;
+  }
+  .bhav_phal_table td, .mahadasha_table td {
+    font-size: 1.6vw;
+    padding: 8px 2px;
+  }
+  .gemstone-table thead th { font-size: 9px; }
+  .gemstone-table tbody td { font-size: 9px; }
+
+  /* Kundli chart */
+  .sign-title {
+    bottom: 14%;
+    transform: translate(-50%, -50%);
+    font-size: 1.6vw;
+  }
+  .chart-container { width: 40vw; }
+  .chart-container .house span  { font-weight: 600; }
+  .chart-container .diamond-45  { width: 16vw; height: 12vw; }
+  .chart-container .triangle-horizontal-45 { width: 7vw; height: 12vw; }
+  .chart-container .triangle-45            { width: 15vw; height: 5.5vw; }
+  .chart-container .numb { font-size: 1.3vw; align-items: center; }
+  .chart-container .planet-in-chart { font-size: 3.5vw; }
+  .chart-container .planet-in-chart span p { font-size: 1.1vw; padding: 0 1.5px; }
+  .chart-container .planet-in-chart span p sub { font-size: 0.9vw; }
+
+  /* Page layouts */
+  .house-page { padding: 3vw 4.5vw; }
+
+  /* Sign cards */
+  .sign-card__visual { width: 90%; }
+  .sign-card__name   { bottom: 15.5%; font-size: 10px; }
 
   /* Ganesh page */
-  .ganesh-page__img {
-    width: 82%;
-    max-height: 74%;
-  }
+  .ganesh-page__img { width: 82%; max-height: 74%; }
 
-  /* Sign card */
-  .sign-card__visual {
-    width: 90%;
-  }
+  /* Info items */
+  .info-item__label { font-size: 14px; line-height: 2; }
+  .info-item__value { font-size: 20px; }
 
-  /* ── Navigation bar ──────────────────────────────────── */
+  /* TOC */
+  .toc-row .toc-badge { font-size: 12px; width: 30px; height: 30px; }
+  .toc-name,
+  .toc-pagenum        { font-size: 17px; }
+
+  /* Summary page */
+  .summary-page__title      { font-size: 22px; font-weight: 500; }
+  .sum-card                 { gap: 1.75vw; }
+  .sum-card__icon           { width: 25px; height: 25px; min-width: auto; }
+  .sum-card__name-wrap .sum-card__cat { font-size: 14px; }
+  .sum-card__count          { font-size: 14px; }
+  .sum-card__sub            { font-size: 12px; }
+  .sum-card__body           { font-size: 10px; line-height: 1.3; -webkit-line-clamp: 6; -webkit-box-orient: none; }
+  .sum-card__link           { font-size: 12px; }
+
+  /* Chapter page */
+  .ch-item                  { margin-bottom: 2vw; }
+  .ch-item .ch-item__label  { font-size: 2vw;   line-height: 3.5vw; }
+  .ch-item .ch-item__value  { font-size: 2.6vw; line-height: 3.5vw; }
+  .content-block__text      { font-size: 1.8vw; line-height: 2.4vw; }
+
+  /* Lock popup */
+  .lock-popup                { flex-direction: column; top: 80%; }
+  .lock-resp                 { flex-direction: column; }
+  .lock-popup__text .lock-popup__heading { font-size: 9px; }
+  .lock-popup__text .lock-popup__body    { font-size: 8px; }
+  .lock-popup__icon-wrap { width: 25px; height: 25px; }
+  .lock-popup__btn       { font-size: 10px; font-weight: 200; }
+
+  /* Planet */
+  .planet-wrap { padding: 13vw 3.5vw 0; }
+
+  /* Mobile nav */
   .mobile-nav {
     display: flex;
     align-items: center;
@@ -2166,19 +1997,12 @@ p {
     font-size: max(5vw, 18px);
     cursor: pointer;
     flex-shrink: 0;
-    transition:
-      background 0.2s,
-      transform 0.15s;
+    transition: background 0.2s, transform 0.15s;
     -webkit-tap-highlight-color: transparent;
   }
-  .mobile-nav__btn:active {
-    background: rgba(245, 237, 224, 0.22);
-    transform: scale(0.91);
-  }
-  .mobile-nav__btn:disabled {
-    opacity: 0.2;
-    pointer-events: none;
-  }
+
+  .mobile-nav__btn:active   { background: rgba(245, 237, 224, 0.22); transform: scale(0.91); }
+  .mobile-nav__btn:disabled { opacity: 0.2; pointer-events: none; }
 
   .mobile-nav__dots {
     display: flex;
@@ -2194,9 +2018,7 @@ p {
     height: max(2vw, 7px);
     border-radius: 50%;
     background: rgba(245, 237, 224, 0.28);
-    transition:
-      background 0.25s,
-      transform 0.25s;
+    transition: background 0.25s, transform 0.25s;
     flex-shrink: 0;
   }
 
@@ -2204,202 +2026,103 @@ p {
     background: #f5ede0;
     transform: scale(1.5);
   }
-
-  .info-item__label {
-    font-size: 10px;
-    line-height: 1.5;
-  }
-  .info-item__value {
-    font-size: 13px;
-  }
-  .sign-card__name {
-    bottom: 15.5%;
-    font-size: 10px;
-  }
-
-  .toc-row .toc-badge {
-    font-size: 10px;
-    width: 25px;
-    height: 25px;
-  }
-  .toc-name,
-  .toc-pagenum {
-    font-size: 12px;
-  }
-
-  /* Page 5 */
-
-  .summary-page__title {
-    font-size: 13px;
-    font-weight: 500;
-  }
-  .sum-card__icon {
-    width: 20px;
-    height: 20px;
-    min-width: auto;
-  }
-
-  .sum-card {
-    gap: 0.75vw;
-  }
-  .sum-card__name-wrap .sum-card__cat {
-    font-size: 10px;
-  }
-  .sum-card__count {
-    font-size: 10px;
-  }
-  .sum-card__sub {
-    font-size: 8px;
-  }
-  .sum-card__body {
-    font-size: 7px;
-    line-height: 1.3;
-    -webkit-line-clamp: 6;
-    -webkit-box-orient: none;
-  }
-  .sum-card__link {
-    font-size: 8px;
-  }
-
-  /* Page 6 */
-
-  .ch-item {
-    margin-bottom: 2vw;
-  }
-  .ch-item .ch-item__label {
-    font-size: 2vw;
-    line-height: 3.5vw;
-  }
-  .ch-item .ch-item__value {
-    font-size: 2.6vw;
-    line-height: 3.5vw;
-  }
-
-  /* Page 7 */
-
-  .content-block__text {
-    font-size: 1.8vw;
-    line-height: 2.4vw;
-  }
-  .lock-popup {
-    flex-direction: column;
-    top: 80%;
-  }
-  .lock-resp {
-    flex-direction: column;
-  }
-  .lock-popup__text .lock-popup__heading {
-    font-size: 9px;
-  }
-  .lock-popup__text .lock-popup__body {
-    font-size: 8px;
-  }
-  .lock-popup__icon-wrap {
-    width: 25px;
-    height: 25px;
-  }
-  .lock-icon-img {
-    width: 45%;
-  }
-  .lock-popup__btn {
-    font-size: 10px;
-    font-weight: 200;
-  }
-  p {
-    font-size: 1.8vw;
-    line-height: 2.4vw;
-  }
-  h2 {
-    font-size: 14px;
-    margin-bottom: 10px;
-  }
-  h3 {
-    color: #843e1e;
-    font-family: "FHTotalDisplay";
-    font-weight: 600;
-    margin-top: 5px;
-    margin-bottom: 5px;
-    font-size: 2.6vw;
-  }
-  .table-sub-heading {
-    font-size: 1.7vw;
-  }
-  .bhav_phal_table th, .mahadasha_table th {
-    font-size: 1.8vw;
-    font-weight: 500;
-  }
-  .bhav_phal_table td, .mahadasha_table td {
-    font-size: 1.6vw;
-  }
-  .house-page {
-    padding: 3vw 4.5vw
-  }
 }
 
-/* ── Small phones (≤ 480px) ────────────────────────────── */
-@media (max-width: 426px) {
+/* ── Small phones (≤ 480px) ── */
+@media (max-width: 480px) {
   :root {
     --page-pad: 6vw 6.5vw;
     --sp-xs: 1.8vw;
     --sp-sm: 3.2vw;
     --sp-md: 5vw;
 
-    --fs-mantra: 6.5vw;
-    --fs-title: 5.6vw;
-    --fs-label: 3.2vw;
-    --fs-value: 4.4vw;
-    --fs-sign-tag: 2.8vw;
+    --fs-mantra:    6.5vw;
+    --fs-title:     5.6vw;
+    --fs-label:     3.2vw;
+    --fs-value:     4.4vw;
+    --fs-sign-tag:  2.8vw;
     --fs-sign-name: 3.6vw;
 
-    --fs-toc-title: 6vw;
-    --fs-toc-sub: 2.8vw;
-    --fs-toc-badge: 3.6vw;
-    --fs-toc-name: 4.2vw;
+    --fs-toc-title:   6vw;
+    --fs-toc-sub:     2.8vw;
+    --fs-toc-badge:   3.6vw;
+    --fs-toc-name:    4.2vw;
     --fs-toc-pagenum: 3.3vw;
-    --fs-toc-footer: 5vw;
-    --sp-toc-row: 2.5vw;
+    --fs-toc-footer:  5vw;
+    --sp-toc-row:     2.5vw;
     --toc-badge-size: 10vw;
-    --toc-row-pad: 2vw 3.5vw;
+    --toc-row-pad:    2vw 3.5vw;
 
     --fs-sum-title: 4.2vw;
-    --fs-sum-cat: 3.6vw;
+    --fs-sum-cat:   3.6vw;
     --fs-sum-count: 4.2vw;
-    --fs-sum-sub: 2.7vw;
-    --fs-sum-body: 2.5vw;
-    --fs-sum-link: 2.7vw;
-    --sum-icon-size: 9.5vw;
-    --sum-card-pad: 3vw 3.5vw 2.5vw;
-    --sum-card-gap: 2.5vw;
-    --sum-grid-gap: 2.2vw;
+    --fs-sum-sub:   2.7vw;
+    --fs-sum-body:  2.5vw;
+    --fs-sum-link:  2.7vw;
+    --sum-icon-size:  9.5vw;
+    --sum-card-pad:   3vw 3.5vw 2.5vw;
+    --sum-card-gap:   2.5vw;
+    --sum-grid-gap:   2.2vw;
 
-    --fs-ch-title: 6vw;
-    --fs-ch-sub: 2.8vw;
-    --fs-ch-label: 2.9vw;
-    --fs-ch-value: 4.2vw;
-    --fs-ch-lock-h: 3.3vw;
-    --fs-ch-lock-b: 2.8vw;
-    --fs-ch-btn: 2.9vw;
-    --ch-grid-gap: 3vw;
-    --ch-body-px: 6.5vw;
-    --ch-heading-mb: 3.5vw;
-    --ch-lock-pad: 3vw 3.5vw;
-    --ch-lock-icon: 8vw;
+    --fs-ch-title:    6vw;
+    --fs-ch-sub:      2.8vw;
+    --fs-ch-label:    2.9vw;
+    --fs-ch-value:    4.2vw;
+    --fs-ch-lock-h:   3.3vw;
+    --fs-ch-lock-b:   2.8vw;
+    --fs-ch-btn:      2.9vw;
+    --ch-grid-gap:    3vw;
+    --ch-body-px:     6.5vw;
+    --ch-heading-mb:  3.5vw;
+    --ch-lock-pad:    3vw 3.5vw;
+    --ch-lock-icon:   8vw;
 
     --fs-content-body: 3.1vw;
     --fs-lock-heading: 3.1vw;
-    --fs-lock-body: 2.6vw;
-    --fs-lock-btn: 2.7vw;
-    --lock-icon-size: 8.5vw;
-    --lock-popup-pad: 3vw 3.5vw;
-    --lock-popup-gap: 2.5vw;
-    --content-gap: 3vw;
+    --fs-lock-body:    2.6vw;
+    --fs-lock-btn:     2.7vw;
+    --lock-icon-size:  8.5vw;
+    --lock-popup-pad:  3vw 3.5vw;
+    --lock-popup-gap:  2.5vw;
+    --content-gap:     3vw;
   }
+
+  h2 { font-size: 14px;  margin-bottom: 10px; }
+
   h3 {
+    font-size: 10px;
     margin-top: 5px;
     margin-bottom: 5px;
-    font-size: 10px;
   }
-  .planet-wrap {
-    padding: 13vw 3.5vw 0;
+
+  .info-item__label { font-size: 10px; line-height: 1.5; }
+  .info-item__value { font-size: 13px; }
+
+  .toc-row .toc-badge { font-size: 10px; width: 25px; height: 25px; }
+  .toc-name,
+  .toc-pagenum        { font-size: 12px; }
+
+  /* Summary page */
+  .summary-page__title      { font-size: 13px; font-weight: 500; }
+  .sum-card                 { gap: 0.75vw; }
+  .sum-card__icon           { width: 20px; height: 20px; min-width: auto; }
+  .sum-card__name-wrap .sum-card__cat { font-size: 10px; }
+  .sum-card__count          { font-size: 10px; }
+  .sum-card__sub            { font-size: 8px; }
+  .sum-card__body           { font-size: 7px; line-height: 1.3; -webkit-line-clamp: 6; -webkit-box-orient: none; }
+  .sum-card__link           { font-size: 8px; }
+
+  /* Table */
+  .bhav_phal_table td, .mahadasha_table td {
+    font-size: 1.4vw;
+    padding: 4px 2px;
   }
+
+  .planet-wrap { padding: 13vw 3.5vw 0; }
+}
+
+/* ── Extra-small phones (≤ 426px) ── */
+@media (max-width: 426px) {
+  .gemstone-table thead th { font-size: 6px; }
+  .gemstone-table tbody td { font-size: 6px; padding: 2px 4px; }
 }
