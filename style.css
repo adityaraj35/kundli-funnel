@@ -420,6 +420,19 @@ p {
    ============================================================ */
 
 /* ── Page footer (Om image) ── */
+.toc-footer {
+  position: absolute;
+  bottom: 4px;
+  left: 0;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.om {
+  padding: 0 2px;
+}
 .page-footer {
   position: absolute;
   bottom: 4px;
@@ -440,17 +453,60 @@ p {
   opacity: 0.7;
 }
 
-/* Legacy alias — prefer .page-footer on new pages */
-.toc-footer {
-  position: absolute;
-  bottom: 4px;
-  left: 0;
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
+/* Left leaf */
+.toc-footer.animate .left {
+  animation: fadeLeft 1.25s ease-out;
 }
+
+/* Middle (optional simple fade) */
+.toc-footer.animate .om {
+  animation: popIn 1s ease-out;
+}
+
+/* Right leaf */
+.toc-footer.animate .right {
+  animation: fadeRight 1.25s ease-out;
+}
+
+/* Animations */
+@keyframes fadeLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-40px) rotate(180deg);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0) rotate(180deg);
+  }
+}
+
+@keyframes fadeRight {
+  from {
+    opacity: 0;
+    transform: translateX(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes popIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.6);
+  }
+  60% {
+    opacity: 1;
+    transform: scale(1.25); /* slight overshoot */
+  }
+  100% {
+    transform: scale(1); /* settle */
+  }
+}
+
+/* Legacy alias — prefer .page-footer on new pages */
+
 
 /* ── Gold gradient button ── */
 .btn-gold {
@@ -485,10 +541,77 @@ p {
 
 /* ── Chapter hero images ── */
 .chapter-frame-img  { width: 85%; display: block; }
-.chapter-banner-img { position: absolute; top: 17%; width: 73%; }
+
+/* Banner image: always fills hero edge-to-edge, face centred */
+.chapter-banner-img {
+  position: absolute; top: 0; left: 0;
+  width: 100%; height: 100%;
+  object-fit: cover;
+  object-position: center 22%;   /* keep the faces visible when cropped */
+  display: block;
+}
 .chapter-title-img  { width: 50%; display: block; margin-inline: auto; }
 .toc-title-img      { width: 80%; display: block; margin-inline: auto; }
 .lock-icon-img      { width: 60%; }
+
+/* ── Animation overrides (only when .ch-has-hero is set) ──────────────
+   The frame image fills its container with object-fit: cover so that
+   as scale increases, all four edges of the ornate border are pushed
+   outside the overflow-hidden clip of .chapter-page__hero.
+   The banner artwork (positioned inside the hero) gets the same scale
+   so both images zoom together as a single visual unit.
+   ─────────────────────────────────────────────────────────────────── */
+.chapter-page.ch-has-hero .chapter-frame-img {
+  width: 100%;
+  height: 100%;
+  /* object-fit: cover; */
+  object-position: center 18%;  /* keep the artwork / face area visible */
+  display: block;
+  transform: scale(1);
+  transform-origin: center center;
+  transition: transform 1s cubic-bezier(0.42, 0, 0.58, 1);
+}
+ 
+.chapter-page.ch-has-hero .chapter-banner-img {
+  transform: scale(1);
+  transform-origin: center center;
+  transition: transform 1.5s cubic-bezier(0.42, 0, 0.58, 1);
+  object-fit: none;
+  object-position: 50% 100%;
+}
+
+.chapter-page.ch-has-hero.ch-loaded .chapter-frame-img {
+  transform: scale(0.9);
+  width: 100%;
+}
+ 
+.chapter-page.ch-has-hero.ch-loaded .chapter-banner-img {
+  transform: scale(1);
+    width: 85%;
+    top: 15%; 
+    left: 8%;
+    object-fit: cover;
+}
+
+ 
+/* ── Content scroll: hidden until animation plays ──────────────────────
+   Scoped to .ch-has-hero so chapter pages without a hero are unaffected.
+   ─────────────────────────────────────────────────────────────────── */
+.chapter-page.ch-has-hero .ch-grid,
+.chapter-page.ch-has-hero .content-scroll {
+  opacity: 0;
+  transition: opacity 1s ease 0.7s;
+}
+ 
+.chapter-page.ch-has-hero.ch-loaded .ch-grid,
+.chapter-page.ch-has-hero.ch-loaded .content-scroll {
+  opacity: 1;
+  /* transition-delay: 0.7s;   */
+}
+.chapter-title-img  { width: 50%; display: block; margin-inline: auto; }
+.toc-title-img      { width: 80%; display: block; margin-inline: auto; }
+.lock-icon-img      { width: 60%; }
+
 
 /* ── Blurred / paywall text ── */
 .blurred {
@@ -500,33 +623,54 @@ p {
 /* ============================================================
    9. PAGE 1: GANESH COVER
    ============================================================ */
-.ganesh-page {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: var(--page-pad);
-  background-color: #f8f5f2;
-}
+
+   .top-quote {
+      font-size: 2vw; 
+      color: #65322F; 
+      margin: 0; 
+      font-family: 'Karma'; 
+      font-weight: 600; 
+      z-index: 1; 
+      margin-top: 1.25vw;
+    }
+
+   .ganesh-page {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: var(--page-pad);
+      background-image: url('./img/front-texture.png');
+      background-repeat: round;
+    }
 
 .ganesh-page__img {
-  width: 75%;
+  width: 55%;
   max-height: 70%;
   object-fit: contain;
   flex-shrink: 1;
+  z-index: 0;
 }
 
 .ganesh-page__mantra {
   font-family: var(--font-karma);
   font-weight: 600;
-  font-size: var(--fs-mantra);
-  color: var(--clr-gold);
-  margin: var(--sp-md) 0 0;
+  font-size: 1.25vw;
+  color: #65322F;
+  /* margin: var(--sp-md) 0 0; */
   text-align: center;
   line-height: 1.4;
   white-space: nowrap;
+  z-index: 0;
+}
+
+.front-name {
+  font-size: 1.25vw;
+  margin-top: 2vw;
+  z-index: 0;
+  color: #65322F;
 }
 
 /* ============================================================
@@ -691,7 +835,7 @@ p {
    11. PAGE 3: KUNDLI SCROLL
    ============================================================ */
 .scroll-page {
-  height: 100%;
+  height: 80%;
   width: 80%;
   display: flex;
   justify-content: center;
@@ -708,8 +852,8 @@ p {
 /* ── Scroll rolls ── */
 .scroll-roll {
   position: absolute;
-  left: -8px;
-  width: 105%;
+  left: 5px;
+  width: 98%;
   z-index: 2;
 }
 
@@ -763,6 +907,12 @@ p {
 .chart-wrap {
   position: absolute;
   top: 20%;
+  opacity: 0;
+  transition: opacity 0s;
+}
+.scroll-page.animate .chart-wrap {
+  opacity: 1;
+  transition: opacity 0.6s ease 0.9s;
 }
 
 .chart-container {
@@ -994,6 +1144,7 @@ p {
   padding: 0;
   min-height: 0;
   justify-content: center;
+  gap: 1vw;
 }
 
 .toc-row {
@@ -1220,15 +1371,58 @@ p {
   position: relative;
 }
 
+/* ── Hero base (pages without animation keep the normal height) ── */
 .chapter-page__hero {
   display: flex;
   justify-content: center;
   width: 100%;
-  height: var(--ch-hero-h);
+  height: var(--ch-hero-h);  /* default — overridden below when ch-has-hero */
   flex-shrink: 0;
   margin-top: var(--sp-sm);
   overflow: hidden;
   position: relative;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   CHAPTER PAGE ENTRANCE ANIMATION
+   ───────────────────────────────────────────────────────────────
+   .ch-has-hero   permanent flag added by JS when a cover page is
+                  first seen; scopes all animation rules below.
+   .ch-resetting  added for ONE frame to disable transitions so the
+                  element snaps back to its initial state instantly.
+   .ch-loaded     the "end" state; JS adds this after the reset so
+                  the browser transitions FROM initial TO loaded.
+ 
+   Sequence
+     0 s        hero = 68 %, frame image at scale(1) — no border crop
+     0→1 s      hero collapses to --ch-hero-h ≈ 35 %
+                frame image zooms to scale(1.45) — ornate border pushed
+                outside the overflow-hidden clip on all sides
+     0.7→1.7 s  content block fades in (opacity 0→1)
+   ═══════════════════════════════════════════════════════════════ */
+ 
+/* Initial: hero tall (68%) → entire image with border visible */
+.chapter-page.ch-has-hero .chapter-page__hero {
+  height: 68%;
+  transition: height 1s cubic-bezier(0.42, 0, 0.58, 1);
+}
+ 
+/* ── No transitions during instant reset ── */
+.chapter-page.ch-resetting .chapter-page__hero,
+.chapter-page.ch-resetting .chapter-banner-img,
+.chapter-page.ch-resetting .ch-grid,
+.chapter-page.ch-resetting .content-scroll {
+  transition: none !important;
+  transition-delay: 0s !important;
+}
+ 
+/* Final: hero shorter → overflow clips the border edges away */
+.chapter-page.ch-has-hero.ch-loaded .chapter-page__hero {
+  height: var(--ch-hero-h);   /* ~35% */
+}
+
+.chapter-page.ch-has-hero .chapter-page__hero {
+  height: 70%; 
 }
 
 .chapter-page__body {
@@ -1239,6 +1433,7 @@ p {
   align-items: center;
   padding: 0 var(--ch-body-px);
   overflow: hidden;
+  padding-top: 1.75vw;
 }
 
 /* ── Chapter heading ── */
@@ -1412,7 +1607,7 @@ p {
   font-family: var(--font-body);
   font-weight: 400;
   color: var(--clr-brown-mid);
-  line-height: 1.45;
+  line-height: 1;
   margin: 0;
   display: -webkit-box;
   -webkit-line-clamp: 3;
@@ -1493,8 +1688,52 @@ p {
   opacity: 0.9;
 }
 
+.text_buy_link a {
+  text-decoration: underline;
+  font-weight: 500;
+  color: #843E1E;
+  display: flex;
+  align-items: flex-start;
+  gap: 2px;
+}
+
 .content-block--blur-only .content-block__text--blurred {
   opacity: 0.75;
+}
+
+.shine-text {
+  position: relative;
+  display: flex;
+  color: #fff;
+  overflow: hidden;
+}
+
+.shine-text::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -75%;
+  width: 50%;
+  height: 100%;
+
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(255, 255, 255, 0.6),
+    transparent
+  );
+
+  transform: skewX(-20deg);
+  animation: shine 2.5s infinite;
+}
+
+@keyframes shine {
+  0% {
+    left: -75%;
+  }
+  100% {
+    left: 125%;
+  }
 }
 
 .lock-popup {
@@ -1624,6 +1863,18 @@ p {
 
 /* ── Large screens (≥ 1440px) ── */
 @media (min-width: 1440px) {
+  .top-quote {
+    font-size: 2vw;
+    margin-top: 2.5vw;
+  }
+  .ganesh-page__mantra {
+    font-size: 0.75vw;
+  }
+  .front-name {
+    font-size: 1vw;
+    margin-top: 1vw;
+  }
+
   .sign-title {
     font-size: 0.9vw;
   }
@@ -1632,6 +1883,13 @@ p {
   }
   .chart-wrap {
     top: 10%;
+  }
+  .scroll-roll {
+    left: -11px;
+    width: 107%;
+  }
+  .scroll-paper {
+    width: 114%;
   }
   .chart-container {
     width: 19.5vw;
@@ -1742,7 +2000,10 @@ p {
     --lock-popup-gap:  0.75vw;
     --content-gap:     0.9vw;
   }
-
+  .content-block__text {
+    font-size: 0.748vw;
+    line-height: 1.5;
+  }
   p  { font-size: 0.8vw; line-height: 1.2vw; }
   h2 { font-size: 2vw;   margin-bottom: 1vw; }
 
@@ -1888,6 +2149,22 @@ p {
     filter: blur(0.7vw);
   }
 
+  .top-quote {
+    font-size: 4.5vw;  
+    margin-top: 6vw;
+  }
+
+  .ganesh-page__mantra {
+    font-size: 2.2vw;
+    line-height: 1.3;
+  }
+
+  .front-name {
+    font-size: 2vw;
+    margin-top: 3vw;
+  }
+  
+
   /* Typography */
   p  { font-size: 1.8vw; line-height: 2.4vw; }
   h2 { font-size: 28px;  margin-bottom: 20px; }
@@ -1937,7 +2214,7 @@ p {
   .sign-card__name   { bottom: 15.5%; font-size: 10px; }
 
   /* Ganesh page */
-  .ganesh-page__img { width: 82%; max-height: 74%; }
+  .ganesh-page__img { width: 65%; max-height: 74%; }
 
   /* Info items */
   .info-item__label { font-size: 14px; line-height: 2; }
@@ -2095,22 +2372,22 @@ p {
     margin-bottom: 5px;
   }
 
-  .info-item__label { font-size: 10px; line-height: 1.5; }
-  .info-item__value { font-size: 13px; }
+  .info-item__label { font-size: 2.2vw; line-height: 1.5; }
+  .info-item__value { font-size: 3vw; }
 
-  .toc-row .toc-badge { font-size: 10px; width: 25px; height: 25px; }
+  .toc-row .toc-badge { font-size: 2.5vw; width: 6.5vw; height: 6.5vw; }
   .toc-name,
-  .toc-pagenum        { font-size: 12px; }
+  .toc-pagenum        { font-size: 2.75vw; }
 
   /* Summary page */
-  .summary-page__title      { font-size: 13px; font-weight: 500; }
+  .summary-page__title      { font-size: 3.1vw; font-weight: 500; }
   .sum-card                 { gap: 0.75vw; }
-  .sum-card__icon           { width: 20px; height: 20px; min-width: auto; }
-  .sum-card__name-wrap .sum-card__cat { font-size: 10px; }
-  .sum-card__count          { font-size: 10px; }
-  .sum-card__sub            { font-size: 8px; }
-  .sum-card__body           { font-size: 7px; line-height: 1.3; -webkit-line-clamp: 6; -webkit-box-orient: none; }
-  .sum-card__link           { font-size: 8px; }
+  .sum-card__icon           { width: 5vw; height: 5vw; min-width: auto; }
+  .sum-card__name-wrap .sum-card__cat { font-size: 2vw; }
+  .sum-card__count          { font-size: 2vw; }
+  .sum-card__sub            { font-size: 1.75vw; }
+  .sum-card__body           { font-size: 1.3vw; line-height: 1.3; -webkit-line-clamp: 6; -webkit-box-orient: none; }
+  .sum-card__link           { font-size: 1.5vw; }
 
   /* Table */
   .bhav_phal_table td, .mahadasha_table td {

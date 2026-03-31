@@ -59,21 +59,28 @@ function maskContent(html, visibleChars = 100) {
    DOM HELPERS — write once, re-use everywhere
    ============================================================ */
 
-/**
- * Inject masked (blurred-tail) content into a single element.
- * Replaces repeated maskAfterFullStops + innerHTML blocks.
- */
 function setMasked(selector, text, limit) {
   const el = document.querySelector(selector);
   if (!el) return;
   const { visible, masked } = maskAfterFullStops(text, limit);
-  el.innerHTML = `${visible}<span class="blurred">${masked}</span>`;
+  el.innerHTML = `
+  ${visible}<span class="blurred">${masked}</span>
+  <span class="text_buy_link">
+    <a class="shine-text" href="#" target="_blank" rel="noopener noreferrer">
+    Unlock Full Kundli to Read More
+    <div><img style="height: 100%;" src="./svg/lock-icon-2.svg" alt=""></div>
+    </a>
+    
+  </span>
+  `;
 }
 
-/**
- * Set text (or innerHTML) on ALL matching elements.
- * Replaces repeated querySelectorAll + forEach blocks.
- */
+function genderInitials(name, gender){
+  if (gender == "Male" || gender == "male"){ return `Mr. ${name}`; }
+  else if (gender == "Female" || gender == "female"){ return `Mrs/Ms. ${name}`; }
+  else return name;
+}
+
 function setAll(selector, content, useHTML = false) {
   document.querySelectorAll(selector).forEach(el => {
     if (useHTML) el.innerHTML = content;
@@ -81,18 +88,20 @@ function setAll(selector, content, useHTML = false) {
   });
 }
 
-/* =================== API FETCH ==================== */
+/* ============================================================
+   API FETCH
+   ============================================================ */
 async function getData() {
   try {
     const res = await fetch("https://reports.astroprenuers.com/cosmic_code/json/", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
-        name:             "Vishvnayan",
+        name:             "Aditya Raj Lodhi",
         gender:           "Male",
-        dob:              "21/06/2001",
-        tob:              "03:30",
-        city:             "Meerut",
+        dob:              "03/06/2003",
+        tob:              "18:14",
+        city:             "Bulandshahr",
         state:            "Uttar Pradesh",
         country:          "India",
         pincode:          "203001",
@@ -100,7 +109,6 @@ async function getData() {
         is_json_response: true,
       }),
     });
-
     const data = await res.json();
     console.log("data->", data);
     fillData(data);
@@ -109,12 +117,22 @@ async function getData() {
   }
 }
 
-/* ====================== DATA → DOM ============================== */
+/* ============================================================
+   DATA -> DOM
+   ============================================================ */
 function fillData(data) {
   const firstName = data.NAME.trim().split(" ")[0];
+  const sunSignImg = document.getElementById("sun-sign-img");
+  if (sunSignImg && data.SUN_SIGN_WESTERN) {
+    sunSignImg.src = `./img/rashi/${data.SUN_SIGN_WESTERN.toLowerCase().trim()}.png`;
+  }
+  const moonSignImg = document.getElementById("moon-sign-img");
+  if (moonSignImg && data.MOON_RASHI_NAME) {
+    moonSignImg.src = `./img/rashi/${data.MOON_RASHI_NAME.toLowerCase().trim()}.png`;
+  }
 
-  /* ── Simple text / HTML fields ─────────────────────────── */
   setAll("#name",      capitalizeWords(data.NAME));
+  setAll("#cover-name", genderInitials(data.NAME, data.GENDER));
   setAll("#dob",       data.DOB);
   setAll("#tob",       data.TIME_OF_BIRTH + " Hour");
   setAll("#city",      data.CITY);
@@ -122,17 +140,6 @@ function fillData(data) {
   setAll("#country",   data.COUNTRY);
   setAll("#sun-sign",   data.SUN_SIGN_WESTERN);
   setAll("#moon-sign",   data.MOON_RASHI_NAME);
-
-  const sunSignImg = document.getElementById("sun-sign-img");
-  if (sunSignImg && data.SUN_SIGN_WESTERN) {
-    sunSignImg.src = `./img/rashi/${data.SUN_SIGN_WESTERN.toLowerCase().trim()}.png`;
-  }
-
-  const moonSignImg = document.getElementById("moon-sign-img");
-  if (moonSignImg && data.MOON_RASHI_NAME) {
-    moonSignImg.src = `./img/rashi/${data.MOON_RASHI_NAME.toLowerCase().trim()}.png`;
-  }
-  
   setAll("#nakshatra", data.NAKSHATRA_CHARAN);
   setAll("#ayanamsa",  data.TITHI_AT_SUNRISE);
   setAll("#gender",    data.GENDER);
@@ -141,56 +148,49 @@ function fillData(data) {
   setAll("#yog-count",  data.YOG_COUNT,  true);
   setAll("#dosh-count", data.DOSH_COUNT, true);
 
-  /* ─────── Masked text blocks ──────── */
-  setMasked("#vaar-desc",     data.VAAR_DESCRIPTION,          6);
-  setMasked("#tithi-desc",    data.TITHI_DESCRIPTION,         3);
-  setMasked("#karana-desc",   data.KARANA_DESCRIPTION,        3);
-  setMasked("#lagna-desc",    data.ASCENDENT_DESCRIPTION,     3);
-  setMasked("#pada-desc",     data.NAKSHATRA_DESCRIPTION,     2);
-  setMasked("#nakshatra-desc",data.NAKSHATRA_PANCHANG_DESCRIPTION, 3);
-  setMasked("#yoga-desc",     data.YOGA_DESCRIPTION,          3);
-  setMasked("#gemstone-intro",data.GEMS_INTRO,                3);
+  setMasked("#vaar-desc",     data.VAAR_DESCRIPTION,                 6);
+  setMasked("#tithi-desc",    data.TITHI_DESCRIPTION,                3);
+  setMasked("#karana-desc",   data.KARANA_DESCRIPTION,               3);
+  setMasked("#lagna-desc",    data.ASCENDENT_DESCRIPTION,            3);
+  setMasked("#pada-desc",     data.NAKSHATRA_DESCRIPTION,            3);
+  setMasked("#nakshatra-desc",data.NAKSHATRA_PANCHANG_DESCRIPTION,   3);
+  setMasked("#yoga-desc",     data.YOGA_DESCRIPTION,                 3);
+  setMasked("#gemstone-intro",data.GEMS_INTRO,                       3);
 
-  // Rashi desc needs the first name prepended
   const rashiEl = document.querySelector("#rashi-desc");
   if (rashiEl) {
     const { visible, masked } = maskAfterFullStops(data.MOON_SIGN_DESCRIPTION, 3);
     rashiEl.innerHTML = `${firstName}, ${visible}<span class="blurred">${masked}</span>`;
   }
 
-  /* ── Planet placements & aspects (loop replaces 20+ repeated blocks) ── */
   const PLANET_CONFIG = [
-    { name: "Sun",     placementLimit: 3, hasAspect: true  },
-    { name: "Moon",    placementLimit: 3, hasAspect: true  },
-    { name: "Mercury", placementLimit: 3, hasAspect: true  },
-    { name: "Saturn",  placementLimit: 1, hasAspect: true  },
-    { name: "Rahu",    placementLimit: 1, hasAspect: true  },
-    { name: "Ketu",    placementLimit: 1, hasAspect: true  },
-    { name: "Venus",   placementLimit: 3, hasAspect: true  },
-    { name: "Jupiter", placementLimit: 3, hasAspect: true  },
-    { name: "Mars",    placementLimit: 3, hasAspect: true  },
+    { name: "Sun",     placementLimit: 3 },
+    { name: "Moon",    placementLimit: 3 },
+    { name: "Mercury", placementLimit: 3 },
+    { name: "Saturn",  placementLimit: 1 },
+    { name: "Rahu",    placementLimit: 1 },
+    { name: "Ketu",    placementLimit: 1 },
+    { name: "Venus",   placementLimit: 3 },
+    { name: "Jupiter", placementLimit: 3 },
+    { name: "Mars",    placementLimit: 3 },
   ];
 
-  PLANET_CONFIG.forEach(({ name, placementLimit, hasAspect }) => {
+  PLANET_CONFIG.forEach(({ name, placementLimit }) => {
     const content = data.PLANET_CONTENT?.[name];
     if (!content) return;
-
     const id = name.toLowerCase();
-    setMasked(`#${id}-desc`, content.placement, placementLimit);
-
-    if (hasAspect && content.aspect?.first) {
+    setMasked(`#${id}-desc`,   content.placement,    placementLimit);
+    if (content.aspect?.first) {
       setMasked(`#${id}-aspect`, content.aspect.first, 1);
     }
   });
 
-  /* ──────── Mahadasha ────────── */
   setMasked("#mahadasha-intro1", data.FIRST_MAHADASHA_CONTENT, 3);
 
   const md = data.MAHADASHA_ANTARDASHA_DATA[0];
   const mdTitleEl = document.querySelector("#mahadasha-title1");
   if (mdTitleEl) mdTitleEl.innerHTML = md.planet_name + " Mahadasha";
 
-  // Antardasha entries — loop replaces 9 near-identical blocks
   md.antardasha.slice(0, 9).forEach((ad, i) => {
     const n = i + 1;
     const titleEl = document.querySelector(`#antardasha-title${n}`);
@@ -198,10 +198,8 @@ function fillData(data) {
     setMasked(`#antardasha-intro${n}`, ad.content, 3);
   });
 
-  /* ────── Mahadasha header table ────── */
   const tbody = document.querySelector(".mahadasha_table tbody");
   if (tbody) {
-    // Use DocumentFragment to batch DOM writes into one reflow
     const fragment = document.createDocumentFragment();
     data.MAHADASHA_HEADER.forEach(item => {
       const tr = document.createElement("tr");
@@ -216,14 +214,11 @@ function fillData(data) {
 
 function renderChart(data) {
   const chart = data.SODASHVARGA?.[0]?.chart || [];
-
   document.querySelectorAll(".house").forEach(houseEl => {
     const item = chart[houseEl.dataset.index];
     if (!item) return;
-
     const planetEl = houseEl.querySelector(".planet-in-chart");
     if (planetEl) planetEl.innerHTML = item.planets || "";
-
     const signEl = houseEl.querySelector(".numb");
     if (signEl) signEl.textContent = item.sign ?? "-";
   });
@@ -231,8 +226,6 @@ function renderChart(data) {
 
 /* ============================================================
    SCROLL ANIMATION — fires ONCE, only when user reaches the page
-   Removed IntersectionObserver (fires on load before user arrives).
-   Hooked into page-flip & mobile goToPage instead.
    ============================================================ */
 var scrollAnimDone = false;
 
@@ -240,66 +233,103 @@ function maybePlayScrollAnim(pageEl) {
   if (scrollAnimDone || !pageEl) return;
   var scrollPage = pageEl.querySelector(".scroll-page");
   if (!scrollPage) return;
-  // Short delay lets the page-flip CSS transition finish first
   setTimeout(function () { scrollPage.classList.add("animate"); }, 700);
   scrollAnimDone = true;
 }
 
 /* ============================================================
+   CHAPTER PAGE ANIMATION — replays on every visit
+   ─────────────────────────────────────────────────────────────
+   Animation sequence (all driven by CSS, triggered by JS class):
+     1. [0 s]       Banner hero starts TALL (68 %) — initial state
+     2. [0 s → 1 s] Hero collapses to var(--ch-hero-h) ≈ 35 %
+                    Frame image zooms in (scale + cover) so the ornate
+                    border is pushed outside the overflow-hidden clip
+     3. [0.7 s → 1.7 s] Content block fades in (opacity 0 → 1)
+
+   .ch-has-hero — added once (permanent), scopes the CSS rules to
+                  chapter pages that have a hero image.
+   .ch-resetting — disables ALL transitions for one frame so the
+                   element snaps back to the start state instantly.
+   .ch-loaded    — the "end" state; added after the reset so the
+                   browser animates FROM start TO end.
+   ============================================================ */
+function playChapterAnim(pageEl) {
+  if (!pageEl) return;
+  var cp = pageEl.querySelector(".chapter-page");
+  if (!cp) return;
+  if (!cp.querySelector(".chapter-page__hero")) return;  /* cover pages only */
+
+  /* Mark permanently so the CSS animation rules engage */
+  cp.classList.add("ch-has-hero");
+
+  /* Instant reset: kill all transitions, remove the loaded state */
+  cp.classList.add("ch-resetting");
+  cp.classList.remove("ch-loaded");
+  void cp.offsetHeight;               /* force reflow — browser must register the snap */
+  cp.classList.remove("ch-resetting");
+
+  /* Two rAFs guarantee the browser paints the reset state before animating */
+  requestAnimationFrame(function () {
+    requestAnimationFrame(function () {
+      cp.classList.add("ch-loaded");
+    });
+  });
+}
+
+/* ============================================================
    BOOK PAGE FLIP
    Two modes:
-     • Desktop (> 768px): classic paired spread flip
-     • Mobile  (≤ 768px): single-page navigation with fade
+     * Desktop (> 768 px): classic paired spread flip
+     * Mobile  (<= 768 px): single-page navigation with fade
    ============================================================ */
 var MOBILE_BREAKPOINT = 768;
 
-// Cache repeated DOM lookups
-var pages       = document.getElementsByClassName("page");
-var prevBtn     = document.getElementById("mobilePrev");
-var nextBtn     = document.getElementById("mobileNext");
-var dotsWrap    = document.getElementById("mobileDots");
-var pagesEl     = document.getElementById("pages");
+var pages    = document.getElementsByClassName("page");
+var prevBtn  = document.getElementById("mobilePrev");
+var nextBtn  = document.getElementById("mobileNext");
+var dotsWrap = document.getElementById("mobileDots");
+var pagesEl  = document.getElementById("pages");
 
 var mobileIndex = 0;
 
-/* ── Helper ── */
 function isMobile() { return window.innerWidth <= MOBILE_BREAKPOINT; }
 
 /* ── DESKTOP MODE — spread flip ── */
 function initDesktop() {
   var i;
-  // Set z-index so odd pages stack front-to-back
   for (i = 0; i < pages.length; i++) {
     if (i % 2 === 0) pages[i].style.zIndex = pages.length - i;
   }
 
-  // Assign 1-based page numbers and click handlers
   for (i = 0; i < pages.length; i++) {
     pages[i].pageNum = i + 1;
 
-    // IIFE captures the correct page reference in the closure
     pages[i].onclick = (function (page) {
       return function () {
         if (isMobile()) return;
 
         if (page.pageNum % 2 === 0) {
-          // Even page clicked → flip back
+          /* Even page → flip back */
           page.classList.remove("flipped");
           var prevPage = page.previousElementSibling;
           if (prevPage) {
             prevPage.classList.remove("flipped");
-            // prevPage (odd) is now newly visible — check for scroll anim
             maybePlayScrollAnim(prevPage);
+            playChapterAnim(prevPage);        /* newly visible odd (right) page */
           }
         } else {
-          // Odd page clicked → flip forward
+          /* Odd page → flip forward */
           page.classList.add("flipped");
           var nextPage = page.nextElementSibling;
           if (nextPage) {
             nextPage.classList.add("flipped");
-            // The odd page two slots ahead is now the visible right page
+            playChapterAnim(nextPage);        /* newly visible even (left) page */
             var newOdd = nextPage.nextElementSibling;
-            if (newOdd) maybePlayScrollAnim(newOdd);
+            if (newOdd) {
+              maybePlayScrollAnim(newOdd);
+              playChapterAnim(newOdd);        /* newly visible odd (right) page */
+            }
           }
         }
       };
@@ -339,7 +369,10 @@ function goToPage(index) {
   pages[mobileIndex].classList.remove("mobile-active");
   mobileIndex = index;
   pages[mobileIndex].classList.add("mobile-active");
+
   maybePlayScrollAnim(pages[mobileIndex]);
+  playChapterAnim(pages[mobileIndex]);   /* replays every time */
+
   updateDots();
   updateButtons();
 }
@@ -386,7 +419,6 @@ window.addEventListener("resize", function () {
   var nowMobile = isMobile();
   if (nowMobile === wasLastMobile) return;
   wasLastMobile = nowMobile;
-
   if (nowMobile) {
     initMobile();
   } else {
@@ -400,16 +432,20 @@ window.addEventListener("resize", function () {
 /* ── INIT ── */
 document.addEventListener("DOMContentLoaded", function () {
   initDesktop();
+  if (isMobile()) initMobile();
 
-  if (isMobile()) {
-    initMobile();
-  }
-
-  // If the kundli/scroll page is the FIRST visible page (e.g. during development
-  // with earlier pages commented out), trigger the animation immediately on load.
-  // When all pages are active the kundli page won't be pages[0], so this is a no-op.
+  /* Fire for the first visible page. Both guards safely no-op if the
+     page doesn't contain the relevant element.                        */
   maybePlayScrollAnim(pages[0]);
+  playChapterAnim(pages[0]);
 
-  // Fetch and render API data
   getData();
 });
+
+setInterval(() => {
+  document.querySelectorAll('.toc-footer').forEach(el => {
+    el.classList.remove('animate');
+    void el.offsetWidth; // reflow
+    el.classList.add('animate');
+  });
+}, 5000);
