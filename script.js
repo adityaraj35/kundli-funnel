@@ -59,6 +59,11 @@ function maskContent(html, visibleChars = 100) {
    DOM HELPERS — write once, re-use everywhere
    ============================================================ */
 
+function innerClick(e) {
+  e.stopPropagation(); // ✅ prevents outer click
+  console.log("Link clicked");
+}
+
 function setMasked(selector, text, limit) {
   const el = document.querySelector(selector);
   if (!el) return;
@@ -66,7 +71,7 @@ function setMasked(selector, text, limit) {
   el.innerHTML = `
   ${visible}<span class="blurred">${masked}</span>
   <span class="text_buy_link">
-    <a class="shine-text" href="#" target="_blank" rel="noopener noreferrer">
+    <a class="shine-text" href="https://astroarunpandit.org/the-premium-personalized-kundli/#package" target="_blank" rel="noopener noreferrer">
     Unlock Full Kundli to Read More
     <div><img style="height: 100%;" src="./svg/lock-icon-2.svg" alt=""></div>
     </a>
@@ -148,14 +153,15 @@ function fillData(data) {
   setAll("#yog-count",  data.YOG_COUNT,  true);
   setAll("#dosh-count", data.DOSH_COUNT, true);
 
-  setMasked("#vaar-desc",     data.VAAR_DESCRIPTION,                 6);
-  setMasked("#tithi-desc",    data.TITHI_DESCRIPTION,                3);
-  setMasked("#karana-desc",   data.KARANA_DESCRIPTION,               3);
-  setMasked("#lagna-desc",    data.ASCENDENT_DESCRIPTION,            3);
-  setMasked("#pada-desc",     data.NAKSHATRA_DESCRIPTION,            3);
-  setMasked("#nakshatra-desc",data.NAKSHATRA_PANCHANG_DESCRIPTION,   3);
-  setMasked("#yoga-desc",     data.YOGA_DESCRIPTION,                 3);
-  setMasked("#gemstone-intro",data.GEMS_INTRO,                       3);
+  setMasked("#vaar-desc",      data.VAAR_DESCRIPTION,                 6);
+  setMasked("#tithi-desc",     data.TITHI_DESCRIPTION,                3);
+  setMasked("#karana-desc",    data.KARANA_DESCRIPTION,               3);
+  setMasked("#lagna-desc",     data.ASCENDENT_DESCRIPTION,            3);
+  setMasked("#pada-desc",      data.NAKSHATRA_DESCRIPTION,            3);
+  setMasked("#nakshatra-desc", data.NAKSHATRA_PANCHANG_DESCRIPTION,   3);
+  setMasked("#yoga-desc",      data.YOGA_DESCRIPTION,                 3);
+  setMasked("#gemstone-intro", data.GEMS_INTRO,                       3);
+  setMasked("#ishta-dev",      data.ISHT_DEV,                         1);
 
   const rashiEl = document.querySelector("#rashi-desc");
   if (rashiEl) {
@@ -198,11 +204,13 @@ function fillData(data) {
     setMasked(`#antardasha-intro${n}`, ad.content, 3);
   });
 
+  /* ── Mahadasha header table ─────────────────────────────── */
   const tbody = document.querySelector(".mahadasha_table tbody");
   if (tbody) {
     const fragment = document.createDocumentFragment();
-    data.MAHADASHA_HEADER.forEach(item => {
+    data.MAHADASHA_HEADER.forEach((item, index) => {   // ← add index param
       const tr = document.createElement("tr");
+      tr.style.setProperty("--row-i", index);          // ← stagger index
       tr.innerHTML = `<td>${item.name}</td><td>${item.start}</td><td>${item.end}</td>`;
       fragment.appendChild(tr);
     });
@@ -278,6 +286,46 @@ function playChapterAnim(pageEl) {
 }
 
 /* ============================================================
+   MAHADASHA TABLE ANIMATION — rows cascade in, fires only once
+   ============================================================ */
+var mahadashaAnimDone = false;
+
+function maybePlayMahadashaAnim(pageEl) {
+  if (mahadashaAnimDone || !pageEl) return;
+  var tbody = pageEl.querySelector(".mahadasha_table tbody");
+  if (!tbody) return;
+
+  /* Small delay so the mobile fade-in of the page itself finishes first */
+  setTimeout(function () {
+    var rows = tbody.querySelectorAll("tr");
+    rows.forEach(function (tr, i) {
+      tr.style.setProperty("--row-i", i);   /* stagger index for CSS */
+      tr.classList.add("maha-row--animate");
+    });
+  }, 400);
+
+  mahadashaAnimDone = true;
+}
+
+/* ============================================================
+   SUN PLANET REVEAL — fires once per unique .sun-reveal element
+   (global flag removed — the element itself gets marked instead)
+   ============================================================ */
+function maybePlaySunAnim(pageEl) {
+  if (!pageEl) return;
+  var reveal = pageEl.querySelector(".sun-reveal");
+  if (!reveal) return;
+
+  /* Already played on this specific element — skip */
+  if (reveal.dataset.animDone === "1") return;
+  reveal.dataset.animDone = "1";           /* mark before timeout to prevent double-fire */
+
+  setTimeout(function () {
+    reveal.classList.add("sun-reveal--loaded");
+  }, 500);
+}
+
+/* ============================================================
    BOOK PAGE FLIP
    Two modes:
      * Desktop (> 768 px): classic paired spread flip
@@ -317,6 +365,8 @@ function initDesktop() {
             prevPage.classList.remove("flipped");
             maybePlayScrollAnim(prevPage);
             playChapterAnim(prevPage);        /* newly visible odd (right) page */
+            maybePlayMahadashaAnim(prevPage);
+            maybePlaySunAnim(prevPage);
           }
         } else {
           /* Odd page → flip forward */
@@ -325,10 +375,14 @@ function initDesktop() {
           if (nextPage) {
             nextPage.classList.add("flipped");
             playChapterAnim(nextPage);        /* newly visible even (left) page */
+            maybePlayMahadashaAnim(nextPage);
+            maybePlaySunAnim(nextPage);
             var newOdd = nextPage.nextElementSibling;
             if (newOdd) {
               maybePlayScrollAnim(newOdd);
               playChapterAnim(newOdd);        /* newly visible odd (right) page */
+              maybePlayMahadashaAnim(newOdd);
+              maybePlaySunAnim(newOdd);
             }
           }
         }
@@ -371,7 +425,9 @@ function goToPage(index) {
   pages[mobileIndex].classList.add("mobile-active");
 
   maybePlayScrollAnim(pages[mobileIndex]);
-  playChapterAnim(pages[mobileIndex]);   /* replays every time */
+  playChapterAnim(pages[mobileIndex]);      /* replays every time */
+  maybePlayMahadashaAnim(pages[mobileIndex]); /* fires only once */
+  maybePlaySunAnim(pages[mobileIndex]);
 
   updateDots();
   updateButtons();
@@ -438,8 +494,59 @@ document.addEventListener("DOMContentLoaded", function () {
      page doesn't contain the relevant element.                        */
   maybePlayScrollAnim(pages[0]);
   playChapterAnim(pages[0]);
+  maybePlayMahadashaAnim(pages[0]);
+  maybePlaySunAnim(pages[0]);
 
   getData();
+
+  /* ── ANCHOR → BOOK NAVIGATION ── */
+  function getPageIndexById(id) {
+    var target = document.getElementById(id);
+    if (!target) return -1;
+    var pageEl = target.closest(".page") || target;
+    return Array.from(pages).indexOf(pageEl);
+  }
+
+  function navigateToHash(hash) {
+    if (!hash || hash === "#") return;
+    var index = getPageIndexById(hash.replace("#", ""));
+    if (index === -1) return;
+
+    if (isMobile()) {
+      goToPage(index);
+    } else {
+      /* Reset all flipped states first */
+      Array.from(pages).forEach(function (p) { p.classList.remove("flipped"); });
+
+      /* Flip every page before the target spread */
+      var spreadStart = index % 2 === 0 ? index : index - 1;
+      for (var i = 0; i < spreadStart; i++) {
+        pages[i].classList.add("flipped");
+      }
+
+      /* Fire animations for the newly visible spread */
+      var leftPage  = pages[spreadStart - 1] || null;
+      var rightPage = pages[spreadStart]     || null;
+      if (leftPage)  { playChapterAnim(leftPage);  maybePlayMahadashaAnim(leftPage);  maybePlaySunAnim(leftPage); }
+      if (rightPage) { maybePlayScrollAnim(rightPage); playChapterAnim(rightPage); maybePlayMahadashaAnim(rightPage); maybePlaySunAnim(rightPage); }
+    }
+  }
+
+  /* Intercept all hash-link clicks */
+  document.addEventListener("click", function (e) {
+    var anchor = e.target.closest("a[href^='#']");
+    if (!anchor) return;
+    var hash = anchor.getAttribute("href");
+    if (!hash || hash === "#") return;
+    e.preventDefault();
+    history.pushState(null, "", hash);
+    navigateToHash(hash);
+  });
+
+  /* Handle page load with a hash already in the URL */
+  if (window.location.hash) {
+    setTimeout(function () { navigateToHash(window.location.hash); }, 100);
+  }
 });
 
 setInterval(() => {
